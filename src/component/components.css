@@ -1,0 +1,1371 @@
+/* Webfont: Merchant-Black */
+@font-face {
+  font-family: "MerchantBlack";
+  src: url("../assets/Web-PS/ShockaSerif-Bold.otf") format("woff2"),
+    /* Modern Browsers */ url("../assets/Web-PS/Merchant-Black.otf")
+      format("opentype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bolder;
+  text-rendering: optimizeLegibility;
+}
+/* Webfont: Merchant-Black */
+@font-face {
+  font-family: "Open_Sans";
+  src: url("../assets/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf")
+      format("ttf"),
+    /* Modern Browsers */
+      url("../assets/Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf")
+      format("ttf"); /* Safari, Android, iOS */
+  font-style: normal;
+
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "EB_Garamond";
+  src: url("../assets/EB_Garamond/EBGaramond-VariableFont_wght.ttf")
+      format("ttf"),
+    /* Modern Browsers */
+      url("../assets/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf")
+      format("ttf"); /* Safari, Android, iOS */
+  font-style: normal;
+
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: MerchantBlack;
+}
+
+.Logo {
+  width: 300px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.Deskhead {
+  display: grid;
+  grid-template-columns: 24rem auto;
+  grid-gap: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.LogoDiv {
+  grid-area: 1/1/2/2;
+  display: grid;
+  grid-template-columns: 6rem 14rem;
+  grid-template-rows: 2rem 2rem;
+  width: 20rem;
+  height: 4rem;
+}
+
+.logo-img {
+  grid-area: 1 / 1 / 3/2;
+
+  width: 8rem;
+  height: auto;
+  align-content: center;
+  padding-left: 57px;
+}
+.LogoDiv img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.BrandName-small img {
+  width: 50%;
+  height: 60%;
+}
+
+.BrandName {
+  grid-area: 1/2/2/3;
+  font-family: EB_Garamond;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.BrandName-small {
+  grid-area: 2 /2/3/3;
+  font-family: Open_Sans;
+  padding-left: 2px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.link {
+  width: 100%;
+  padding: 0;
+  padding-top: 20px;
+  margin-left: 20px;
+  position: relative;
+  display: block;
+  font-size: large;
+  color: black;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  right: 15px;
+}
+
+.Burger {
+  display: none;
+}
+.Burgerstuff {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.LinkDiv li {
+  display: inline;
+  margin-right: 60px;
+}
+
+.LinkDiv li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Links {
+  float: right;
+  margin-top: 60px;
+  margin-right: 300px;
+  font-family: none;
+}
+
+.Links ul li {
+  color: rgba(255, 255, 255, 0.884);
+  margin-bottom: 25px;
+}
+
+.Links a {
+  color: rgba(255, 255, 255, 0.884);
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.LinkDiv {
+  float: right;
+  margin-top: 6px;
+  font-family: ui-monospace;
+  grid-area: 1/2/2/3;
+
+  display: grid;
+  justify-content: right;
+}
+
+.linkoff {
+  padding: 0px;
+  background-color: transparent;
+  color: black;
+  z-index: 1000;
+}
+
+.linkoff:hover {
+  padding: 0px;
+  background-color: transparent;
+  padding-bottom: 8px;
+  border-bottom: 2.5px solid black;
+  color: black;
+}
+
+.BookingButton {
+  border: solid 2px gray;
+  padding: 5px 20px 5px 20px;
+  font-family: none;
+}
+.BookingButton a {
+  color: inherit;
+  text-decoration: none;
+}
+.BookingButton:hover {
+  border: solid 2px rgb(209, 208, 208);
+  padding: 5px 20px 5px 20px;
+  background-color: #000;
+  color: white;
+}
+
+.BookingButton:hover a {
+  color: white;
+}
+
+.BookingButtonDark {
+  border: solid 2px gray;
+  padding: 5px 20px 5px 20px;
+  color: rgba(255, 255, 255, 0.884);
+  margin-left: 10px;
+  width: 140px;
+}
+
+.Salon {
+  width: 100%;
+  margin-bottom: 100px;
+  margin-top: 80px;
+}
+
+.FooterDiv {
+  background-color: black;
+  height: 350px;
+  margin-top: 80px;
+}
+
+.FooterLogo {
+  width: 350px;
+  margin-left: 30px;
+}
+
+.FooterLeft {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: none;
+}
+
+.FooterLeft h5 {
+  color: rgba(255, 255, 255, 0.884);
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+.item {
+  max-height: 21rem;
+  min-width: 17.3rem;
+  padding: 35px;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 2em;
+}
+
+.inner-carousel {
+  display: flex;
+}
+
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+  margin-bottom: 150px;
+}
+
+.ServicesHome {
+  text-align: center;
+  padding-top: 45px;
+}
+
+.Services img {
+  width: 6em;
+  padding: 10px 80px 10px 80px;
+  margin-top: 50px;
+}
+
+.Services div {
+  display: inline-block;
+}
+
+.Services h1 {
+  font-weight: 500;
+}
+.Services h2 {
+  font-weight: 300;
+}
+
+.Services ul {
+  padding: 0;
+  margin-top: 50px;
+}
+
+.Services li {
+  width: 10em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.OurCrew {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.OurCrew h1 {
+  font-weight: 500;
+}
+.OurCrew h2 {
+  font-weight: 400;
+  font-size: 25px;
+  margin: 5px;
+}
+.OurCrew h3 {
+  font-weight: 700;
+  font-size: 15px;
+  color: rgb(99, 99, 99);
+  margin: 5px;
+  margin-bottom: 30px;
+}
+.OurCrew div {
+  display: inline-block;
+  background-color: white;
+  margin: 100px 80px 10px 80px;
+  border-radius: 15px;
+  width: 16em;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 10px 10px 20px 10px;
+}
+
+.OurCrew .facebook {
+  border: none;
+  border-radius: 0;
+  width: 20px;
+  margin-top: 0px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.OurCrew .instagram {
+  border: none;
+  border-radius: 0;
+  width: 20px;
+  margin-top: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.OurCrew img {
+  width: 8em;
+  border: 3px #daa520 solid;
+  border-radius: 100%;
+  margin-top: 30px;
+}
+
+.OurCrew ul {
+  padding: 0;
+  margin-top: 70px;
+}
+
+.OurCrew li {
+  width: 10em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ContactUsMain {
+  width: 100%;
+  text-align: center;
+}
+.Contact {
+  width: auto;
+  margin-top: 80px;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 10px;
+  display: inline-block;
+}
+.ContactContent {
+  width: 100%;
+  height: 590px;
+  text-align: left;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.ContactUsMain img {
+  width: auto;
+  height: 590px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 30px;
+  margin: 0px;
+  float: right;
+}
+.ContactUsInfo {
+  width: 33%;
+  height: auto;
+  border-radius: 0;
+  margin: 10px;
+  margin-left: 70px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+.ContactUsInfo h1 {
+  font-weight: 700;
+  color: #505050;
+}
+
+.ContactUsInfo h4 {
+  font-weight: 300;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.ContactUsInfo h5 {
+  font-weight: 400;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.CallButtonContact {
+  width: 200px;
+  display: block;
+  color: white;
+  background-color: rgb(58, 58, 58);
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid rgb(45, 45, 45);
+}
+.CallButtonContact a {
+  color: white;
+  text-decoration: none;
+}
+.BookingButtonContact {
+  width: 200px;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid #505050;
+}
+.BookingButtonContact a {
+  color: black;
+  text-decoration: none;
+}
+.ContactUsInfo ul {
+  margin-top: 20px;
+  padding: 0;
+}
+.BookingButtonContact li {
+  margin: 0;
+  padding: 0;
+}
+
+.BookingPage {
+  width: 100%;
+  text-align: center;
+}
+
+.Booking {
+  width: auto;
+  margin-top: 100px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.BookingAppointmentDiv {
+  height: 550px;
+  margin-left: 50px;
+  border-radius: 10px;
+  background-color: white;
+  display: inline-block;
+}
+
+.BookingAppointmentDiv img {
+  width: 80px;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.BookingAppointmentDiv h3 {
+  margin: 40px 20px 20px 20px;
+}
+
+.BookingAppointmentDiv h4 {
+  margin: 10px 10px 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.BookingAppointmentDiv h6 {
+  margin: 10px 20px 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.HairStylistDiv {
+  width: 100%;
+  height: 485px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.HairStylistDiv img {
+  display: inline-block;
+  width: 80px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.HairStylistDiv .LoginPic {
+  width: auto;
+  height: 485px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 30px;
+  margin: 0px;
+  float: right;
+}
+.HairStylistDiv .LoginDiv {
+  width: 40%;
+  height: auto;
+  border-radius: 0;
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+.HairStylistDiv h3 {
+  margin: 40px 20px 20px 20px;
+}
+
+.HairStylistDiv h4 {
+  margin: 10px 10px 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.HairStylistDiv h6 {
+  margin: 10px 20px 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.AppointmentDiv {
+  width: 45%;
+  height: 550px;
+  margin-right: 150px;
+  border-radius: 10px;
+  background-color: white;
+  float: right;
+  overflow: scroll;
+  text-align: center;
+}
+.TestInput {
+  width: 150px;
+  margin: 20px;
+}
+.SignIn {
+  width: 100px;
+  height: 20px;
+  margin: 20px;
+}
+
+#signInDiv {
+  background-color: transparent;
+  border: none;
+  margin-top: 20px;
+}
+
+.SignOut {
+  width: 100px;
+  height: 20px;
+  margin: 20px;
+}
+.AppointmentListDiv {
+  margin-top: 110px;
+}
+.Title {
+  position: absolute;
+  background-color: rgba(255, 254, 254, 0.957);
+  width: 45%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: solid 1px rgba(128, 128, 128, 0.33);
+}
+
+.Title p {
+  font-weight: 600;
+}
+
+.Title h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.Title .Apptime {
+  display: inline-block;
+  margin: 10px 0px 0px 0px;
+  width: 70px;
+}
+.Title .Appdate {
+  display: inline-block;
+  margin: 10px 2px 0px 30px;
+  width: 100px;
+}
+.Title .Appname {
+  display: inline-block;
+  margin: 10px 2px 0px 30px;
+  width: 130px;
+}
+.Title .Appprice {
+  display: inline-block;
+  margin: 10px 20px 0px 40px;
+  width: 20px;
+}
+
+.Title .Appstylist {
+  display: inline-block;
+  margin: 10px 20px 0px 50px;
+  width: 20px;
+}
+
+.AppointmentList {
+  width: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.AppointmentMultiList {
+  width: auto;
+  border-bottom: 1px rgba(128, 128, 128, 0.325) solid;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 4%;
+  padding-right: 3%;
+}
+
+.AppointmentMultiList .Apptime {
+  display: inline-block;
+  margin: 20px 2px 20px 0px;
+  width: 70px;
+}
+.AppointmentMultiList .Appdate {
+  display: inline-block;
+  margin: 10px 2px 10px 30px;
+  width: 100px;
+}
+.AppointmentMultiList .Appname {
+  display: inline-block;
+  margin: 10px 2px 10px 30px;
+  width: 130px;
+}
+.AppointmentMultiList .Appprice {
+  display: inline-block;
+  margin: 10px 20px 10px 50px;
+  width: 20px;
+}
+
+.AppointmentMultiList .Appstylist {
+  display: inline-block;
+  margin: 10px 20px 10px 60px;
+  width: auto;
+}
+
+.AppointmentList .Apptime {
+  display: inline-block;
+  margin: 20px 2px 20px 0px;
+  width: 70px;
+}
+.AppointmentList .Appdate {
+  display: inline-block;
+  margin: 10px 2px 10px 30px;
+  width: 100px;
+}
+.AppointmentList .Appname {
+  display: inline-block;
+  margin: 10px 2px 10px 20px;
+  width: 130px;
+}
+.AppointmentList .Appprice {
+  display: inline-block;
+  margin: 10px 20px 10px 50px;
+  width: 20px;
+}
+
+.AppointmentList .Appstylist {
+  display: inline-block;
+  margin: 10px 20px 10px 60px;
+  width: auto;
+}
+
+.container {
+  margin-top: 80px;
+
+  justify-content: center;
+  height: 65vh;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.04);
+  filter: blur(4px);
+}
+
+.swiper-slide-active {
+  filter: blur(0px);
+  background: #fff;
+}
+
+.testimonialBox {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  padding-top: 55px;
+  color: #999;
+  box-sizing: border-box;
+}
+
+.testimonialBox .quote {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  opacity: 0.2;
+  width: 50px;
+  height: 50px;
+}
+
+.testimonialBox .details {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.testimonialBox .details .imgBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.testimonialBox .details .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialBox .details h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #2196f3;
+  line-height: 1.1em;
+}
+
+.testimonialBox .details h3 span {
+  font-size: 12px;
+
+  color: #666;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+.section-break img {
+  width: 100%;
+  transform: scale(0.8);
+  padding-top: 150px;
+  padding-bottom: 0px;
+  opacity: 0.7;
+}
+
+.SalonMobile {
+  display: none;
+}
+.ServicesMobile {
+  display: none;
+}
+.Testimonials {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.Testimonials h1 {
+  font-weight: 500;
+}
+
+.LogoMobile {
+  display: none;
+}
+
+.head {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background-color: #f2f5f6;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.5);
+}
+
+.ser-img:hover {
+  transform: scale(1.15);
+}
+
+.DivMap {
+  display: inline-block;
+}
+
+.DivMapMobile {
+  display: none;
+}
+
+.single-img h2 {
+  position: absolute;
+  bottom: 5%;
+  z-index: 1;
+  left: 8%;
+  color: lawngreen;
+  font-family: Cardo;
+  font-size: 35px;
+}
+
+.img-area {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  max-width: 100%;
+  margin: 50px auto;
+}
+
+.img-slide-track {
+  transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.single-img {
+  height: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.single-img img {
+  width: 100%;
+  height: 100%;
+  transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  transform: scale(1.2);
+}
+
+.single-img.slick-active img {
+  -webkit-animation: kenburns-top 5s ease-out both;
+  animation: kenburns-top 5s ease-out both;
+}
+
+.kenburns-top {
+  -webkit-animation: kenburns-top 5s ease-out both;
+  animation: kenburns-top 5s ease-out both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-11-8 21:51:35
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation kenburns-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+
+.slick-current {
+  -webkit-animation: kenburns-top 5s ease-out both;
+  animation: kenburns-top 5s ease-out both;
+}
+
+@media only screen and (max-width: 1220px) {
+  .ContactImg {
+    display: none;
+  }
+  .Burger {
+    position: fixed;
+    right: 20px;
+    top: 25px;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .Bur {
+    color: black;
+    height: 40px;
+    width: 40px;
+    float: right;
+  }
+  .Burgerstuff {
+    display: inline-block;
+    height: 190px;
+  }
+  .LinkDiv {
+    display: none;
+    margin-top: 0px;
+  }
+  .ContactUsInfo {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin: 10px;
+    margin-left: 47px;
+    margin-bottom: 50px;
+    display: inline-block;
+  }
+  .ContactUsInfo h1 {
+    font-weight: 700;
+    color: #505050;
+  }
+
+  .ContactUsInfo h4 {
+    font-weight: 300;
+    width: 70%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .ContactUsInfo h5 {
+    font-weight: 400;
+    margin-top: 7px;
+    width: 270px;
+    margin-bottom: 7px;
+  }
+  .Links a {
+    color: rgba(255, 255, 255, 0.884);
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .LogoMobile {
+    display: inline;
+    width: 300px;
+    margin-left: 0;
+  }
+
+  .Logo {
+    display: none;
+  }
+
+  .OurCrew {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .OurCrew div {
+    margin: 30px;
+    background-color: white;
+  }
+
+  .Testimonials {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  .Testimonials h1 {
+    font-weight: 500;
+  }
+  .Burger {
+    position: fixed;
+    right: 20px;
+    top: 25px;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .Bur {
+    color: black;
+    height: 40px;
+    width: 40px;
+    float: right;
+  }
+  .Burgerstuff {
+    display: inline-block;
+    height: 190px;
+  }
+  .LinkDiv {
+    display: none;
+    margin-top: 0px;
+  }
+
+  .LinkDivMobile {
+    z-index: 3;
+    background-color: #f2f5f6;
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .Desktop {
+    display: none;
+  }
+  .SalonMobile {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .item {
+    max-height: 21rem;
+    min-width: 17.3rem;
+    padding: 55px;
+    touch-action: none;
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 2em;
+  }
+
+  .inner-carousel {
+    display: flex;
+  }
+
+  .carousel {
+    cursor: grab;
+    overflow: hidden;
+    margin-bottom: 150px;
+  }
+
+  .Services {
+    display: none;
+  }
+
+  .ServicesMobile {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .ServicesMobile img {
+    width: 6em;
+    padding: 0px 30px 10px 30px;
+    margin-top: 50px;
+  }
+
+  .ServicesMobile div {
+    display: inline-block;
+  }
+
+  .ServicesMobile h1 {
+    font-weight: 500;
+  }
+  .ServicesMobile h2 {
+    font-weight: 300;
+  }
+
+  .ServicesMobile ul {
+    padding: 0;
+    margin-top: 50px;
+  }
+
+  .ServicesMobile li {
+    width: 10em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-break {
+    display: none;
+  }
+  .container {
+    margin-top: 80px;
+
+    justify-content: center;
+    height: 60vh;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+  }
+  .FooterDiv {
+    background-color: black;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    height: auto;
+  }
+
+  .FooterLeft {
+    width: 69%;
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+  }
+
+  .FooterLeft h5 {
+    color: rgba(255, 255, 255, 0.884);
+    margin-left: 15px;
+    margin-bottom: 30px;
+  }
+
+  .FooterLogo {
+    width: 350px;
+    margin-left: 0px;
+  }
+
+  .Links {
+    width: 31%;
+    position: relative;
+    margin-top: 100px;
+    margin-right: 0px;
+    display: inline-block;
+  }
+
+  .Links ul li {
+    color: rgba(255, 255, 255, 0.884);
+    margin-bottom: 25px;
+  }
+
+  .Links a {
+    color: rgba(255, 255, 255, 0.884);
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+
+  .Links ul {
+    margin-left: 0px;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul {
+    padding: 0;
+  }
+  .Contact {
+    width: auto;
+    margin-top: 80px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .ContactImg {
+    display: none;
+  }
+  .ContactContent {
+    width: 100%;
+    height: 590px;
+    text-align: left;
+    border-radius: 30px;
+    background-color: white;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .ContactUsInfo {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin: 10px;
+    margin-left: 47px;
+    margin-bottom: 50px;
+    display: inline-block;
+  }
+  .ContactUsInfo h1 {
+    font-weight: 700;
+    color: #505050;
+  }
+
+  .ContactUsInfo h4 {
+    font-weight: 300;
+    width: 70%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .ContactUsInfo h5 {
+    font-weight: 400;
+    margin-top: 7px;
+    width: 270px;
+    margin-bottom: 7px;
+  }
+  .BookingButtonDark {
+    border: solid 2px gray;
+    padding: 5px 20px 5px 20px;
+    color: rgba(255, 255, 255, 0.884);
+    margin-left: 15px;
+    width: 140px;
+  }
+
+  .BookingPage {
+    width: 100%;
+    text-align: center;
+  }
+
+  .Booking {
+    width: auto;
+
+    margin-top: 100px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  .BookingAppointmentDiv {
+    height: 550px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+  }
+
+  .BookingAppointmentDiv img {
+    width: 80px;
+    border-radius: 100%;
+    margin: 20px;
+  }
+
+  .BookingAppointmentDiv h3 {
+    margin: 40px 20px 20px 20px;
+  }
+
+  .BookingAppointmentDiv h4 {
+    margin: 10px 10px 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .BookingAppointmentDiv h6 {
+    margin: 10px 20px 10px 20px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .HairStylistDiv {
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 485px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 30px;
+    display: inline-block;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .HairStylistDiv img {
+    display: none;
+  }
+  .HairStylistDiv .LoginPic {
+    width: auto;
+    height: 485px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 30px;
+    margin: 0px;
+    float: right;
+  }
+  .HairStylistDiv .LoginDiv {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 50px;
+  }
+
+  .HairStylistDiv h3 {
+    margin: 40px 20px 20px 20px;
+  }
+
+  .HairStylistDiv h4 {
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .HairStylistDiv h6 {
+    margin: 10px 20px 10px 10px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .AppointmentDiv {
+    width: 45%;
+    height: 550px;
+    margin-right: 150px;
+    border-radius: 10px;
+    background-color: white;
+    float: right;
+    overflow: scroll;
+    text-align: center;
+  }
+  .TestInput {
+    width: 150px;
+    margin: 20px;
+  }
+  .SignIn {
+    width: 100px;
+    height: 20px;
+    margin: 20px;
+  }
+
+  #signInDiv {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+  }
+
+  .SignOut {
+    width: 100px;
+    height: 20px;
+    margin: 20px;
+  }
+  .AppointmentListDiv {
+    margin-top: 110px;
+  }
+  .DivMapMobile {
+    display: inline-block;
+  }
+  .Divmap {
+    display: none;
+  }
+  .FooterDiv {
+    background-color: black;
+    height: 350px;
+    margin-top: 30px;
+  }
+}
