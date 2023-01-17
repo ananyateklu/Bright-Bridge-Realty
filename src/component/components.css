@@ -237,6 +237,24 @@ ul {
   border-radius: 2em;
 }
 
+.Home{
+  height:100vh;
+}
+
+.hero{
+  height:80vh;
+  background-color: #2196f3;
+
+}
+
+.hero-img img {
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
 .inner-carousel {
   display: flex;
 }
