@@ -25,6 +25,7 @@ const Home = () => {
       <div className="hero">
       <div className="hero-img">
           <img src={hero_img} alt="hero-img"/>
+          <h2>The Bridge to Your Next Home</h2>
         </div>
       </div>
       <div className="featured">

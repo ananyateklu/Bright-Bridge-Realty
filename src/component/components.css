@@ -250,6 +250,15 @@ ul {
   grid-area: 1/1/2/2;
 
 }
+.hero-img h2{
+  position: absolute;
+  bottom: 35%;
+  z-index: 1;
+  left: 35%;
+  color: whitesmoke;
+  font-family: Cardo;
+  font-size: 35px;
+}
 
 .hero-img img {
   width: 100%;
