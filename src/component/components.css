@@ -241,7 +241,7 @@ ul {
 .Home{
   height:360vh;
   display:grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr;
 }
 
 .hero{
