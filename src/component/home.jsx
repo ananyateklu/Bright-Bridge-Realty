@@ -27,6 +27,15 @@ const Home = () => {
           <img src={hero_img} alt="hero-img"/>
         </div>
       </div>
+      <div className="featured">
+        Featured Listings
+      </div>
+      <div className="open_houses">
+        Open Houses
+      </div>
+      <div className="say_about">
+        Comments
+      </div>
       
       
       

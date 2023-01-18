@@ -9,14 +9,11 @@ const logo = require("../assets/BrightBridgeLogo.png");
 
 
 const Header = () => {
-  const [mobile, setMobile] = useState(true);
-  const tab_class = mobile ? "none" : "block";
+  
 
   
 
-  function expandNav() {
-    setMobile(!mobile);
-  }
+ 
 
   
 
@@ -75,26 +72,10 @@ const Header = () => {
       </div>
       </div>
 
-      <div className="LinkDivMobile">
-        <div className="LogoDivMobile">
-          <img className="LogoMobile" src={logo} alt="logo" />
-        </div>
+     
         
-        <div className="Burgerstuff" style={{ display: tab_class }}>
-          <Link className="link" to="/" onClick={() => expandNav()}>
-            HOME
-          </Link>
-          <Link className="link" to="/" onClick={() => expandNav()}>
-            OUR CREW
-          </Link>
-          <Link className="link" to="/contactus" onClick={() => expandNav()}>
-            CONTACT US
-          </Link>
-          <Link className="link" to="/booking" onClick={() => expandNav()}>
-            BOOKING
-          </Link>
-        </div>
-      </div>
+       
+      
     </div>
   );
 };
