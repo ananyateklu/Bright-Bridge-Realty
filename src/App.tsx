@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/BBLogo.png';
+import house from './assets/House1.jpg';
 import './App.css';
 
 function App() {
@@ -7,18 +8,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <a href='/' className='Home-link'>Home</a>
       </header>
+      <div className="House-container">
+        <img src={house} className="House" alt="house" />
+        <h1 className="House-text">OUR WEBSITE IS UNDER CONSTRUCTION</h1>
+      </div>
     </div>
   );
 }
