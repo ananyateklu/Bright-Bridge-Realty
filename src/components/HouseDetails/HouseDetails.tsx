@@ -1,0 +1,58 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './HouseDetails.css';
+import { useParams } from 'react-router-dom';
+
+interface RouteParams extends Record<string, string | undefined> {
+  zpid: string;
+}
+
+const HouseDetails: React.FC = () => {
+  const { zpid } = useParams<RouteParams>();
+  const [houseData, setHouseData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchHouseDetails = async () => {
+      const options = {
+        method: 'GET',
+        url: 'https://zillow-com1.p.rapidapi.com/property',
+        params: { zpid },
+        headers: {
+          'X-RapidAPI-Key': '5cecdd4475mshb15c34e799457b2p151503jsn581a088e90f4',
+          'X-RapidAPI-Host': 'zillow-com1.p.rapidapi.com',
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        setHouseData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchHouseDetails();
+  }, [zpid]);
+
+  if (!houseData) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="House-details">
+      <div className="House-details">
+        <h1>{houseData.address.streetAddress}</h1>
+        <img src={houseData.imgSrc} alt="House" />
+        <p>Price: ${houseData.price}</p>
+        <p>Bedrooms: {houseData.bedrooms}</p>
+        <p>Bathrooms: {houseData.bathrooms}</p>
+        <p>Living Area: {houseData.livingAreaValue} sqft</p>
+        <p>Year Built: {houseData.yearBuilt}</p>
+        <p>Home Type: {houseData.homeType}</p>
+        <p>Description: {houseData.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default HouseDetails;

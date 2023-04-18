@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home/Home';
-
+import HouseDetails from './components/HouseDetails/HouseDetails';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/house-details/:zpid" element={<HouseDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
