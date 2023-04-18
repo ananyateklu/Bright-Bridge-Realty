@@ -3,6 +3,7 @@ import api from '../../services/api.js';
 import './HouseSearchResult.css';
 import SearchBarList from '../SearchBar/SearchBarList';
 import { Link } from 'react-router-dom';
+import Loading from '../Loading'; 
 
 
 
@@ -25,6 +26,7 @@ interface House {
 
 const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChange }) => {
     const [houses, setHouses] = useState<House[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
     const extractCityAndStateFromAddress = (address: string): string => {
         const cityAndStateRegex = /,\s*([^,]+,\s*\w{2})/;
         const cityAndStateMatch = address.match(cityAndStateRegex);
@@ -48,6 +50,7 @@ const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChang
 
 
     async function fetchData(city: string) {
+        setLoading(true); // Add this line
         try {
             const response = await api.get('propertyExtendedSearch', {
                 params: { location: city, home_type: 'Houses' },
@@ -57,6 +60,11 @@ const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChang
         } catch (error) {
             console.error('Error fetching data:', error);
         }
+        setLoading(false); // Add this line
+    }
+
+    if (loading) {
+        return <div className='LoadDiv'><Loading /></div>;
     }
 
     const renderHouse = (house: House) => (

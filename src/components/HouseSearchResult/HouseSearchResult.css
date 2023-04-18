@@ -93,3 +93,11 @@
   margin-top: 0px;
   margin-bottom: 26px;
 }
+
+.LoadDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 1000;
+}

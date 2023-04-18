@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
+import Loading from '../Loading'; 
 
 interface RouteParams extends Record<string, string | undefined> {
   zpid: string;
@@ -11,6 +12,7 @@ const HouseDetails: React.FC = () => {
   const { zpid } = useParams<RouteParams>();
   const [houseData, setHouseData] = useState<any>(null);
 
+  
   useEffect(() => {
     const fetchHouseDetails = async () => {
       const options = {
@@ -22,7 +24,7 @@ const HouseDetails: React.FC = () => {
           'X-RapidAPI-Host': 'zillow-com1.p.rapidapi.com',
         },
       };
-
+      
       try {
         const response = await axios.request(options);
         setHouseData(response.data);
@@ -35,8 +37,8 @@ const HouseDetails: React.FC = () => {
   }, [zpid]);
 
   if (!houseData) {
-    return <div>Loading...</div>;
-  }
+    return <div className='LoadDiv'><Loading /></div>; // Update this line
+}
 
   return (
     <div className="House-details">
