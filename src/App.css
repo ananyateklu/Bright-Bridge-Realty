@@ -97,3 +97,76 @@
   animation: zoomIn 1s ease-in-out;
 }
 
+/* Add this to your App.css file */
+
+.Search-container {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search-input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #5D1A91;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  width: 300px;
+}
+
+.Search-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #5D1A91;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s;
+}
+
+.Search-button:hover {
+  background-color: #8B30C7;
+}
+
+/* Add this to your App.css file */
+
+.House-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.House-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.House-item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.House-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
