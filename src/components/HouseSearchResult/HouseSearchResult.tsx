@@ -3,14 +3,9 @@ import api from '../../services/api.js';
 import './HouseSearchResult.css';
 import SearchBarList from '../SearchBar/SearchBarList';
 import { Link } from 'react-router-dom';
-import Loading from '../Loading'; 
+import Loading from '../Loading';
+import { useSearchParams } from 'react-router-dom';
 
-
-
-interface HouseSearchResultProps {
-    city: string;
-    onCityChange: (newCity: string) => void;
-}
 
 
 interface House {
@@ -24,9 +19,11 @@ interface House {
     propertyType: string;
 }
 
-const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChange }) => {
+const HouseSearchResult: React.FC = () => {
     const [houses, setHouses] = useState<House[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+    const [searchParams] = useSearchParams();
+    const city = searchParams.get('city') || '';
     const extractCityAndStateFromAddress = (address: string): string => {
         const cityAndStateRegex = /,\s*([^,]+,\s*\w{2})/;
         const cityAndStateMatch = address.match(cityAndStateRegex);
@@ -90,19 +87,20 @@ const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChang
 
     return (
         <>
-            <div className='Larger-search'>
-                <SearchBarList
-                    onSearch={(searchedCity: string) => {
-                        onCityChange(searchedCity);
-                    }}
-                />
-            </div>
-
-            <div className="House-list">
-                {houses.map((house) => renderHouse(house))}
-            </div>
+          <div className="Larger-search">
+            <SearchBarList
+              onSearch={(searchedCity: string) => {
+                const newPath = `/search?city=${searchedCity}`;
+                window.location.href = newPath;
+              }}
+            />
+          </div>
+    
+          <div className="House-list">
+            {houses.map((house) => renderHouse(house))}
+          </div>
         </>
-    );
-}
+      );
+    };
 
 export default HouseSearchResult;

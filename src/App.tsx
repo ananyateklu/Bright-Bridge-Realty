@@ -4,6 +4,8 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home/Home';
 import HouseDetails from './components/HouseDetails/HouseDetails';
+import HouseSearchResult from './components/HouseSearchResult/HouseSearchResult';
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search" element={<HouseSearchResult />} />
           <Route path="/house-details/:zpid" element={<HouseDetails />} />
         </Routes>
       </BrowserRouter>
