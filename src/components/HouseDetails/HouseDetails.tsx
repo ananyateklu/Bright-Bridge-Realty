@@ -20,8 +20,8 @@ const HouseDetails: React.FC = () => {
         url: 'https://zillow-com1.p.rapidapi.com/property',
         params: { zpid },
         headers: {
-          'X-RapidAPI-Key': '5cecdd4475mshb15c34e799457b2p151503jsn581a088e90f4',
-          'X-RapidAPI-Host': 'zillow-com1.p.rapidapi.com',
+          'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+          'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST,
         },
       };
       

@@ -53,7 +53,7 @@ const HouseSearchResult: React.FC<HouseSearchResultProps> = ({ city, onCityChang
         setLoading(true); // Add this line
         try {
             const response = await api.get('propertyExtendedSearch', {
-                params: { location: city, home_type: 'Houses' },
+                params: { location: city },
             });
             console.log(response.data.props);
             setHouses(response.data.props);

@@ -30,7 +30,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     const [city, setCity] = useState('');
     const [suggestions, setSuggestions] = useState<string[]>([]);
 
-    const API_KEY = '5a2682f8f0f8467db9efbcb76dfd2c5f';
+    const API_KEY = process.env.REACT_APP_OPENCAGE_KEY;
 
 
     useEffect(() => {
@@ -57,7 +57,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         } else {
           setSuggestions([]);
         }
-      }, [city]);      
+      }, [city, API_KEY]);      
 
     const handleSearch = () => {
         console.log('City:', city);
