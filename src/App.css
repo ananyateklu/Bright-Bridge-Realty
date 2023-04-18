@@ -42,7 +42,8 @@
 
 .App-header {
   font-family: 'Quicksand', sans-serif;
-  position: absolute;
+  background-color:  transparent;
+  position: fixed;
   z-index: 1;
   min-height: 10vh;
   width: 100%;
@@ -52,6 +53,16 @@
   justify-content: center;
   font-size: calc(7px + 2vmin);
   color: white;
+}
+
+.App-footer {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5D1A91;
+  color: white;
+  padding: 20px;
 }
 
 .Home-link {
@@ -110,9 +121,19 @@
   align-items: center;
 }
 
+.SearchList-container {
+  position: fixed;
+  z-index: 1;
+  left: 55%;
+  transform: translate(-40%, 60%);
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
 .Search-input {
   padding: 12px 20px;
-  font-size: 16px;
   border: 2px solid #5D1A91;
   border-radius: 4px 0 0 4px;
   outline: none;
@@ -142,6 +163,7 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  padding-top: 130px;
 }
 
 .House-item {

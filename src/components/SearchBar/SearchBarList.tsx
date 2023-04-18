@@ -5,7 +5,7 @@ interface SearchBarProps {
   onSearch: (city: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBarList: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [city, setCity] = useState('');
 
   const handleSearch = () => {
@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="Search-container">
+    <div className="SearchList-container">
       <input
         className="Search-input"
         type="text"
@@ -29,4 +29,4 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   );
 };
 
-export default SearchBar;
+export default SearchBarList;
