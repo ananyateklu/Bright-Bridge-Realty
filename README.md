@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Bright Bridge Realty
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application created for Bright Bridge Realty. It uses the Zillow API to fetch property data.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Environment Variables](#environment-variables)
+- [Contributing](#contributing)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Search for real estate listings by city
+- View property details such as address, price, bedrooms, bathrooms, and living area
+- Responsive design that works on both desktop and mobile devices
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/yourusername/Bright-Bridge-Realty.git
+```
 
-### `npm run build`
+2. Change to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd Bright-Bridge-Realty
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Start the development server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The application should now be running on \`http://localhost:3000\`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Build for production: (Don't use this unless it's for production)
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This command will create a \`build\` folder containing the optimized production build.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Environment Variables
+
+To keep your API key and other sensitive information secure, create a \`.env\` file in the root folder of your project and add the following environment variables:
+
+```bash
+REACT_APP_RAPIDAPI_KEY=your_api_key
+REACT_APP_RAPIDAPI_HOST=your_api_host
+```
+
+Replace \`your_api_key\` and \`your_api_host\` with your actual values.
+
+**Note:** Do not commit the \`.env\` file to your version control system. Add it to your \`.gitignore\` file to ensure it's excluded.
+
+## Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch with a descriptive name, e.g., \`feature-new-search-functionality\`
+3. Make your changes on the new branch
+4. Push your changes to your fork
+5. Create a pull request
+
+Please make sure your code follows best practices and is well-documented.
