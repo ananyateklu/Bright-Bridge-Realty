@@ -37,3 +37,36 @@
     background-color: #0056b3;
   }
   
+  .SearchList-container {
+    position: fixed;
+    z-index: 1;
+    left: 55%;
+    transform: translate(-40%, 60%);
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Search-input {
+    padding: 12px 20px;
+    border: 2px solid #5D1A91;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 300px;
+  }
+  
+  .Search-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #5D1A91;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .Search-button:hover {
+    background-color: #8B30C7;
+  }

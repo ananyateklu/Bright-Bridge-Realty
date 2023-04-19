@@ -1,36 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import house from '../../assets/House1.jpg';
 import './Home.css';
 import SearchBar from '../SearchBar/SearchBar';
-import HouseSearchResult from '../HouseSearchResult/HouseSearchResult';
+import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
-    const [city, setCity] = useState('');
-    const [searchSubmitted, setSearchSubmitted] = useState(false);
-  
+    const navigate = useNavigate();
+    
+
     const handleSearch = (searchedCity: string) => {
-      setCity(searchedCity);
-      setSearchSubmitted(true);
+        navigate(`/search?city=${searchedCity}`);
     };
-  
-    const handleCityChange = (newCity: string) => {
-      setCity(newCity);
-    };
-  
+
     return (
-      <div className="Home">
-        {!searchSubmitted && <SearchBar onSearch={handleSearch} />}
-        {searchSubmitted ? (
-          <HouseSearchResult city={city} onCityChange={handleCityChange} />
-        ) : (
-          <div className="House-container">
-            <img src={house} className="House" alt="house" />
-          </div>
-        )}
-      </div>
+        <div className="Home">
+            <SearchBar onSearch={handleSearch} />
+            <div className="House-container">
+                <img src={house} className="House" alt="house" />
+            </div>
+
+        </div>
     );
-  };
-  
-  
+};
 
 export default Home;

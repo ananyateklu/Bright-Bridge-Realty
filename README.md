@@ -59,8 +59,9 @@ This command will create a \`build\` folder containing the optimized production 
 To keep your API key and other sensitive information secure, create a \`.env\` file in the root folder of your project and add the following environment variables:
 
 ```bash
-REACT_APP_RAPIDAPI_KEY=your_api_key
-REACT_APP_RAPIDAPI_HOST=your_api_host
+REACT_APP_RAPIDAPI_KEY="your_api_key"
+REACT_APP_RAPIDAPI_HOST="your_api_host"
+REACT_APP_OPENCAGE_KEY="your_api_key"
 ```
 
 Replace \`your_api_key\` and \`your_api_host\` with your actual values.

@@ -1,3 +1,19 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Add this line */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -70,125 +86,20 @@
   top: 0;
   right: 0;
   padding: 20px 40px 20px 20px;
-  color: white;
+  color: #5D1A91;
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
 }
 
 
 .Home-link:hover {
-  color: black;
+  color: white;
   position: absolute;
   top: 0;
   right: 0;
   padding: 20px 40px 20px 20px;
 }
 
-
-.House-container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.House {
-  width: 100%;
-}
-
-.House-text {
-  font-family: 'Lato', serif;
-  position: absolute;
-  z-index: 1;
-  color: white;
-  font-size: calc(70px + 2vmin);
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  animation: zoomIn 1s ease-in-out;
-}
-
 /* Add this to your App.css file */
 
-.Search-container {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.SearchList-container {
-  position: fixed;
-  z-index: 1;
-  left: 55%;
-  transform: translate(-40%, 60%);
-  display: flex;
-  margin-bottom: 40px;
-  justify-content: center;
-  align-items: center;
-}
-
-.Search-input {
-  padding: 12px 20px;
-  border: 2px solid #5D1A91;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  width: 300px;
-}
-
-.Search-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  background-color: #5D1A91;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  transition: background-color 0.3s;
-}
-
-.Search-button:hover {
-  background-color: #8B30C7;
-}
-
-/* Add this to your App.css file */
-
-.House-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  padding-top: 130px;
-}
-
-.House-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 20px;
-}
-
-.House-item-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.House-item-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-}
