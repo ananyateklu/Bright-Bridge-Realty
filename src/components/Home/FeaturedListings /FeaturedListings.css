@@ -75,8 +75,8 @@
   object-fit: cover;
   display: block;
   flex-direction: column;
-  height: calc(60%);
-  width: calc(100% - 20px);
+  height: calc(55.5%);
+  width: calc(100% - 10px);
   align-items: flex-end;
   justify-content: flex-start;
   border: 20px solid rgb(128, 128, 128, 0.5);
@@ -120,6 +120,9 @@
 .FeaturedListings-button {
   background-color: white;
   color: black;
+  position: relative;
+  bottom: 15px;
+  left: 5px;
   border: 1px solid black;
   padding: 10px 20px;
   font-size: 16px;
