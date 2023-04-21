@@ -45,7 +45,7 @@ const HouseDetails: React.FC = () => {
       <div className="House-details">
         <h1>{houseData.address.streetAddress}</h1>
         <img src={houseData.imgSrc} alt="House" />
-        <p>Price: ${houseData.price}</p>
+        <p>Price: $ {houseData.price}</p>
         <p>Bedrooms: {houseData.bedrooms}</p>
         <p>Bathrooms: {houseData.bathrooms}</p>
         <p>Living Area: {houseData.livingAreaValue} sqft</p>

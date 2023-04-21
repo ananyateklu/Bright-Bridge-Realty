@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const fetchFeaturedListings = async (): Promise<string[]> => {
+const fetchFeaturedListings = async (): Promise<[string[], any[]]> => {
   const options = {
     method: 'GET',
     url: 'https://zillow-com1.p.rapidapi.com/propertyExtendedSearch',
     params: {
-      location: 'Blaine',
+      location: 'Minneapolis, MN',
       home_type: 'Houses, Condos, Apartments',
-      minPrice: '400000',
+      minPrice: '300000',
     },
     headers: {
       'X-RapidAPI-Key': '5cecdd4475mshb15c34e799457b2p151503jsn581a088e90f4',
@@ -18,14 +18,14 @@ const fetchFeaturedListings = async (): Promise<string[]> => {
   try {
     const response = await axios.request(options);
     const data = response.data.props;
-    console.log(data)
     // Get the image URLs for the first 5 listings
-    const imageUrls = data.slice(0, 5).map((listing: any) => listing.imgSrc);
-
-    return imageUrls;
+    const imageUrls = data.slice(5, 10).map((listing: any) => listing.imgSrc);
+    const imageUrLsPlusDetails: [string[], any[]] = [imageUrls, data.slice(5, 10)]; // Specify the type explicitly
+    console.log(imageUrLsPlusDetails);
+    return imageUrLsPlusDetails; // Return the imageUrLsPlusDetails array
   } catch (error) {
     console.error(error);
-    return [];
+    return [[], []];
   }
 };
 
