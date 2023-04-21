@@ -2,16 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .FeaturedListings-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 40% 30% 30%;
+  grid-template-rows: 280px 1fr;
   gap: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  align-items: start;
 }
 
 .FeaturedListings-image {
@@ -22,63 +20,108 @@
   height: 100%;
 }
 
-.FeaturedListings-image:nth-child(1) {
-  height: 100%;
-}
-.FeaturedListings-image:nth-child(2) {
-  height: 100%;
-}
-
-.FeaturedListings-image:nth-child(3) {
-  height: 100%;
-}
-.FeaturedListings-image:nth-child(4) {
-  height: 100%;
-}
-.FeaturedListings-image:nth-child(5) {
-  grid-row: span 1;
-  height: 100%;
-}
-
 .FeaturedListings-image:hover {
   filter: grayscale(0%);
   transform: scale(1.1);
 }
+.FeaturedListings-image:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+  height: calc(100% - 10px);
+  width: calc(100% + 30px);
+  align-self: start;
+}
+
+.FeaturedListings-image:nth-child(2) {
+  height: calc(100% + 20px);
+  width: calc(100% - 34px);
+  align-self: start;
+  padding-left: 34px;
+  margin-bottom: 5px;
+}
+.FeaturedListings-image:nth-child(3) {
+  height: calc(100% + 20px);
+  align-self: start;
+  padding-left: 4px;
+  margin-bottom: 5px;
+}
+
+.FeaturedListings-image:nth-child(4) {
+  height: calc(100% - 80px);
+  width: calc(100% - 70px);
+  margin-top: -6px;
+}
+
+.FeaturedListings-image:nth-child(5) {
+  grid-row: 2;
+  grid-column: 2;
+  height: calc(100% - 50px);
+  margin-left: -66px;
+  margin-top: 4px;
+  padding-top: 20px;
+  align-self: start;
+}
 
 .FeaturedListings-title {
+  grid-row: 2;
+  grid-column: 3;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover;
   display: flex;
   flex-direction: column;
+  height: calc(60%);
+  width: calc(100% - 20px);
   align-items: flex-end;
   justify-content: flex-start;
+  border: 20px solid rgb(128, 128, 128, 0.5);
   grid-column: 3;
   grid-row: 2;
   padding: 20px;
+  margin-left: -62px;
+  margin-top: 24px;
+  padding-top: 40px;
+}
+
+.FeaturedListings-title:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
 .FeaturedListings-title h2 {
-  display: flex;
+  display: contents;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: 48px; 
   font-weight: bold;
   margin: 10px 0;
 }
 
 .FeaturedListings-title-featured {
   color: black;
+  display: inline;
+  font-size: 70px; 
+  font-weight: 400;
 }
 
 .FeaturedListings-title-listings {
   color: #5d1a91;
+  font-size: 40px; 
+  font-weight: 400;
+  margin-left: 5px; 
+  margin-top: -13px;
 }
 
 .FeaturedListings-button {
-  background-color: #5d1a91;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
-  margin-top: 10px;
+  margin-top: 30px;
+}
+
+.FeaturedListings-button:hover {
+  background-color: #5d1a91;
+  color: white;
 }
