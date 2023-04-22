@@ -125,9 +125,12 @@ const FeaturedListings: React.FC = () => {
 
                 <h3 className="House-slider-price" >{house.price}</h3>
 
-                <p className='House-slider-location'>{house.location}</p>
+                <p className='House-slider-location'>{extractCityAndStateFromAddress(house.location)}</p>
+                <p className='House-slider-detail House-slider-data'>{house.propertyType}</p>
                 <p className="House-slider-size">Size:</p>
                 <p className="House-slider-detail House-slider-data">{house.livingArea} sqft</p>
+                <p className='House-slider-bedrooms'>Rooms:</p>
+                <p className='House-slider-detail House-slider-data'> {house.bedrooms} Beds + {house.bathrooms} Baths</p>
               </div>
             </div>
           ))}
