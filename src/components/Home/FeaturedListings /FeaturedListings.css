@@ -129,7 +129,13 @@
   cursor: pointer;
   margin-top: 0px;
 }
-
+.LoadDiv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  z-index: 1000;
+}
 .FeaturedListings-button:hover {
   background-color: #5d1a91;
   color: white;

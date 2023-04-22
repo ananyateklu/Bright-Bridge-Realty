@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Add this line */
 }
 
 code {
@@ -91,6 +91,25 @@ code {
   animation: slideDown 1s ease-in-out;
 }
 
+.App-logo-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0px 20px 20px 0px;
+  color: #5D1A91;
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.App-l {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 40px 20px 20px;
+  color: #5D1A91;
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
 
 .Home-link:hover {
   color: #0056b3;

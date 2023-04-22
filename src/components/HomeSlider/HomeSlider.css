@@ -1,0 +1,148 @@
+.House-slider-title {
+  font-size: 45px;
+  font-weight: 500;
+  margin-left: 100px;
+  position: absolute;
+  margin-top: 40px;
+  
+}
+
+.House-slider-title2 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: 110px;
+    margin-left: 170px;
+    position: absolute;
+    
+  }
+  .House-slider-hr {
+    width: 22.1%;
+    margin-top: 105px;
+    margin-left: 0px;
+    position: absolute;
+    border: 1.5px solid #D0B25E;
+  }
+  
+.HousesSlider {
+  margin-top: 230px;
+  width: 90%;
+  position: relative;
+  margin-bottom: 200px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.House-slider-item {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.House-slider-item img {
+  width: 100%;
+  height: auto;
+}
+
+.House-slider-info {
+  background-color: #d9d9d9;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  transition: transform 0.3s;
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 8px;
+  padding: 16px;
+}
+
+.House-slider-info h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.House-slider-detail {
+  font-size: 0.9em;
+  padding-left: 4px;
+  color: grey;
+}
+
+.House-slider-detail a {
+  color: white;
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+.House-slider-details span {
+  font-size: 23px;
+}
+
+.House-slider-price {
+  font-weight: bolder;
+  font-family: Cardo, serif;
+  font-size: 1.6em;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+.House-slider-size {
+  font-size: 0.9em;
+}
+
+.House-slider-location {
+  font-size: 1em;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-left: 4px;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(254, 250, 250, 0);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  padding: none;
+  color: #5d1a91;
+  border-radius: 50%;
+  margin-right: -60px;
+  transform: translateY(-50%);
+}
+.prev-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(254, 250, 250, 0);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: #5d1a91;
+  border-radius: 50%;
+  margin-left: -60px;
+  transform: translateY(-50%);
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow:hover,
+.prev-arrow:hover {
+  color: #8b30c7;
+}

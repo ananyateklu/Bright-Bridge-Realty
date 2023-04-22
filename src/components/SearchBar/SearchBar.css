@@ -47,13 +47,20 @@
     justify-content: center;
     align-items: center;
   }
+
+  .Search-container {
+    position: absolute;
+    top: 450px;
+  }
   
   .Search-input {
     padding: 12px 20px;
     border: 2px solid #5D1A91;
     border-radius: 4px 0 0 4px;
     outline: none;
+    justify-content: center;
     width: 300px;
+    position: sticky;
   }
   
   .Search-button {

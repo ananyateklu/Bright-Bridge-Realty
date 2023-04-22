@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import opencage from 'opencage-api-client';
 import './SearchBar.css';
+import Loading from '../Loading';
 
 interface SearchBarProps {
     onSearch: (city: string) => void;
@@ -29,11 +30,13 @@ const isWithinMinnesotaBounds = (lat: number, lng: number) => {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     const [city, setCity] = useState('');
     const [suggestions, setSuggestions] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const API_KEY = process.env.REACT_APP_OPENCAGE_KEY;
 
 
     useEffect(() => {
+      setLoading(true);
         if (city.length > 0) {
           opencage
             .geocode({
@@ -57,12 +60,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         } else {
           setSuggestions([]);
         }
+        setLoading(false);
       }, [city, API_KEY]);      
 
     const handleSearch = () => {
         console.log('City:', city);
         onSearch(city);
     };
+
+    if (loading) {
+      return <div className='LoadDiv'><Loading /></div>;
+    }
 
     return (
         <div className="Search-container">
