@@ -57,18 +57,35 @@ code {
 }
 
 .App-header {
-  font-family: 'Quicksand', sans-serif;
+  font-family: sans-serif;
   background-color:  transparent;
   position: fixed;
-  z-index: 1;
-  min-height: 10vh;
+  z-index: 1000;
+  height: 10vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  font-size: calc(7px + 2vmin);
   color: white;
+}
+
+.App-header.scrolled {
+  background-color: #d9d9d9;
+  transition: background-color 0.3s ease;
+  height: 8vh;
+}
+
+.App-header.scrolled .App-logo {
+  width: 40mm; 
+  transition: width 0.3s ease;
+}
+
+.App-header.scrolled .Home-link,
+.App-header.scrolled .About-link,
+.App-header.scrolled .Contact-link {
+  transition: padding-top 0.3s ease;
+  font-size: calc(6px + 1.2vmin);
 }
 
 .App-footer {
@@ -84,11 +101,58 @@ code {
 .Home-link {
   position: absolute;
   top: 0;
-  right: 0;
-  padding: 20px 40px 20px 20px;
+  right: 600px;
+  padding: 30px 40px 20px 20px;
   color: #5D1A91;
+  font-size: calc(1px + 2vmin);
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
+}
+
+.Home-link:hover {
+  color: #0056b3;
+  position: absolute;
+  right: 600px;
+  top: 0;
+  padding: 30px 40px 20px 20px;
+}
+
+.About-link {
+  position: absolute;
+  top: 0;
+  right: 410px;
+  padding: 30px 40px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 2vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.About-link:hover {
+  color: #0056b3;
+  position: absolute;
+  top: 0;
+  right: 410px;
+  padding: 30px 40px 20px 20px;
+}
+
+.Contact-link {
+  position: absolute;
+  top: 0;
+  right: 190px;
+  padding: 30px 40px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 2vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.Contact-link:hover {
+  color: #0056b3;
+  position: absolute;
+  top: 0;
+  right: 190px;
+  padding: 30px 40px 20px 20px;
 }
 
 .App-logo-link {
@@ -111,14 +175,5 @@ code {
   animation: slideDown 1s ease-in-out;
 }
 
-.Home-link:hover {
-  color: #0056b3;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px 40px 20px 20px;
-}
-
-/* Add this to your App.css file */
 
 
