@@ -1,13 +1,14 @@
-import './FeaturedListings.css';
-import React, { useState, useEffect } from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import fetchFeaturedListings from './FeaturedListingsApi';
-import HouseDetailsButton from '../../HouseDetails/HouseDetailsButton';
-import HouseAllDetailsButton from '../../HouseDetails/HouseAllDetailsButton';
-import '../../HomeSlider/HomeSlider.css'
-import Slider from 'react-slick';
-import Loading from '../../Loading';
+import "./FeaturedListings.css";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import fetchFeaturedListings from "./FeaturedListingsApi";
+import HouseDetailsButton from "../../HouseDetails/HouseDetailsButton";
+import HouseAllDetailsButton from "../../HouseDetails/HouseAllDetailsButton";
+import "../../HomeSlider/HomeSlider.css";
+import Slider from "react-slick";
+import Loading from "../../Loading";
 
 interface House {
   zpid: number;
@@ -19,16 +20,23 @@ interface House {
   bathrooms: number;
   livingArea: string;
   propertyType: string;
-
 }
 const NextArrow: React.FC = (props: any) => {
   const { onClick } = props;
-  return <div className="next-arrow" onClick={onClick}>&gt;</div>;
+  return (
+    <div className="next-arrow" onClick={onClick}>
+      &gt;
+    </div>
+  );
 };
 
 const PrevArrow: React.FC = (props: any) => {
   const { onClick } = props;
-  return <div className="prev-arrow" onClick={onClick}>&lt;</div>;
+  return (
+    <div className="prev-arrow" onClick={onClick}>
+      &lt;
+    </div>
+  );
 };
 
 const settings = {
@@ -53,6 +61,13 @@ const FeaturedListings: React.FC = () => {
     return cityAndStateMatch ? cityAndStateMatch[1] : address;
   };
 
+  function formatPropertyType(propertyType: string) {
+    return propertyType
+      .split("_")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+  }
+
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
@@ -68,8 +83,6 @@ const FeaturedListings: React.FC = () => {
         bathrooms: house.bathrooms,
         livingArea: house.livingArea,
         propertyType: house.propertyType,
-
-
       }));
       setListingData(data);
       setHouses(houseData);
@@ -80,9 +93,12 @@ const FeaturedListings: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <div className='LoadDiv2'><Loading /></div>;
+    return (
+      <div className="LoadDiv2">
+        <Loading />
+      </div>
+    );
   }
-
 
   return (
     <div className="FeaturedListings">
@@ -97,47 +113,64 @@ const FeaturedListings: React.FC = () => {
           >
             {listingData[index] && (
               <>
-                <h3 className="FeaturedListings-price">$ {listingData[index].price}</h3>
-                <p className="FeaturedListings-address">{extractCityAndStateFromAddress(listingData[index].address)}</p>
-                <HouseDetailsButton zpid={listingData[index].zpid}>View Details</HouseDetailsButton>
+                <h3 className="FeaturedListings-price">
+                  $ {listingData[index].price}
+                </h3>
+                <p className="FeaturedListings-address">
+                  {extractCityAndStateFromAddress(listingData[index].address)}
+                </p>
+                <HouseDetailsButton zpid={listingData[index].zpid}>
+                  View Details
+                </HouseDetailsButton>
               </>
             )}
           </div>
         ))}
         <div className="FeaturedListings-title">
           <h1>
-            <span className="FeaturedListings-title-featured">FEATURED</span>{' '}
+            <span className="FeaturedListings-title-featured">FEATURED</span>{" "}
             <span className="FeaturedListings-title-listings">LISTINGS</span>
           </h1>
           <HouseAllDetailsButton>VIEW ALL PROPERTIES</HouseAllDetailsButton>
         </div>
       </div>
-      <div className='House-slider-title'>Open</div>
-      <hr className='House-slider-hr'></hr>
-      <div className='House-slider-title2'>Houses</div>
-      
+      <div className="House-slider-title">Open</div>
+      <hr className="House-slider-hr"></hr>
+      <div className="House-slider-title2">Houses</div>
+
       <div className="HousesSlider">
         <Slider {...settings}>
           {houses.map((house) => (
             <div key={house.zpid} className="House-slider-item">
+              <div className="House-slider-item-details">
+                <Link to={`/house-details/${house.zpid}`}>View Details</Link>
+              </div>
               <img src={house.image} alt={house.title} />
               <div className="House-slider-info">
-
-                <h3 className="House-slider-price" >{house.price}</h3>
-
-                <p className='House-slider-location'>{extractCityAndStateFromAddress(house.location)}</p>
-                <p className='House-slider-detail House-slider-data'>{house.propertyType}</p>
+                <h3 className="House-slider-price">{house.price}</h3>
+                <p className="House-slider-location">
+                  {extractCityAndStateFromAddress(house.location)}
+                </p>
+                <p className="House-slider-type">Type:</p>
+                <p className="House-slider-detail House-slider-data">
+                  {formatPropertyType(house.propertyType)}
+                </p>
                 <p className="House-slider-size">Size:</p>
-                <p className="House-slider-detail House-slider-data">{house.livingArea} sqft</p>
-                <p className='House-slider-bedrooms'>Rooms:</p>
-                <p className='House-slider-detail House-slider-data'> {house.bedrooms} Beds + {house.bathrooms} Baths</p>
+                <p className="House-slider-detail House-slider-data">
+                  {house.livingArea} sqft
+                </p>
+                <p className="House-slider-bedrooms">Rooms:</p>
+                <p className="House-slider-detail House-slider-data">
+                  {" "}
+                  {house.bedrooms} Beds + {house.bathrooms} Baths
+                </p>
               </div>
             </div>
           ))}
         </Slider>
+        </div>
       </div>
-    </div>
   );
-}
+};
 
 export default FeaturedListings;

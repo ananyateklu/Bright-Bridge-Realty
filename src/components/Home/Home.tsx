@@ -18,8 +18,7 @@ const Home: React.FC = () => {
         <div className="Home">
             <SearchBar onSearch={handleSearch} />
             <div className="House-container">
-                <img src={house} className="House" alt="house" />
-                
+                <img src={house} className="House" alt="house" />     
             </div>
             <FeaturedListings />
         </div>
