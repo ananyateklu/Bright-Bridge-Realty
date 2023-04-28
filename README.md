@@ -44,7 +44,7 @@ npm install
 npm start
 ```
 
-The application should now be running on \`http://localhost:3000\`.
+The application should now be running on \`http://localhost:3000`.
 
 2. Build for production: (Don't use this unless it's for production)
 
