@@ -31,7 +31,7 @@
 
 .House-item-details {
     position: absolute;
-    width: 100%;
+    width: 300px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px 0;
