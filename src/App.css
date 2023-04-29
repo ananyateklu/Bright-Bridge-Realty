@@ -73,7 +73,7 @@ code {
 .App-header.scrolled {
   background-color: hsl(0, 0%, 85%, 0.7);
   transition: background-color 0.7s ease;
-  height: 8vh;
+  height: 75px;
 }
 
 .App-header.scrolled .App-logo {
@@ -102,7 +102,7 @@ code {
   position: absolute;
   top: 0;
   right: 600px;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
   color: #5D1A91;
   font-size: calc(1px + 2vmin);
   text-decoration: none;
@@ -110,18 +110,18 @@ code {
 }
 
 .Home-link:hover {
-  color: #0056b3;
+  color: white;
   position: absolute;
   right: 600px;
   top: 0;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
 }
 
 .About-link {
   position: absolute;
   top: 0;
   right: 410px;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
   color: #5D1A91;
   font-size: calc(1px + 2vmin);
   text-decoration: none;
@@ -129,18 +129,18 @@ code {
 }
 
 .About-link:hover {
-  color: #0056b3;
+  color: white;
   position: absolute;
   top: 0;
   right: 410px;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
 }
 
 .Contact-link {
   position: absolute;
   top: 0;
   right: 190px;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
   color: #5D1A91;
   font-size: calc(1px + 2vmin);
   text-decoration: none;
@@ -148,11 +148,11 @@ code {
 }
 
 .Contact-link:hover {
-  color: #0056b3;
+  color: white;
   position: absolute;
   top: 0;
   right: 190px;
-  padding: 30px 40px 20px 20px;
+  margin: 30px 40px 20px 20px;
 }
 
 .App-logo-link {
