@@ -83,7 +83,8 @@ code {
 
 .App-header.scrolled .Home-link,
 .App-header.scrolled .About-link,
-.App-header.scrolled .Contact-link {
+.App-header.scrolled .Contact-link,
+.App-header.scrolled .Search-link {
   transition: font-size 0.7s ease;
   font-size: calc(6px + 1.2vmin);
 }
@@ -101,10 +102,10 @@ code {
 .Home-link {
   position: absolute;
   top: 0;
-  right: 600px;
+  right: 620px;
   margin: 30px 40px 20px 20px;
   color: #5D1A91;
-  font-size: calc(1px + 2vmin);
+  font-size: calc(1px + 1.8vmin);
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
 }
@@ -112,18 +113,37 @@ code {
 .Home-link:hover {
   color: white;
   position: absolute;
-  right: 600px;
+  right: 620px;
   top: 0;
+  margin: 30px 40px 20px 20px;
+}
+
+.Search-link {
+  position: absolute;
+  top: 0;
+  right: 430px;
+  margin: 30px 40px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.Search-link:hover {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 430px;
   margin: 30px 40px 20px 20px;
 }
 
 .About-link {
   position: absolute;
   top: 0;
-  right: 410px;
+  right: 250px;
   margin: 30px 40px 20px 20px;
   color: #5D1A91;
-  font-size: calc(1px + 2vmin);
+  font-size: calc(1px + 1.8vmin);
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
 }
@@ -132,17 +152,19 @@ code {
   color: white;
   position: absolute;
   top: 0;
-  right: 410px;
+  right: 250px;
   margin: 30px 40px 20px 20px;
 }
 
 .Contact-link {
   position: absolute;
   top: 0;
-  right: 190px;
-  margin: 30px 40px 20px 20px;
-  color: #5D1A91;
-  font-size: calc(1px + 2vmin);
+  right: 50px;
+  background-color: #5D1A91;
+  padding: 10px 15px 10px 15px;
+  margin: 20px 10px 20px 15px;
+  color: white;
+  font-size: calc(1px + 1.8vmin);
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
 }
@@ -151,8 +173,8 @@ code {
   color: white;
   position: absolute;
   top: 0;
-  right: 190px;
-  margin: 30px 40px 20px 20px;
+  right: 50px;
+  margin: 20px 10px 20px 15px;
 }
 
 .App-logo-link {

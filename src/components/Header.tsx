@@ -28,11 +28,14 @@ const Header: React.FC = () => {
       <a href="/" className="Home-link">
         HOME
       </a>
+      <a href="/search?city=55419" className="Search-link">
+        SEARCH
+      </a>
       <a href="/about" className="About-link">
-        ABOUT US
+        ABOUT
       </a>
       <a href="/contact" className="Contact-link">
-        CONTACT US
+        CONTACT
       </a>
     </header>
   );
