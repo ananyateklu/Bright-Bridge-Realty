@@ -162,7 +162,7 @@ code {
   right: 50px;
   background-color: #5D1A91;
   padding: 10px 15px 10px 15px;
-  margin: 20px 10px 20px 15px;
+  margin: 18px 10px 20px 10px;
   color: white;
   font-size: calc(1px + 1.8vmin);
   text-decoration: none;
@@ -174,7 +174,7 @@ code {
   position: absolute;
   top: 0;
   right: 50px;
-  margin: 20px 10px 20px 15px;
+  margin: 18px 10px 20px 15px;
 }
 
 .App-logo-link {
