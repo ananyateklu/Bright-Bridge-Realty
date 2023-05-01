@@ -31,17 +31,17 @@ const Footer: React.FC = () => {
             accuracy. The data relating to real estate for sale on this website
             comes in part from the Internet Data Exchange (IDX) program of the
             relevant MLS. Real estate listings held by brokerage firms other
-            than [Your Brokerage Name] are marked with the MLS logo and detailed
+            than BRIGHTBRIDGE REALTY are marked with the MLS logo and detailed
             information about them includes the name of the listing brokers.
           </p>
           <p>
             The property data and information displayed on this website is
-            provided through the Zillow API, and [Your Brokerage Name] is not
+            provided through the Zillow API, and BRIGHTBRIDGE REALTY is not
             responsible for the accuracy, completeness, or timeliness of this
             data. Users of this website are encouraged to confirm all property
             information with the appropriate professionals, including Realtors
             and/or MLS providers, prior to making any decisions based on such
-            information. [Your Brokerage Name] and its agents are not
+            information. BRIGHTBRIDGE REALTY and its agents are not
             responsible for any errors, omissions, or inaccuracies in the data
             displayed.
           </p>
