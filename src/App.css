@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Add this line */
+  overflow-x: hidden; 
 }
 
 code {
@@ -57,38 +57,181 @@ code {
 }
 
 .App-header {
-  font-family: 'Quicksand', sans-serif;
+  font-family: sans-serif;
   background-color:  transparent;
   position: fixed;
-  z-index: 1;
-  min-height: 10vh;
+  z-index: 3;
+  height: 10vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  font-size: calc(7px + 2vmin);
   color: white;
+}
+
+.App-header.scrolled {
+  background-color: hsl(0, 0%, 85%, 0.7);
+  transition: background-color 0.7s ease;
+  height: 85px;
+}
+
+.App-header.scrolled .App-logo {
+  width: 40mm; 
+  transition: width 0.7s ease;
+}
+
+.App-header.scrolled .Home-link,
+.App-header.scrolled .About-link,
+.App-header.scrolled .Contact-link,
+.App-header.scrolled .Search-link {
+  transition: font-size 0.7s ease;
+  font-size: calc(6px + 1.2vmin);
 }
 
 .App-footer {
   font-family: 'Quicksand', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5D1A91;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #5d1a91;
   color: white;
   padding: 20px;
+  flex-wrap: wrap;
 }
+
+.footer-left,
+.footer-right {
+  padding: 20px;
+}
+
+.footer-left {
+  flex: 0 0 10%;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-facebook {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-right {
+  flex: 0 0 70%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  color: #f0f0f0;
+}
+
+.footer-disclaimer {
+  font-size: 0.9em;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+}
+
 
 .Home-link {
   position: absolute;
   top: 0;
-  right: 0;
-  padding: 20px 40px 20px 20px;
+  right: 620px;
+  margin: 30px 40px 20px 20px;
   color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
   text-decoration: none;
   animation: slideDown 1s ease-in-out;
+}
+
+.Home-link:hover {
+  color: #b382d5;
+  position: absolute;
+  right: 620px;
+  top: 0;
+  margin: 30px 40px 20px 20px;
+}
+
+.Search-link {
+  position: absolute;
+  top: 0;
+  right: 430px;
+  margin: 30px 40px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.Search-link:hover {
+  color: #b382d5;
+  position: absolute;
+  top: 0;
+  right: 430px;
+  margin: 30px 40px 20px 20px;
+}
+
+.About-link {
+  position: absolute;
+  top: 0;
+  right: 250px;
+  margin: 30px 40px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.About-link:hover {
+  color: #b382d5;
+  position: absolute;
+  top: 0;
+  right: 250px;
+  margin: 30px 40px 20px 20px;
+}
+
+.Contact-link {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  background-color: #5D1A91;
+  padding: 10px 15px 10px 15px;
+  margin: 18px 10px 20px 10px;
+  color: white;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.Contact-link:hover {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  margin: 18px 10px 20px 15px;
+  background-color: #8B30C7;
 }
 
 .App-logo-link {
@@ -111,14 +254,99 @@ code {
   animation: slideDown 1s ease-in-out;
 }
 
-.Home-link:hover {
-  color: #0056b3;
+.burger-icon {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px 40px 20px 20px;
+  right: 0px;
+  top: 0px;
+  z-index: 10;
+  margin: 0px 10px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Add this to your App.css file */
+.burger-icon span {
+  font-size: 60px;
+}
+
+.burger-icon:hover {
+  color: #8B30C7;
+  transform: scale(1.10);
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  z-index: 3;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.burger-menu a {
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.burger-menu.show {
+  right: 0; 
+}
+
+
+.burger-menu.show {
+  transform: translateX(0%);
+}
+
+.burger-menu a:hover {
+  color: #8B30C7;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  width: 200px;
+  text-align: right;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.nav-links.open a {
+  display: block;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
 
 

@@ -4,25 +4,24 @@
   margin-left: 100px;
   position: absolute;
   margin-top: 40px;
-  
 }
 
 .House-slider-title2 {
-    font-size: 45px;
-    font-weight: 500;
-    margin-top: 110px;
-    margin-left: 170px;
-    position: absolute;
-    
-  }
-  .House-slider-hr {
-    width: 22.1%;
-    margin-top: 105px;
-    margin-left: 0px;
-    position: absolute;
-    border: 1.5px solid #D0B25E;
-  }
-  
+  font-size: 45px;
+  font-weight: 500;
+  margin-top: 110px;
+  margin-left: 170px;
+  position: absolute;
+}
+
+.House-slider-hr {
+  width: 22.1%;
+  margin-top: 105px;
+  margin-left: 0px;
+  position: absolute;
+  border: 1.5px solid #d0b25e;
+}
+
 .HousesSlider {
   margin-top: 230px;
   width: 90%;
@@ -37,8 +36,33 @@
   box-sizing: border-box;
 }
 
+.House-slider-item:hover {
+  transform: scale(1.05);
+}
+
+.House-slider-item:hover .House-slider-item-details {
+  opacity: 1;
+}
+
+.House-slider-item-details {
+  position: absolute;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 0;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.House-slider-item-details a {
+  color: white;
+  text-decoration: none;
+  padding-left: 30px;
+}
+
 .House-slider-item img {
-  width: 100%;
+  width: 300px;
   height: auto;
 }
 
@@ -52,8 +76,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto auto;
-  gap: 8px;
-  padding: 16px;
+  width: 280px;
 }
 
 .House-slider-info h3 {
@@ -103,33 +126,40 @@
   top: 50%;
   z-index: 1;
   cursor: pointer;
-  background-color: rgba(254, 250, 250, 0);
-  width: 50px;
-  height: 50px;
+  background-color: hsl(274, 70%, 34%, 0.6);
+  width: 20px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 7px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
+  font-size: 40px;
   padding: none;
-  color: #5d1a91;
-  border-radius: 50%;
+  color: white;
+  border-radius: 30%;
   margin-right: -60px;
   transform: translateY(-50%);
 }
+
 .prev-arrow {
   position: absolute;
   top: 50%;
   z-index: 1;
   cursor: pointer;
-  background-color: rgba(254, 250, 250, 0);
-  width: 50px;
-  height: 50px;
+  background-color: hsl(274, 70%, 34%, 0.6);
+  width: 20px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 7px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
-  color: #5d1a91;
-  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+  border-radius: 30%;
   margin-left: -60px;
   transform: translateY(-50%);
 }
@@ -144,5 +174,10 @@
 
 .next-arrow:hover,
 .prev-arrow:hover {
-  color: #8b30c7;
+  color: white;
+  background-color: hsl(274, 70%, 34%, 1);
+}
+
+.slick-list {
+  overflow: visible !important;
 }

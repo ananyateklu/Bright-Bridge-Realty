@@ -57,7 +57,7 @@ const HouseSearchResult: React.FC = () => {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-        setLoading(false); // Add this line
+        setLoading(false); 
     }
 
     if (loading) {

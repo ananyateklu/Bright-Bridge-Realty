@@ -77,7 +77,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             <input
                 className="Search-input"
                 type="text"
-                placeholder="Enter city"
+                placeholder="Enter city or ZIP code"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 list="citySuggestions"
