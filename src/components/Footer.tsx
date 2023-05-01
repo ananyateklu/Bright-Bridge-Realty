@@ -31,24 +31,24 @@ const Footer: React.FC = () => {
             accuracy. The data relating to real estate for sale on this website
             comes in part from the Internet Data Exchange (IDX) program of the
             relevant MLS. Real estate listings held by brokerage firms other
-            than BRIGHTBRIDGE REALTY are marked with the MLS logo and detailed
+            than BrightBridge Realty are marked with the MLS logo and detailed
             information about them includes the name of the listing brokers.
           </p>
           <p>
             The property data and information displayed on this website is
-            provided through the Zillow API, and BRIGHTBRIDGE REALTY is not
+            provided through the Zillow API, and BrightBridge Realty is not
             responsible for the accuracy, completeness, or timeliness of this
             data. Users of this website are encouraged to confirm all property
             information with the appropriate professionals, including Realtors
             and/or MLS providers, prior to making any decisions based on such
-            information. BRIGHTBRIDGE REALTY and its agents are not
+            information. BrightBridge Realty and its agents are not
             responsible for any errors, omissions, or inaccuracies in the data
             displayed.
           </p>
         </div>
       </div>
       <p className="footer-copyright">
-        &copy; {new Date().getFullYear()} Real Estate Listings. All rights
+        &copy; {new Date().getFullYear()} BrightBridge Realty. All rights
         reserved.
       </p>
     </footer>
