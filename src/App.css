@@ -73,7 +73,7 @@ code {
 .App-header.scrolled {
   background-color: hsl(0, 0%, 85%, 0.7);
   transition: background-color 0.7s ease;
-  height: 75px;
+  height: 85px;
 }
 
 .App-header.scrolled .App-logo {
@@ -92,12 +92,68 @@ code {
 .App-footer {
   font-family: 'Quicksand', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5D1A91;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #5d1a91;
   color: white;
   padding: 20px;
+  flex-wrap: wrap;
 }
+
+.footer-left,
+.footer-right {
+  padding: 20px;
+}
+
+.footer-left {
+  flex: 0 0 10%;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-facebook {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-right {
+  flex: 0 0 80%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  color: #f0f0f0;
+}
+
+.footer-disclaimer {
+  font-size: 0.9em;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+}
+
 
 .Home-link {
   position: absolute;
@@ -201,6 +257,7 @@ code {
 .burger-icon {
   position: absolute;
   right: 0px;
+  top: 0px;
   z-index: 10;
   margin: 0px 10px 20px 20px;
   color: #5D1A91;

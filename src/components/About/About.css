@@ -1,0 +1,67 @@
+.About {
+    margin: 0px 40px 100px 40px;
+  }
+  
+  .about-header {
+    padding-top: 130px;
+    margin-left: 60px;
+    margin-bottom: 80px;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+    color: black;
+  }
+  
+  .about-header h1 span {
+    color: #5d1a91; /* dark purple color */
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+  }
+  
+  .agent-roster {
+    margin-left: 60px;
+  }
+  
+  .agent-roster h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .agents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  
+  .agent {
+    background-color: hsl(0, 0%, 85%, 0.7);
+    padding: 30px;
+  }
+  
+  .agent-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .agent-info {
+    margin-top: 20px;
+  }
+  
+  .agent-info h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .agent-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
