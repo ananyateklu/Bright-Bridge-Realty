@@ -167,7 +167,7 @@ code {
 }
 
 .Home-link:hover {
-  color: white;
+  color: #b382d5;
   position: absolute;
   right: 620px;
   top: 0;
@@ -186,7 +186,7 @@ code {
 }
 
 .Search-link:hover {
-  color: white;
+  color: #b382d5;
   position: absolute;
   top: 0;
   right: 430px;
@@ -205,7 +205,7 @@ code {
 }
 
 .About-link:hover {
-  color: white;
+  color: #b382d5;
   position: absolute;
   top: 0;
   right: 250px;
