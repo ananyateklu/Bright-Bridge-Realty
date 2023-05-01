@@ -37,7 +37,7 @@ const HouseDetails: React.FC = () => {
   }, [zpid]);
 
   if (!houseData) {
-    return <div className='LoadDiv'><Loading /></div>; // Update this line
+    return <div className='LoadDiv'><Loading /></div>;
 }
 
   return (

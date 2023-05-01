@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Add this line */
+  overflow-x: hidden; 
 }
 
 code {
@@ -60,7 +60,7 @@ code {
   font-family: sans-serif;
   background-color:  transparent;
   position: fixed;
-  z-index: 1000;
+  z-index: 3;
   height: 10vh;
   width: 100%;
   display: flex;
@@ -198,5 +198,98 @@ code {
   animation: slideDown 1s ease-in-out;
 }
 
+.burger-icon {
+  position: absolute;
+  right: 0px;
+  z-index: 10;
+  margin: 0px 10px 20px 20px;
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-icon span {
+  font-size: 60px;
+}
+
+.burger-icon:hover {
+  color: #8B30C7;
+  transform: scale(1.10);
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  z-index: 3;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.burger-menu a {
+  color: #5D1A91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.burger-menu.show {
+  right: 0; 
+}
+
+
+.burger-menu.show {
+  transform: translateX(0%);
+}
+
+.burger-menu a:hover {
+  color: #8B30C7;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  width: 200px;
+  text-align: right;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.nav-links.open a {
+  display: block;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
 
 
