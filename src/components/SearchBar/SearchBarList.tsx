@@ -45,6 +45,7 @@ const isWithinMinnesotaBounds = (lat: number, lng: number) => {
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
+  const [error, setError] = useState('');
   const [city, setCity] = useState(initialValues.location || '');
   const [minPrice, setMinPrice] = useState(initialValues.minPrice || '');
   const [maxPrice, setMaxPrice] = useState(initialValues.maxPrice || '');
@@ -85,6 +86,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
 
   const handleSearch = () => {
     if (city.trim() !== '') {
+      setError('');
       onSearch({
         location: city,
         minPrice: minPrice,
@@ -96,7 +98,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
         home_type: homeType,
       });
     } else {
-      alert('Please enter a city or ZIP code');
+      setError('City or ZIP code is required');
     }
   };
 
@@ -111,15 +113,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
         <div className="Filters-wrapper">
           <div className="Filter-container">
             <div className="Filter-item">
-            <label className="Filter-label">City or ZIP Code</label>
-            <input
-                  className="Search-input-details"
-                  type="text"
-                  placeholder="Enter city or ZIP code"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  list="citySuggestions"
-                />
+              <label className="Filter-label">City or ZIP Code</label>
+              <input
+                className={`Search-input-details ${error ? 'Input-error' : ''}`}
+                type="text"
+                placeholder="Enter city or ZIP code"
+                value={city}
+                onChange={(e) => {
+                  setError('');
+                  setCity(e.target.value);
+                }}
+                list="citySuggestions"
+              />
+              {error && <div className="Error-message">{error}</div>}
             </div>
             <div className="Filter-item">
 

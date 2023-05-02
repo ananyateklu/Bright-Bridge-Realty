@@ -172,3 +172,15 @@
 .Search-button:hover {
   background-color: #8B30C7;
 }
+
+.Error-message {
+  color: red;
+  font-size: 10px;
+  margin-top: 2px;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+.Input-error {
+  border: 1px solid red;
+  animation: zoomIn 0.5s ease-in-out;
+}
