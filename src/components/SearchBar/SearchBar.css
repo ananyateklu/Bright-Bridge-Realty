@@ -8,6 +8,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -27,66 +28,147 @@
 }
 
 .SearchBar {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  
-  .SearchBar button:hover {
-    background-color: #0056b3;
-  }
-  
-  .SearchList-container {
-    animation: fadeIn 1s ease-in-out;
-    position: fixed;
-    z-index: 1;
-    left: 55%;
-    width: 50%;
-    transform: translate(-40%, 60%);
-    display: flex;
-    margin-bottom: 40px;
-    margin-top: -10px;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
-  .Search-container {
-    position: absolute;
-    animation: fadeIn 1s ease-in-out;
-    top: 450px;
-  }
-  
-  .Search-input {
-    padding: 12px 20px;
-    border: 2px solid #5D1A91;
-    outline: none;
-    justify-content: center;
-    width: 600px;
-    height: 20px;
-    font-size: 18px;
-    position: sticky;
-  }
-  
-  .Search-button {
-    padding: 12px 20px;
-    font-size: 20px;
-    background-color: #5D1A91;
-    color: white;
-    border: none;
-    cursor: pointer;
-    height: 48px;
-    transition: background-color 0.3s;
-  }
-  
-  .Search-button:hover {
-    background-color: #8B30C7;
-  }
+.SearchBar button:hover {
+  background-color: #0056b3;
+}
+
+.Filters-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 15px;
+}
+
+.Filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Filter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Filter-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.Price-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.Price-input {
+  width: 60px;
+  padding: 5px;
+  margin: 1px 10px 1px 10px;
+  border: 1px solid #5D1A91;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Price-input-separator {
+  margin: 1px -8px 1px -8px;
+}
+
+.Filter-dropdown {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #5D1A91;
+  border-radius: 3px;
+}
+
+.Filter-button {
+  padding: 4px 15px;
+  margin-top: 80px;
+  height: 30px;
+  font-size: 16px;
+  background-color: #5D1A91;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  margin-left: 15px;
+}
+
+.Filter-button:hover {
+  background-color: #8B30C7;
+}
+
+.SearchList-container {
+  animation: fadeIn 1s ease-in-out;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  width: 50%;
+  transform: translate(-40%, 60%);
+  display: flex;
+  margin-bottom: 40px;
+  margin-top: -10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search-container {
+  position: absolute;
+  animation: fadeIn 1s ease-in-out;
+  top: 450px;
+}
+
+.Search-input {
+  padding: 12px 20px;
+  border: 2px solid #5D1A91;
+  outline: none;
+  justify-content: center;
+  width: 600px;
+  height: 20px;
+  font-size: 18px;
+  position: sticky;
+}
+
+.Search-input-details {
+  width: 140px;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid #5D1A91;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Search-button {
+  padding: 12px 20px;
+  font-size: 20px;
+  background-color: #5D1A91;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 48px;
+  transition: background-color 0.3s;
+}
+
+.Search-button:hover {
+  background-color: #8B30C7;
+}

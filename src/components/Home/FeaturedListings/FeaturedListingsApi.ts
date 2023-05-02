@@ -29,6 +29,7 @@ const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
       'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST,
     },
   };
+  
 
   function wait(): Promise<void> {
     return new Promise((resolve) => {
