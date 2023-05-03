@@ -33,6 +33,7 @@ const HouseSearchResult: React.FC = () => {
     const bathsMax = searchParams.get('bathsMax') || '';
     const home_type = searchParams.get('home_type') || '';
     const [currentPage, setCurrentPage] = useState<number>(1);
+    const [hasMorePages, setHasMorePages] = useState<boolean>(true);
     const [filterValues, setFilterValues] = useState({
         location: city,
         minPrice: minPrice,
@@ -52,15 +53,6 @@ const HouseSearchResult: React.FC = () => {
 
 
     useEffect(() => {
-        console.log('UseeffectCity', city);
-        console.log('UseeffectMinPrice', minPrice);
-        console.log('UseeffectMaxPrice', maxPrice);
-        console.log('UseeffectBedsMin', bedsMin);
-        console.log('UseeffectBedsMax', bedsMax);
-        console.log('UseeffectBathsMin', bathsMin);
-        console.log('UseeffectBathsMax', bathsMax);
-        console.log('UseeffectHomeType', home_type);
-        console.log('UseeffectCurrentPage', currentPage);
         if (city) {
 
             fetchData(city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage);
@@ -92,7 +84,6 @@ const HouseSearchResult: React.FC = () => {
             const params: any = {
                 location: city,
                 home_type: home_type,
-                page: page,
             };
 
             if (minPrice) params.minPrice = minPrice;
@@ -101,14 +92,17 @@ const HouseSearchResult: React.FC = () => {
             if (bedsMax) params.bedsMax = bedsMax;
             if (bathsMin) params.bathsMin = bathsMin;
             if (bathsMax) params.bathsMax = bathsMax;
+            if (page) params.page = page;
 
             const response = await api.get("propertyExtendedSearch", {
                 params: params,
             });
+          // Check if there are more pages
+            setHasMorePages((response.data.totalPages - response.data.currentPage) > 0);
+            // Check if there are no results
             if (response.data.props === undefined || response.data.props.length === 0) {
                 setErrorMessage('No results found for the given search criteria.');
             } else {
-                console.log(response.data.props, "response.data.props");
                 setHouses(response.data.props);
             }
         } catch (error) {
@@ -195,7 +189,7 @@ const HouseSearchResult: React.FC = () => {
                     <div className="pagination-container">
                         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
                         <span>Page {currentPage}</span>
-                        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 20}>Next</button>
+                        <button onClick={() => handlePageChange(currentPage + 1)} disabled={!hasMorePages}>Next</button>
                     </div>
                 </div>
             )}
