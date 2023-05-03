@@ -127,6 +127,46 @@
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Add styles for the pagination container */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-container button {
+  background-color: white;
+  border: none;
+  color: #5D1A91;
+  border: 1px solid #5D1A91;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.pagination-container button:hover {
+  background-color: #d6c0e7;
+}
+
+.pagination-container button:disabled {
+  background-color: white;
+  border: 1px solid rgb(152, 151, 151);
+  color: rgb(152, 151, 151);
+  cursor: not-allowed;
+}
+
+.pagination-container span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
 @media (max-width: 1200px) {
 
   .House-list {

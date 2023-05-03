@@ -32,6 +32,7 @@ const HouseSearchResult: React.FC = () => {
     const bathsMin = searchParams.get('bathsMin') || '';
     const bathsMax = searchParams.get('bathsMax') || '';
     const home_type = searchParams.get('home_type') || '';
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const [filterValues, setFilterValues] = useState({
         location: city,
         minPrice: minPrice,
@@ -59,11 +60,12 @@ const HouseSearchResult: React.FC = () => {
         console.log('UseeffectBathsMin', bathsMin);
         console.log('UseeffectBathsMax', bathsMax);
         console.log('UseeffectHomeType', home_type);
+        console.log('UseeffectCurrentPage', currentPage);
         if (city) {
 
-            fetchData(city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type);
+            fetchData(city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage);
         }
-    }, [city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type]);
+    }, [city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage]);
 
     function formatPropertyType(propertyType: string) {
         return propertyType
@@ -81,7 +83,8 @@ const HouseSearchResult: React.FC = () => {
         bedsMax: string,
         bathsMin: string,
         bathsMax: string,
-        home_type: string
+        home_type: string,
+        page: number
     ) {
         setLoading(true);
         setErrorMessage('');
@@ -89,6 +92,7 @@ const HouseSearchResult: React.FC = () => {
             const params: any = {
                 location: city,
                 home_type: home_type,
+                page: page,
             };
 
             if (minPrice) params.minPrice = minPrice;
@@ -114,6 +118,10 @@ const HouseSearchResult: React.FC = () => {
         setLoading(false);
     }
 
+    // Create a function to handle page change
+    function handlePageChange(newPage: number) {
+        setCurrentPage(newPage);
+    }
 
     if (loading) {
         return <div className='LoadDiv'><Loading /></div>;
@@ -184,6 +192,11 @@ const HouseSearchResult: React.FC = () => {
             ) : (
                 <div className="House-list">
                     {houses.map((house) => renderHouse(house))}
+                    <div className="pagination-container">
+                        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+                        <span>Page {currentPage}</span>
+                        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 20}>Next</button>
+                    </div>
                 </div>
             )}
         </>
