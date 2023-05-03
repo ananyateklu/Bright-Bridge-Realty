@@ -126,3 +126,43 @@
   width: 50%;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 1200px) {
+
+  .House-list {
+    padding-top: 500px;
+  }
+
+  .House-item {
+    width: 250px;
+  }
+
+  .House-item-image {
+    height: 150px;
+  }
+
+  .House-item-info {
+    padding: 10px;
+  }
+
+  .House-item-detail {
+    font-size: 0.7em;
+  }
+
+  .House-item-details {
+    width: 250px;
+    font-size: 1em;
+  }
+
+  .House-item-city {
+    font-size: 0.8em;
+  }
+
+  .House-item-price {
+    font-size: 1.2em;
+  }
+
+  .No-results-message-header {
+    width: 80%;
+  }
+}

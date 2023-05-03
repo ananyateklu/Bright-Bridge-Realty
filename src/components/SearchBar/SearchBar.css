@@ -182,5 +182,48 @@
 
 .Input-error {
   border: 1px solid red;
-  animation: zoomIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .Filters-wrapper {
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .Filter-container {
+    flex-direction: column;
+  }
+
+  .Filter-item {
+    margin-bottom: 15px;
+  }
+
+  .Filter-label {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .SearchList-container {
+    width: 100%;
+    transform: translateY(20px);
+    padding: 0 20px;
+    margin-top: 40px;
+    position: absolute;
+    left: -2%;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .Filter-button {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .Larger-search {
+    position: relative;
+    padding: 20px;
+    
+  }
+
 }

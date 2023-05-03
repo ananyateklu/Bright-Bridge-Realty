@@ -6,6 +6,7 @@ const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
     url: 'https://zillow-com1.p.rapidapi.com/propertyExtendedSearch',
     params: {
       location: 'Minneapolis, MN',
+      status_type: 'ForSale',
       home_type: 'Houses, Condos, Apartments',
       minPrice: '300000',
     },
@@ -20,6 +21,7 @@ const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
     url: 'https://zillow-com1.p.rapidapi.com/propertyExtendedSearch',
     params: {
       location: 'Minneapolis, MN',
+      status_type: 'ForSale',
       home_type: 'Houses, Condos, Apartments',
       minPrice: '300000',
       isOpenHousesOnly: 'true'
