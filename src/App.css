@@ -71,7 +71,7 @@ code {
 }
 
 .App-header.scrolled {
-  background-color: hsl(0, 0%, 85%, 0.7);
+  background-color: hsl(0, 0%, 85%, 0.8);
   transition: background-color 0.7s ease;
   height: 85px;
 }
@@ -257,7 +257,7 @@ code {
 .burger-icon {
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 3px;
   z-index: 10;
   margin: 0px 10px 20px 20px;
   color: #5D1A91;

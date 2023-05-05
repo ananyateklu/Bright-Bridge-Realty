@@ -20,10 +20,31 @@ interface House {
 }
 
 const HouseSearchResult: React.FC = () => {
+    const [errorMessage, setErrorMessage] = useState<string>('');
     const [houses, setHouses] = useState<House[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [searchParams] = useSearchParams();
     const city = searchParams.get('city') || '';
+    const minPrice = searchParams.get('minPrice') || '';
+    const maxPrice = searchParams.get('maxPrice') || '';
+    const bedsMin = searchParams.get('bedsMin') || '';
+    const bedsMax = searchParams.get('bedsMax') || '';
+    const bathsMin = searchParams.get('bathsMin') || '';
+    const bathsMax = searchParams.get('bathsMax') || '';
+    const home_type = searchParams.get('home_type') || '';
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [hasMorePages, setHasMorePages] = useState<boolean>(true);
+    const [filterValues, setFilterValues] = useState({
+        location: city,
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        bedsMin: bedsMin,
+        bedsMax: bedsMax,
+        bathsMin: bathsMin,
+        bathsMax: bathsMax,
+        home_type: home_type,
+    });
+
     const extractCityAndStateFromAddress = (address: string): string => {
         const cityAndStateRegex = /,\s*([^,]+,\s*\w{2})/;
         const cityAndStateMatch = address.match(cityAndStateRegex);
@@ -32,11 +53,11 @@ const HouseSearchResult: React.FC = () => {
 
 
     useEffect(() => {
-        console.log('UseeffectCity', city);
         if (city) {
-            fetchData(city);
+
+            fetchData(city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage);
         }
-    }, [city]);
+    }, [city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage]);
 
     function formatPropertyType(propertyType: string) {
         return propertyType
@@ -46,18 +67,54 @@ const HouseSearchResult: React.FC = () => {
     }
 
 
-    async function fetchData(city: string) {
-        setLoading(true); // Add this line
+    async function fetchData(
+        city: string,
+        minPrice: string,
+        maxPrice: string,
+        bedsMin: string,
+        bedsMax: string,
+        bathsMin: string,
+        bathsMax: string,
+        home_type: string,
+        page: number
+    ) {
+        setLoading(true);
+        setErrorMessage('');
         try {
-            const response = await api.get('propertyExtendedSearch', {
-                params: { location: city },
+            const params: any = {
+                location: city,
+                home_type: home_type,
+            };
+
+            if (minPrice) params.minPrice = minPrice;
+            if (maxPrice) params.maxPrice = maxPrice;
+            if (bedsMin) params.bedsMin = bedsMin;
+            if (bedsMax) params.bedsMax = bedsMax;
+            if (bathsMin) params.bathsMin = bathsMin;
+            if (bathsMax) params.bathsMax = bathsMax;
+            if (page) params.page = page;
+
+            const response = await api.get("propertyExtendedSearch", {
+                params: params,
             });
-            console.log(response.data.props);
-            setHouses(response.data.props);
+          // Check if there are more pages
+            setHasMorePages((response.data.totalPages - response.data.currentPage) > 0);
+            // Check if there are no results
+            if (response.data.props === undefined || response.data.props.length === 0) {
+                setErrorMessage('No results found for the given search criteria.');
+            } else {
+                setHouses(response.data.props);
+            }
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error("Error fetching data:", error);
+            setErrorMessage('An error occurred while fetching data. Please try again.');
         }
-        setLoading(false); 
+        setLoading(false);
+    }
+
+    // Create a function to handle page change
+    function handlePageChange(newPage: number) {
+        setCurrentPage(newPage);
     }
 
     if (loading) {
@@ -87,20 +144,57 @@ const HouseSearchResult: React.FC = () => {
 
     return (
         <>
-          <div className="Larger-search">
-            <SearchBarList
-              onSearch={(searchedCity: string) => {
-                const newPath = `/search?city=${searchedCity}`;
-                window.location.href = newPath;
-              }}
-            />
-          </div>
-    
-          <div className="House-list">
-            {houses.map((house) => renderHouse(house))}
-          </div>
+            <div className="Larger-search">
+                <SearchBarList
+                    initialValues={filterValues}
+                    onSearch={(filters) => {
+                        const {
+                            location,
+                            minPrice,
+                            maxPrice,
+                            bedsMin,
+                            bedsMax,
+                            bathsMin,
+                            bathsMax,
+                            home_type,
+                        } = filters;
+
+                        // Update the filter values in the state
+                        setFilterValues({
+                            location,
+                            minPrice,
+                            maxPrice,
+                            bedsMin,
+                            bedsMax,
+                            bathsMin,
+                            bathsMax,
+                            home_type,
+                        });
+
+                        const newPath = `/search?city=${location}&minPrice=${minPrice}&maxPrice=${maxPrice}&bedsMin=${bedsMin}&bedsMax=${bedsMax}&bathsMin=${bathsMin}&bathsMax=${bathsMax}&home_type=${home_type}`;
+                        window.location.href = newPath;
+                    }}
+                />
+            </div>
+            {errorMessage ? (
+                <div className="No-results-message">
+                    <div className="No-results-message-header">
+                        <p>{errorMessage}</p>
+                    </div>
+
+                </div>
+            ) : (
+                <div className="House-list">
+                    {houses.map((house) => renderHouse(house))}
+                    <div className="pagination-container">
+                        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+                        <span>Page {currentPage}</span>
+                        <button onClick={() => handlePageChange(currentPage + 1)} disabled={!hasMorePages}>Next</button>
+                    </div>
+                </div>
+            )}
         </>
-      );
-    };
+    );
+};
 
 export default HouseSearchResult;

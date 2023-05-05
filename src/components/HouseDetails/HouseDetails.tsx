@@ -42,7 +42,7 @@ const HouseDetails: React.FC = () => {
 
   return (
     <div className="House-details">
-      <div className="House-details">
+      <div className="House-details-inner">
         <h1>{houseData.address.streetAddress}</h1>
         <img src={houseData.imgSrc} alt="House" />
         <p>Price: $ {houseData.price}</p>
