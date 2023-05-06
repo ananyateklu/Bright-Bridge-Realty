@@ -1,43 +1,78 @@
-.House-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px 20px 20px 20px;
-  }
-
-  .House-details-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px 20px 20px 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
-  }
-  
-  .House-details h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .House-details img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .House-details p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .LoadDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    z-index: 1000;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-  
+
+.House-details {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: auto;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Changed from space-evenly */
+  align-items: center;
+  background-color: blue;
+  padding: 10px;
+  gap: 5px; /* Added gap to set the space between the images */
+}
+
+.side-bar img {
+  width: 80%;          /* updated from 100% */
+  max-height: 12%;     /* updated from 15% */
+  object-fit: cover;
+  margin-bottom: 5px;  /* updated from 10px */
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  text-align: center;
+  background-color: aqua;
+}
+
+.main-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  padding: 10px;
+}
+
+.main-img img {
+  width: 80%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.details {
+  background-color: blueviolet;
+  padding: 10px;
+}
+
+.details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.details ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.details li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.LoadDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  z-index: 1000;
+}
