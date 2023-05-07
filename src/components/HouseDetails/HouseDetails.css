@@ -10,7 +10,7 @@
   height: auto;
 }
 
-.side-bar {
+.side-slider {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Changed from space-evenly */
@@ -20,7 +20,7 @@
   gap: 5px; /* Added gap to set the space between the images */
 }
 
-.side-bar img {
+.side-slider img {
   width: 80%;          /* updated from 100% */
   max-height: 12%;     /* updated from 15% */
   object-fit: cover;
@@ -29,7 +29,7 @@
 
 .main {
   display: grid;
-  grid-template-rows: 2fr 3fr;
+  grid-template-rows: 2fr auto;
   text-align: center;
   background-color: aqua;
 }
@@ -75,4 +75,83 @@
   align-items: center;
   min-height: 100vh;
   z-index: 1000;
+}
+
+.property-info {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+  padding: 10px 0;
+}
+
+.property-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.property-info-address{
+  grid-area: 1/1/2/2;
+}
+.label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.property-header {
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  gap: 5px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Added bottom border */
+  padding-bottom: 5px; /* Added padding-bottom for spacing */
+}
+
+.header-details {
+  font-size: 14px;
+}
+
+.property-description {
+  text-align: left; /* Added to make the text left-justified */
+  padding-top: 10px; /* Added padding-top */
+  padding-bottom: 10px; /* Added padding-bottom */
+}
+
+.listing-info{
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  justify-content:left;
+}
+
+.listing-detail{
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  text-align: left;
+  padding-left: 3px;
+  margin-bottom: 10px;
+}
+
+.interior{
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  justify-content:left;
+}
+
+.interior-list{
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  
+}
+.interior-list div{
+  border:1px solid black;
+  text-align: left;
+  padding: 5px;
+ 
+}
+
+.interior-name{
+  font-weight: bold;
 }
