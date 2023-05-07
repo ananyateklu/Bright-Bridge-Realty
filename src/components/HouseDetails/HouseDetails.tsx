@@ -2,11 +2,24 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading'; 
-
+import HouseAllDetailsButton from "./HouseAllDetailsButton";
 interface RouteParams extends Record<string, string | undefined> {
   zpid: string;
 }
+
+interface House {
+  zpid: string;
+  miniCardPhotos: { url: string }[];
+  address: any;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  livingArea: number;
+  homeType: string;
+}
+
 
 const HouseDetails: React.FC = () => {
   const { zpid } = useParams<RouteParams>();
@@ -14,6 +27,8 @@ const HouseDetails: React.FC = () => {
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
   const [displayedImage, setDisplayedImage] = useState<string>('');
   
+  const [similarHouse, setSimilarHouse] = useState<any[]>([]);
+
   useEffect(() => {
     const fetchHouseDetails = async () => {
       const options = {
@@ -34,6 +49,18 @@ const HouseDetails: React.FC = () => {
           'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST,
         },
       };
+
+      const similarHouseOptions = {
+        method: 'GET',
+        url: 'https://zillow-com1.p.rapidapi.com/similarProperty',
+        params: { zpid },
+        headers: {
+          'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+          'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST,
+        },
+      };
+
+
       function wait(): Promise<void> {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -48,6 +75,11 @@ const HouseDetails: React.FC = () => {
         await wait();
         const additionalImagesResponse = await axios.request(additionalImagesOptions);
         setAdditionalImages(additionalImagesResponse.data.images);
+        await wait();
+        const similarHouseResponse = await axios.request(similarHouseOptions);
+        setSimilarHouse(similarHouseResponse.data);
+
+
       } catch (error) {
         console.error(error);
       }
@@ -69,6 +101,32 @@ const HouseDetails: React.FC = () => {
   if (!houseData) {
     return <div className='LoadDiv'><Loading /></div>;
   }
+
+  const renderHouse = (house: House) => (
+    <div className="House-item" key={house.zpid}>
+        <div className="House-item-details"><Link to={`/house-details/${house.zpid}`}>View Details</Link>
+        </div>
+        <img
+      src={house.miniCardPhotos?.[0]?.url ?? ''}
+      alt="House"
+      className="House-item-image"
+        />
+        <div className="House-item-info">
+            <p className="House-item-price">${house.price.toLocaleString()}</p>
+            <p className="House-item-city House-item-data">{house.address.city}</p>
+            <p className="House-item-detail">Type:</p>
+            <p className="House-item-detail House-item-data">{house.homeType}</p>
+            <p className="House-item-detail">Size:</p>
+            <p className="House-item-detail House-item-data">{house.livingArea} sqft</p>
+            <p className="House-item-detail">Rooms:</p>
+            <p className="House-item-detail House-item-data">
+                {house.bedrooms} Beds + {house.bathrooms} Baths
+            </p>
+        </div>
+        <hr className="House-item-divider" />
+    </div>
+);
+
   return (
     <div className="House-details">
       <div className="side-bar">
@@ -83,7 +141,12 @@ const HouseDetails: React.FC = () => {
         ))}
         </div>
         <div className="side-details">
-          Side details
+          <HouseAllDetailsButton>VIEW MORE LISTINGS</HouseAllDetailsButton>
+          <div className="related-house">
+            <div className="similar-header">Similar Properties</div>
+          {similarHouse && similarHouse.slice(0 ,2).map((house: House) => renderHouse(house))}
+          </div>
+          
         </div>
       </div>
       <div className="main">
@@ -92,15 +155,15 @@ const HouseDetails: React.FC = () => {
         </div>
          <div className="property-info">
         <div className="property-info-address">
-          <span className="label">Address:</span>
+          <span className="label">Address</span>
           <span>{houseData.address.streetAddress}, {houseData.address.city}, {houseData.address.state}</span>
         </div>
         <div className="property-info-type">
-          <span className="label">Home Type:</span>
+          <span className="label">Home Type</span>
           <span>{houseData.homeType}</span>
         </div>
         <div className="property-info-price">
-          <span className="label">Price:</span>
+          <span className="label">Price</span>
           <span>${houseData.price}</span>
         </div>
       </div>
