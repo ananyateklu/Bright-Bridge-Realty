@@ -113,7 +113,7 @@ const HouseDetails: React.FC = () => {
         />
         <div className="House-item-info">
             <p className="House-item-price">${house.price.toLocaleString()}</p>
-            <p className="House-item-city House-item-data">{house.address.city}</p>
+            <p className="House-item-city House-item-data">{house.address.city}, {house.address.state}</p>
             <p className="House-item-detail">Type:</p>
             <p className="House-item-detail House-item-data">{house.homeType}</p>
             <p className="House-item-detail">Size:</p>
