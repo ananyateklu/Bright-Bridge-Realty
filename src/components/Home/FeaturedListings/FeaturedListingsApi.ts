@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
-  const options = {
+  const featuredListingProperties = {
     method: 'GET',
     url: 'https://zillow-com1.p.rapidapi.com/propertyExtendedSearch',
     params: {
@@ -16,7 +16,7 @@ const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
     },
   };
 
-  const options2 = {
+  const openHouseOnlyProperties = {
     method: 'GET',
     url: 'https://zillow-com1.p.rapidapi.com/propertyExtendedSearch',
     params: {
@@ -44,10 +44,10 @@ const fetchFeaturedListings = async (): Promise<[string[], any[], any[]]> => {
 
 
   try {
-    const response = await axios.request(options);
+    const response = await axios.request(featuredListingProperties);
     const data = response.data.props;
     await wait();
-    const response2 = await axios.request(options2);
+    const response2 = await axios.request(openHouseOnlyProperties);
     const data2 = response2.data.props;
     // Get the image URLs for the first 5 listings
     const imageUrls = data.slice(1, 6).map((listing: any) => listing.imgSrc);
