@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import './Mortgage.css';
 
 interface MortgageProps {
@@ -9,9 +10,11 @@ interface MortgageProps {
 
 const Mortgage: React.FC<MortgageProps> = ({
   size = 1,
-  textColor = '003140',
-  backgroundColor = 'e7f0f3',
+  textColor = '5d1a91',
+  backgroundColor = 'dcdcb63b',
 }) => {
+  
+
   const iframeSrc = `https://www.mortgagecalculator.net/embeddable/v2/?size=${size}&textColor=${textColor}&backgroundColor=${backgroundColor}`;
 
   return (

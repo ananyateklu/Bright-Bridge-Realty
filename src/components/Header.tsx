@@ -76,9 +76,6 @@ const Header: React.FC = () => {
           <a href="/about" className="About-link">
             ABOUT
           </a>
-          <a href="/mortgage" className="Mortgage-link">
-            MORTGAGE
-          </a>
           <a href="/contact" className="Contact-link">
             CONTACT
           </a>
@@ -94,9 +91,7 @@ const Header: React.FC = () => {
         <a href="/about" className="About-link-burger" onClick={toggleBurgerMenu}>
           ABOUT
         </a>
-        <a href="/mort" className="Mortgage-link-burger" onClick={toggleBurgerMenu}>
-          MORTGAGE
-        </a>
+        
         <a href="/contact" className="Contact-link-burger" onClick={toggleBurgerMenu}>
           CONTACT
         </a>

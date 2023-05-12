@@ -186,3 +186,15 @@
   color: white;
   cursor: pointer;
 }
+
+.House-slider-info{
+  border-radius: 4px;
+}
+
+.House-slider-item img {
+  
+  border-radius: 4px;
+}
+.House-slider-item-details{
+  border-radius: 4px;
+}

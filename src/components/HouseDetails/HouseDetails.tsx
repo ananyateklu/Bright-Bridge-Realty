@@ -103,8 +103,8 @@ const HouseDetails: React.FC = () => {
   }
 
   const renderHouse = (house: House) => (
-    <div className="House-item" key={house.zpid}>
-        <div className="House-item-details"><Link to={`/house-details/${house.zpid}`}>View Details</Link>
+    <div className="House-item house-item-del" key={house.zpid}>
+        <div className="House-item-details house-view-detail"><Link to={`/house-details/${house.zpid}`}>View Details</Link>
         </div>
         <img
       src={house.miniCardPhotos?.[0]?.url ?? ''}
@@ -243,6 +243,10 @@ const HouseDetails: React.FC = () => {
           <div className="interior-desc"> 10</div>
         </div>
         
+
+      </div>
+      <div className="mortgage-calc-link">
+     <Link to="/mortgage" className="HouseAllDetailsButton">Mortgage Calculator</Link>
 
       </div>
       </div>

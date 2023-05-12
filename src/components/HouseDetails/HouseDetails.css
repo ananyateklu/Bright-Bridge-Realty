@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+ 
   margin: 0;
   padding: 0;
 }
@@ -12,6 +12,7 @@
   padding-top: 5rem;
   
 }
+
 
 .side-slider {
   display: flex;
@@ -180,13 +181,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px !important;
+  width: 300px ;
   background-color: #d9d9d9;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   position: relative;
   transition: transform 0.3s;
+}
+
+.house-item-del{
+  width: 250px !important;
 }
 
 .House-item:hover {
@@ -221,13 +226,18 @@
 
 .House-item-details {
   position: absolute;
-  width: 250px !important;
+  width: 300px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 10px 0;
   font-size: 1.2em;
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+.house-view-detail{
+  width: 250px !important;
+  border-radius: 4px;
 }
 
 .House-item:hover .House-item-details {

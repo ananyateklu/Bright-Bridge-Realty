@@ -13,16 +13,6 @@ code {
     monospace;
 }
 
-.Home-link,
-.Search-link,
-.About-link,
-.Mortgage-link,
-.Contact-link {
-  position: relative;  /* New position */
-  margin: 30px 0; /* New margin */
-}
-
-
 
 @keyframes fadeIn {
   from {
@@ -74,11 +64,11 @@ code {
   height: 10vh;
   width: 100%;
   display: flex;
-  justify-content: space-around; /* New property for evenly spaced links */
-  align-items: center; /* Adjusted alignment */
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
   color: white;
 }
-
 
 .App-header.scrolled {
   background-color: hsl(0, 0%, 85%, 0.8);
@@ -225,7 +215,7 @@ code {
 .Contact-link {
   position: absolute;
   top: 0;
-  right: 0px;  /* New position */
+  right: 50px;
   background-color: #5D1A91;
   padding: 10px 15px 10px 15px;
   margin: 18px 10px 20px 10px;
@@ -239,7 +229,7 @@ code {
   color: white;
   position: absolute;
   top: 0;
-  right: 0px;  /* New position */
+  right: 50px;
   margin: 18px 10px 20px 15px;
   background-color: #8B30C7;
 }
@@ -359,37 +349,4 @@ code {
   }
 }
 
-.Mortgage-link {
-  position: absolute;
-  top: 0;
-  right: 130px;  /* Adjusted position */
-  margin: 30px 40px 20px 20px;
-  color: #5D1A91;
-  font-size: calc(1px + 1.8vmin);
-  text-decoration: none;
-  animation: slideDown 1s ease-in-out;
-}
-
-.Mortgage-link:hover {
-  color: #b382d5;
-  position: absolute;
-  top: 0;
-  right: 130px;
-  margin: 30px 40px 20px 20px;
-}
-
-.Mortgage-link-burger {
-  color: #5D1A91;
-  font-size: calc(1px + 1.8vmin);
-  text-decoration: none;
-  padding: 10px 0;
-  display: block;
-  width: 100%;
-  text-align: center;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.Mortgage-link-burger:hover {
-  color: #8B30C7;
-}
 
