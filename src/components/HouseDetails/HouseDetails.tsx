@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading'; 
 import HouseAllDetailsButton from "./HouseAllDetailsButton";
+import Mortgage from '../Mortgage/Mortgage';
+
 interface RouteParams extends Record<string, string | undefined> {
   zpid: string;
 }
@@ -98,9 +100,10 @@ const HouseDetails: React.FC = () => {
     setDisplayedImage(image);
   };
 
-  if (!houseData) {
+  if (!houseData ) {
     return <div className='LoadDiv'><Loading /></div>;
   }
+
 
   const renderHouse = (house: House) => (
     <div className="House-item house-item-del" key={house.zpid}>
@@ -127,10 +130,13 @@ const HouseDetails: React.FC = () => {
     </div>
 );
 
+
+
+
   return (
     <div className="House-details">
       <div className="side-bar">
-        <div className="side-slider">
+      <div className="side-slider">
         {additionalImages.slice(0, 5).map((image, index) => (
           <img
             key={index}
@@ -139,7 +145,7 @@ const HouseDetails: React.FC = () => {
             onClick={() => handleThumbnailClick(image)} // Add click event handler
           />
         ))}
-        </div>
+      </div>
         <div className="side-details">
           <HouseAllDetailsButton>VIEW MORE LISTINGS</HouseAllDetailsButton>
           <div className="related-house">
@@ -246,8 +252,8 @@ const HouseDetails: React.FC = () => {
 
       </div>
       <div className="mortgage-calc-link">
-     <Link to="/mortgage" className="HouseAllDetailsButton">Mortgage Calculator</Link>
-
+     
+          <Mortgage></Mortgage>
       </div>
       </div>
       

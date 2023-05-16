@@ -3,13 +3,17 @@
     max-width: 100%;
     position: relative;
     margin: 0 auto; /* centers the container horizontally */
+    margin-top: 5px;
     display: flex; /* for vertical alignment */
     justify-content: center; /* centers content horizontally */
     align-items: center; /* centers content vertically */
-    min-height: 100vh; /* to make sure it fills the viewport */
+    
     background: transparent; /* removes the background */
     box-shadow: 0px 0px 20px rgba(0,0,0,0.15); /* adds a shadow */
 }
+.mortgage-container iframe {
+    border: none;
+  }
 
 .mortgage-link {
     width: 100%;
@@ -26,5 +30,6 @@
     cursor: pointer;
     position: absolute;
     bottom: 0; /* to position the link at the bottom of the container */
+
 }
 

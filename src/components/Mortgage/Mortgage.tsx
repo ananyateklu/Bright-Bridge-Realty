@@ -11,7 +11,7 @@ interface MortgageProps {
 const Mortgage: React.FC<MortgageProps> = ({
   size = 1,
   textColor = '5d1a91',
-  backgroundColor = 'dcdcb63b',
+  backgroundColor = 'e7e7e7',
 }) => {
   
 
@@ -24,15 +24,9 @@ const Mortgage: React.FC<MortgageProps> = ({
         width="100%"
         height="330"
         frameBorder="0"
-        scrolling="no"
+        scrolling="yes"
         title="Mortgage Calculator"
       ></iframe>
-      <a
-        className="mortgage-link"
-        href="https://www.mortgagecalculator.net"
-      >
-        Powered By www.MortgageCalculator.net
-      </a>
     </div>
   );
 };
