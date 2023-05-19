@@ -23,9 +23,10 @@ const Mortgage: React.FC<MortgageProps> = ({
         src={iframeSrc}
         width="100%"
         height="330"
-        frameBorder="0"
+        
         scrolling="yes"
         title="Mortgage Calculator"
+        style={{ borderRadius: '10px' }}
       ></iframe>
     </div>
   );

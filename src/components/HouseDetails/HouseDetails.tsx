@@ -30,6 +30,8 @@ const HouseDetails: React.FC = () => {
   const [displayedImage, setDisplayedImage] = useState<string>('');
   
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true); // Initialize loading state
+
 
   useEffect(() => {
     const fetchHouseDetails = async () => {
@@ -80,10 +82,11 @@ const HouseDetails: React.FC = () => {
         await wait();
         const similarHouseResponse = await axios.request(similarHouseOptions);
         setSimilarHouse(similarHouseResponse.data);
-
+        setLoading(false);
 
       } catch (error) {
         console.error(error);
+        setLoading(false); // Optionally, you may also set loading to false here to remove the loading screen even if there's an error
       }
     };
   
@@ -100,7 +103,7 @@ const HouseDetails: React.FC = () => {
     setDisplayedImage(image);
   };
 
-  if (!houseData ) {
+  if (loading) {
     return <div className='LoadDiv'><Loading /></div>;
   }
 
