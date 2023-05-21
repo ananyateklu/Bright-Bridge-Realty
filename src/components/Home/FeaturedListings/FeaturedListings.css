@@ -77,7 +77,7 @@
   object-fit: cover;
   display: block;
   flex-direction: column;
-  height: calc(55.5%);
+  height: calc(60%);
   width: calc(100% - 10px);
   align-items: flex-end;
   justify-content: flex-start;
@@ -87,12 +87,16 @@
   padding: 20px;
   margin-left: -62px;
   margin-top: 24px;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .FeaturedListings-title:hover {
   filter: grayscale(0%);
   transform: scale(1.1);
+}
+
+.FeaturedListings-title h1 {
+  margin-bottom: 10px;
 }
 
 .FeaturedListings-title h2 {
@@ -123,13 +127,14 @@
   background-color: white;
   color: black;
   position: relative;
-  bottom: 15px;
+  bottom: 0px;
   left: 5px;
   border: 1px solid black;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 0px;
+  margin-bottom: 10px;
 }
 .LoadDiv2 {
   display: flex;
