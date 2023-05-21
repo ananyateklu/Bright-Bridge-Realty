@@ -69,11 +69,12 @@ const HouseDetails: React.FC = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
             resolve();
-          }, 3000); // 3 seconds in milliseconds
+          }, 1000); // 3 seconds in milliseconds
         });
       }
   
       try {
+        setLoading(true);
         const response = await axios.request(options);
         setHouseData(response.data);
         await wait();
