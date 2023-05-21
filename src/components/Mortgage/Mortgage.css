@@ -1,0 +1,35 @@
+.mortgage-container {
+    width: 960px;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto; /* centers the container horizontally */
+    margin-top: 5px;
+    display: flex; /* for vertical alignment */
+    justify-content: center; /* centers content horizontally */
+    align-items: center; /* centers content vertically */
+    
+    background: transparent; /* removes the background */
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.15); /* adds a shadow */
+}
+.mortgage-container iframe {
+    border: none;
+  }
+
+.mortgage-link {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    clear: both;
+    padding: 3px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: arial;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0; /* to position the link at the bottom of the container */
+
+}
+

@@ -91,6 +91,7 @@ const Header: React.FC = () => {
         <a href="/about" className="About-link-burger" onClick={toggleBurgerMenu}>
           ABOUT
         </a>
+        
         <a href="/contact" className="Contact-link-burger" onClick={toggleBurgerMenu}>
           CONTACT
         </a>
