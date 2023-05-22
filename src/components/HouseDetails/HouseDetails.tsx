@@ -153,7 +153,9 @@ const HouseDetails: React.FC = () => {
           ))}
         </div>
         <div className="side-details">
-          <HouseAllDetailsButton>VIEW MORE LISTINGS</HouseAllDetailsButton>
+          <a href="/search?city=Minneapolis, MN" className="FeaturedListings-button" style={{textDecoration: "none"}}>
+            VIEW MORE LISTINGS
+          </a>
           <div className="related-house">
             <div className="similar-header">Similar Properties</div>
             {Array.isArray(similarHouse) && similarHouse.slice(0, 2).map((house: House) => renderHouse(house))}
