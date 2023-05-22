@@ -121,16 +121,18 @@ const HouseDetails: React.FC = () => {
     const { onClick } = props;
     return (
       <div className="next-arrow-details" onClick={onClick}>
-        <img className='arrow' src={up} alt="up" ></img>
+        <div className='a-div'> <img className='arrow' src={up} alt="up" ></img>
+        </div>
       </div>
     );
   };
-  
+
   const PrevArrow: React.FC = (props: any) => {
     const { onClick } = props;
     return (
       <div className="prev-arrow-details" onClick={onClick}>
-       <img className='arrow' src={down} alt="up" ></img>
+        <div className='a-div'><img className='arrow' src={down} alt="up" ></img>
+        </div>
       </div>
     );
   };
