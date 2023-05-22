@@ -4,7 +4,6 @@ import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-import HouseAllDetailsButton from "./HouseAllDetailsButton";
 import Mortgage from '../Mortgage/Mortgage';
 
 interface RouteParams extends Record<string, string | undefined> {
