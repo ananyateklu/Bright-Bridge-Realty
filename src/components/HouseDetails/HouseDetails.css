@@ -18,7 +18,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-left: 38px;
 }
 
 .side-slider img {
@@ -31,9 +32,11 @@
 
 .main {
   text-align: center;
-  margin-right: 3rem;
-  padding-right: 10px;
+  width: 90%;
+  margin-left: 3.5%;
+  margin-right: 5%;
   padding-left: 10px;
+  margin-top: 20px;
 }
 
 .main-img {
