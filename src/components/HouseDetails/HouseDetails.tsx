@@ -195,7 +195,7 @@ const HouseDetails: React.FC = () => {
         </div>
 
         <div className="side-details">
-          <a href="/search?city=Minneapolis, MN" className="FeaturedListings-button" style={{ textDecoration: "none" }}>
+          <a href="/search?city=Minneapolis, MN" className="view-more-listing-button" style={{ textDecoration: "none" }}>
             VIEW MORE LISTINGS
           </a>
           <div className="related-house">
