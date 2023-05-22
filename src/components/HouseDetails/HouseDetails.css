@@ -255,6 +255,11 @@
   margin-bottom: 10px;
 }
 
+.view-more-listing-button:hover {
+  background-color: #5d1a91;
+  color: white;
+}
+
 .House-item {
   display: flex;
   flex-direction: column;
