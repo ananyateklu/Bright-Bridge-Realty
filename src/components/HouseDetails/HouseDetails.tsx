@@ -5,6 +5,13 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import Mortgage from '../Mortgage/Mortgage';
+import Slider from "react-slick";
+import up from "../../assets/Up.png";
+import down from "../../assets/Down.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 interface RouteParams extends Record<string, string | undefined> {
   zpid: string;
@@ -72,6 +79,8 @@ const HouseDetails: React.FC = () => {
         });
       }
 
+
+
       try {
         setLoading(true);
         const response = await axios.request(options);
@@ -108,6 +117,34 @@ const HouseDetails: React.FC = () => {
   if (loading) {
     return <div className='LoadDiv'><Loading /></div>;
   }
+  const NextArrow: React.FC = (props: any) => {
+    const { onClick } = props;
+    return (
+      <div className="next-arrow-details" onClick={onClick}>
+        <img className='arrow' src={up} alt="up" ></img>
+      </div>
+    );
+  };
+  
+  const PrevArrow: React.FC = (props: any) => {
+    const { onClick } = props;
+    return (
+      <div className="prev-arrow-details" onClick={onClick}>
+       <img className='arrow' src={down} alt="up" ></img>
+      </div>
+    );
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    vertical: true,
+    nextArrow: <PrevArrow />,
+    prevArrow: <NextArrow />,
+  };
 
 
   const renderHouse = (house: House) => (
@@ -142,17 +179,21 @@ const HouseDetails: React.FC = () => {
     <div className="House-details">
       <div className="side-bar">
         <div className="side-slider">
-          {additionalImages.slice(0, 5).map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Thumbnail ${index + 1}`}
-              onClick={() => handleThumbnailClick(image)} // Add click event handler
-            />
-          ))}
+          <Slider {...settings}>
+            {additionalImages.slice(0, 20).map((image, index) => (
+              <div key={index}>
+                <img
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  onClick={() => handleThumbnailClick(image)}
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
+
         <div className="side-details">
-          <a href="/search?city=Minneapolis, MN" className="FeaturedListings-button" style={{textDecoration: "none"}}>
+          <a href="/search?city=Minneapolis, MN" className="FeaturedListings-button" style={{ textDecoration: "none" }}>
             VIEW MORE LISTINGS
           </a>
           <div className="related-house">
