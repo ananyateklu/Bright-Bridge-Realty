@@ -301,10 +301,12 @@ const HouseDetails: React.FC = () => {
 
 
         </div>
-        <div className="mortgage-calc-link">
-
-          <Mortgage></Mortgage>
-        </div>
+       <div>
+       <a href="/mortgage" className="view-more-listing-button" style={{ textDecoration: "none" }}>
+            Mortgage Calculator
+          </a>
+          
+       </div>
       </div>
 
 
