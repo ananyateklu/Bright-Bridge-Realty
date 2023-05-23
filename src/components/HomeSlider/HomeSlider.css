@@ -34,10 +34,11 @@
 .House-slider-item {
   padding: 0 10px;
   box-sizing: border-box;
+  transition: transform 0.3s;
 }
 
 .House-slider-item:hover {
-  transform: scale(1.05);
+  transform: scaleX(1.03);
 }
 
 .House-slider-item:hover .House-slider-item-details {
@@ -52,6 +53,8 @@
     padding: 10px 0;
     font-size: 1.2em;
     opacity: 0;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     transition: opacity 0.3s;
 }
 

@@ -10,8 +10,8 @@ interface MortgageProps {
 
 const Mortgage: React.FC<MortgageProps> = ({
   size = 1,
-  textColor = '5d1a91',
-  backgroundColor = 'e7e7e7',
+  textColor = 'black',
+  backgroundColor = '9696961a',
 }) => {
   
 
