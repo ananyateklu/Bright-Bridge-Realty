@@ -3,22 +3,22 @@ import { useLocation } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import './Mortgage.css';
 
-
-
-const Mortgage =()=> {
+const Mortgage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const price = searchParams.get('price');
   const loanAmtInputRef = useRef();
   const intRateSliderRef = useRef();
   const loanPeriodSliderRef = useRef();
-  let line = null;
-  let pie = null;
+  const lineRef = useRef(null);
+  const pieRef = useRef(null);
+ 
 
   useEffect(() => {
     const loanAmtInput = loanAmtInputRef.current;
     const intRateSlider = intRateSliderRef.current;
     const loanPeriodSlider = loanPeriodSliderRef.current;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const displayDetails = () => {
       const P = parseFloat(loanAmtInput.value) || price;
@@ -27,7 +27,7 @@ const Mortgage =()=> {
 
       document.getElementById('loan-amt-text').innerText = parseFloat(P).toLocaleString('en-US') + '$';
       document.getElementById('loan-period-text').innerText = N + " Years";
-      document.getElementById('interest-rate-text').innerText = R.toFixed(2)+" %";
+      document.getElementById('interest-rate-text').innerText = R.toFixed(2) + " %";
 
       const calculateLoanDetails = (p, r, emi) => {
         let totalInterest = 0;
@@ -52,9 +52,9 @@ const Mortgage =()=> {
           }
         }
 
-        line.data.datasets[0].data = yearPrincipal;
-        line.data.datasets[1].data = yearlyInterest;
-        line.data.labels = years;
+        lineRef.current.data.datasets[0].data = yearPrincipal;
+        lineRef.current.data.datasets[1].data = yearlyInterest;
+        lineRef.current.data.labels = years;
 
         return totalInterest;
       };
@@ -85,10 +85,10 @@ const Mortgage =()=> {
       document.querySelector('#price').innerText =
         parseFloat(emi).toLocaleString('en-US', opts) + '$';
 
-      pie.data.datasets[0].data[0] = P;
-      pie.data.datasets[0].data[1] = payabaleInterest;
-      pie.update();
-      line.update();
+      pieRef.current.data.datasets[0].data[0] = P;
+      pieRef.current.data.datasets[0].data[1] = payabaleInterest;
+      pieRef.current.update();
+      lineRef.current.update();
     };
 
     loanAmtInput.addEventListener('input', displayDetails);
@@ -98,7 +98,7 @@ const Mortgage =()=> {
     const lineChartCanvas = document.getElementById('lineChart');
     const pieChartCanvas = document.getElementById('pieChart');
 
-    line = new Chart(lineChartCanvas.getContext('2d'), {
+    lineRef.current = new Chart(lineChartCanvas.getContext('2d'), {
       type: 'line',
       data: {
         datasets: [
@@ -143,7 +143,7 @@ const Mortgage =()=> {
       },
     });
 
-    pie = new Chart(pieChartCanvas.getContext('2d'), {
+    pieRef.current = new Chart(pieChartCanvas.getContext('2d'), {
       type: 'doughnut',
       data: {
         labels: ['Principal', 'Interest'],
@@ -172,12 +172,13 @@ const Mortgage =()=> {
       loanAmtInput.removeEventListener('input', displayDetails);
       intRateSlider.removeEventListener('input', displayDetails);
       loanPeriodSlider.removeEventListener('input', displayDetails);
-      line.destroy();
-      pie.destroy();
+      lineRef.current.destroy();
+      pieRef.current.destroy();
     };
   }, []);
 
   return (
+   
     <div className="mortgage-container">
       <div className="mortgage-wrapper">
         <div className="mortgage-header">
@@ -262,6 +263,7 @@ const Mortgage =()=> {
         </div>
       </div>
     </div>
+   
   );
 };
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef  } from 'react';
 import axios from 'axios';
 import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-import Mortgage from '../Mortgage/Mortgage';
+
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -38,16 +38,16 @@ const HouseDetails: React.FC = () => {
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
 
-  const [price, setPrice] = useState(0);
-  const [showMortgage, setShowMortgage] = useState(false);
+ 
+  
 
-  const handleMortgageCalculator = () => {
-    setShowMortgage(true);
-  };
-
-
-
+  
+  
   useEffect(() => {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -186,6 +186,7 @@ const HouseDetails: React.FC = () => {
 
 
   return (
+    
     <div className="House-details">
       <div className="side-bar">
         <div className="side-slider">
@@ -317,6 +318,7 @@ const HouseDetails: React.FC = () => {
 
 
     </div>
+    
   );
 };
 
