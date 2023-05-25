@@ -148,42 +148,106 @@
   color: white;
 }
 
-.FeaturedListings-price {
-  font-size: 24px;
+.FeaturedListings-city {
+  font-size: 25px;
   color: white;
-  margin-bottom: 5px;
-  position: absolute;
-  bottom: 60px; 
-  left: 30px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  margin-top: 30px;
+  display: flex;
   font-weight: 900;
   font-family: Cardo, serif;
 }
 
-.FeaturedListings-address {
+.FeaturedListings-details-m {
   color: white;
   font-weight: 500;
-  margin-bottom: 20px;
-  position: absolute; 
-  bottom: 30px; 
-  left: 30px;
+  margin-left: 50px;
+  margin-right: 180px;
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
 }
 
+.FeaturedListings-details-s {
+  color: white;
+  font-weight: 500;
+  margin-left: 50px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
+}
+
+.FeaturedListings-details-ea {
+  color: white;
+  font-weight: 500;
+  margin-left: 50px;
+  margin-right: 120px;
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
+}
+
+.FeaturedListings-details-b {
+  color: white;
+  font-weight: 500;
+  margin-left: 50px;
+  margin-right: 140px;
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
+}
+
+.FeaturedListings-details-ed {
+  color: white;
+  font-weight: 500;
+  margin-left: 50px;
+  margin-right: 120px;
+  margin-bottom: 10px;
+  display: flex;
+  opacity: 0;
+}
 
 .FeaturedListings-details-button {
-  position: absolute;
-  width: 120px;
+  display: flex;
+  width: 70px;
   background-color: #5d1a91;
   color: white;
   border: none;
-  padding: 5px 5px 5px 5px;
-  bottom: 15px;
-  left: 30px;
+  padding: 5px 8px 5px 8px;
+  margin-left: 50px;
   opacity: 0; 
   transition: opacity 0.3s ease; 
 }
 
-.FeaturedListings-image:hover .FeaturedListings-details-button {
+.FeaturedListings-image:hover  .FeaturedListings-details-button  {
   opacity: 1; 
+}
+
+.FeaturedListings-image:hover  .FeaturedListings-details-m  {
+  opacity: 1; 
+  transition: opacity 1.4s ease;
+}
+
+.FeaturedListings-image:hover  .FeaturedListings-details-s  {
+  opacity: 1; 
+  transition: opacity 1.4s ease;
+}
+
+.FeaturedListings-image:hover  .FeaturedListings-details-ea  {
+  opacity: 1; 
+  transition: opacity 1.4s ease;
+}
+
+.FeaturedListings-image:hover  .FeaturedListings-details-b  {
+  opacity: 1; 
+  transition: opacity 1.4s ease;
+}
+
+.FeaturedListings-image:hover  .FeaturedListings-details-ed  {
+  opacity: 1; 
+  transition: opacity 1.4s ease;
 }
 
 .FeaturedListings-details-button:hover {

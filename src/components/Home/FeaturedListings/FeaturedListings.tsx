@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import fetchFeaturedListings from "./FeaturedListingsApi";
-import HouseDetailsButton from "../../HouseDetails/HouseDetailsButton";
 import HouseAllDetailsButton from "../../HouseDetails/HouseAllDetailsButton";
 import "../../HomeSlider/HomeSlider.css";
 import Slider from "react-slick";
 import Loading from "../../Loading";
+import Eagan from "../../../assets/Eagan.jpg";
+import Edina from "../../../assets/Edina.jpg";
+import Minneapolis from "../../../assets/Minneapolis.jpg";
+import StPaul from "../../../assets/StPaul.jpg";
+import Bloomington from "../../../assets/Bloomington.jpg";
 
 interface House {
   zpid: number;
@@ -50,8 +54,6 @@ const settings = {
 };
 
 const FeaturedListings: React.FC = () => {
-  const [featuredImages, setFeaturedImages] = useState<string[]>([]);
-  const [listingData, setListingData] = useState<any[]>([]);
   const [houses, setHouses] = useState<House[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -71,9 +73,8 @@ const FeaturedListings: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const [images, data, data2] = await fetchFeaturedListings();
-      setFeaturedImages(images);
-      const houseData = data2.map((house: any) => ({
+      const [data] = await fetchFeaturedListings();
+      const houseData = data.map((house: any) => ({
         zpid: house.zpid,
         image: house.imgSrc,
         title: house.title,
@@ -84,7 +85,6 @@ const FeaturedListings: React.FC = () => {
         livingArea: house.livingArea,
         propertyType: house.propertyType,
       }));
-      setListingData(data);
       setHouses(houseData);
       setLoading(false);
     };
@@ -103,35 +103,82 @@ const FeaturedListings: React.FC = () => {
   return (
     <div className="FeaturedListings">
       <div className="FeaturedListings-grid">
-        {featuredImages.map((image, index) => (
-          <div
-            key={index}
-            className="FeaturedListings-image"
-            style={{ backgroundImage: `url(${image})` }}
-            role="img"
-            aria-label={`Featured listing ${index + 1}`}
-          >
-            {listingData[index] && (
-              <>
-                <h3 className="FeaturedListings-price">
-                  $ {listingData[index].price}
-                </h3>
-                <p className="FeaturedListings-address">
-                  {extractCityAndStateFromAddress(listingData[index].address)}
-                </p>
-                <HouseDetailsButton zpid={listingData[index].zpid}>
-                  View Details
-                </HouseDetailsButton>
-              </>
-            )}
-          </div>
-        ))}
+        <div
+          className="FeaturedListings-image"
+          style={{ backgroundImage: `url(${Minneapolis})` }}
+          role="img"
+        >
+
+          <h1 className="FeaturedListings-city">
+            Minneapolis
+          </h1>
+          <p className="FeaturedListings-details-m">A vibrant Midwestern city renowned for its lakes, parks, arts scene, and the Mississippi River</p>
+          <a href="/search?city=Minneapolis, MN" className="FeaturedListings-details-button" style={{ textDecoration: "none" }}>
+            EXPLORE
+          </a>
+        </div>
+        <div
+          className="FeaturedListings-image"
+          style={{ backgroundImage: `url(${StPaul})` }}
+          role="img"
+        >
+
+          <h1 className="FeaturedListings-city">
+            St.Paul
+          </h1>
+          <p className="FeaturedListings-details-s">The capital of Minnesota, is a city rich in history, featuring beautiful Victorian architecture, extensive parkland, and a diverse cultural scene</p>
+          <a href="/search?city=Saint Paul, MN" className="FeaturedListings-details-button" style={{ textDecoration: "none" }}>
+            EXPLORE
+          </a>
+        </div>
+        <div
+          className="FeaturedListings-image"
+          style={{ backgroundImage: `url(${Eagan})` }}
+          role="img"
+        >
+
+          <h1 className="FeaturedListings-city">
+            Eagan
+          </h1>
+          <p className="FeaturedListings-details-ea">A family-friendly suburban city known for its extensive parks, recreational facilities, and convenient location near both Minneapolis and St. Paul</p>
+          <a href="/search?city=Eagan, MN" className="FeaturedListings-details-button" style={{ textDecoration: "none" }}>
+            EXPLORE
+          </a>
+        </div>
+        <div
+          className="FeaturedListings-image"
+          style={{ backgroundImage: `url(${Bloomington})` }}
+          role="img"
+        >
+
+          <h1 className="FeaturedListings-city">
+            Bloomington
+          </h1>
+          <p className="FeaturedListings-details-b">A dynamic suburb of Minneapolis, best known for the Mall of America, a vast shopping and entertainment complex, and its natural beauty with many parks and wildlife reserves</p>
+          <a href="/search?city=Bloomington, MN" className="FeaturedListings-details-button" style={{ textDecoration: "none" }}>
+            EXPLORE
+          </a>
+        </div>
+        <div
+          className="FeaturedListings-image"
+          style={{ backgroundImage: `url(${Edina})` }}
+          role="img"
+        >
+
+          <h1 className="FeaturedListings-city">
+            Edina
+          </h1>
+          <p className="FeaturedListings-details-ed">An affluent suburban city renowned for its high-end shopping and dining, top-rated schools, and lush parks and golf courses</p>
+          <a href="/search?city=Edina, MN" className="FeaturedListings-details-button" style={{ textDecoration: "none" }}>
+            EXPLORE
+          </a>
+        </div>
         <div className="FeaturedListings-title">
           <h1>
-            <span className="FeaturedListings-title-featured">FEATURED</span>{" "}
-            <span className="FeaturedListings-title-listings">LISTINGS</span>
+            <span className="FeaturedListings-title-featured">FEATURED </span>{" "}
+            <span className="FeaturedListings-title-listings"> CITIES</span>
           </h1>
-          <HouseAllDetailsButton>VIEW ALL PROPERTIES</HouseAllDetailsButton>
+          <HouseAllDetailsButton>VIEW MORE CITIES</HouseAllDetailsButton>
         </div>
       </div>
       <div className="House-slider-title">Open</div>
@@ -168,8 +215,8 @@ const FeaturedListings: React.FC = () => {
             </div>
           ))}
         </Slider>
-        </div>
       </div>
+    </div>
   );
 };
 
