@@ -4,7 +4,7 @@ import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-import Mortgage from '../Mortgage/Mortgage';
+
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -38,8 +38,16 @@ const HouseDetails: React.FC = () => {
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
 
+ 
+  
 
+  
+  
   useEffect(() => {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -178,6 +186,7 @@ const HouseDetails: React.FC = () => {
 
 
   return (
+    
     <div className="House-details">
       <div className="side-bar">
         <div className="side-slider">
@@ -301,14 +310,15 @@ const HouseDetails: React.FC = () => {
 
 
         </div>
-        <div className="mortgage-calc-link">
-
-          <Mortgage></Mortgage>
-        </div>
+       <div>
+       <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
+          
+       </div>
       </div>
 
 
     </div>
+    
   );
 };
 
