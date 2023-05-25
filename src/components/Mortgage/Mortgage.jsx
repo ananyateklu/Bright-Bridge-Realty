@@ -175,7 +175,7 @@ const Mortgage = () => {
       lineRef.current.destroy();
       pieRef.current.destroy();
     };
-  }, []);
+  }, [price]);
 
   return (
    
