@@ -23,7 +23,7 @@ function App() {
           <Route path="/house-details/:zpid" element={<HouseDetails />} />
           <Route path="/about" element={<About  />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/mortgage" Component={Mortgage} />
+          <Route path="/mortgage" element={<Mortgage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

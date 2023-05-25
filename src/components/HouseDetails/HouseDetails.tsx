@@ -38,6 +38,14 @@ const HouseDetails: React.FC = () => {
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
 
+  const [price, setPrice] = useState(0);
+  const [showMortgage, setShowMortgage] = useState(false);
+
+  const handleMortgageCalculator = () => {
+    setShowMortgage(true);
+  };
+
+
 
   useEffect(() => {
     const fetchHouseDetails = async () => {
@@ -302,9 +310,7 @@ const HouseDetails: React.FC = () => {
 
         </div>
        <div>
-       <a href="/mortgage" className="view-more-listing-button" style={{ textDecoration: "none" }}>
-            Mortgage Calculator
-          </a>
+       <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
           
        </div>
       </div>

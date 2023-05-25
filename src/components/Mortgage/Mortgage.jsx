@@ -1,23 +1,33 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import './Mortgage.css';
 
-const Mortgage = () => {
-  const loanAmtSliderRef = useRef();
+
+
+const Mortgage =()=> {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const price = searchParams.get('price');
+  const loanAmtInputRef = useRef();
   const intRateSliderRef = useRef();
   const loanPeriodSliderRef = useRef();
   let line = null;
   let pie = null;
 
   useEffect(() => {
-    const loanAmtSlider = loanAmtSliderRef.current;
+    const loanAmtInput = loanAmtInputRef.current;
     const intRateSlider = intRateSliderRef.current;
     const loanPeriodSlider = loanPeriodSliderRef.current;
 
     const displayDetails = () => {
-      const P = parseFloat(loanAmtSlider.value);
+      const P = parseFloat(loanAmtInput.value) || price;
       const R = parseFloat(intRateSlider.value);
       const N = parseFloat(loanPeriodSlider.value);
+
+      document.getElementById('loan-amt-text').innerText = parseFloat(P).toLocaleString('en-US') + '$';
+      document.getElementById('loan-period-text').innerText = N + " Years";
+      document.getElementById('interest-rate-text').innerText = R.toFixed(2)+" %";
 
       const calculateLoanDetails = (p, r, emi) => {
         let totalInterest = 0;
@@ -81,7 +91,7 @@ const Mortgage = () => {
       line.update();
     };
 
-    loanAmtSlider.addEventListener('input', displayDetails);
+    loanAmtInput.addEventListener('input', displayDetails);
     intRateSlider.addEventListener('input', displayDetails);
     loanPeriodSlider.addEventListener('input', displayDetails);
 
@@ -159,7 +169,7 @@ const Mortgage = () => {
     displayDetails();
 
     return () => {
-      loanAmtSlider.removeEventListener('input', displayDetails);
+      loanAmtInput.removeEventListener('input', displayDetails);
       intRateSlider.removeEventListener('input', displayDetails);
       loanPeriodSlider.removeEventListener('input', displayDetails);
       line.destroy();
@@ -182,15 +192,16 @@ const Mortgage = () => {
               <div>
                 <div className="mortgage-detail">
                   <p style={{ color: '#9088D2' }}>Amount</p>
-                  <p id="loan-amt-text" ></p>
+                  <p id="loan-amt-text" style={{ color: '#6258A8' }}></p>
                 </div>
                 <input
-                  type="range"
+                  type="number"
                   id="loan-amount"
                   min="0"
                   max="10000000"
-                  step="50000"
-                  ref={loanAmtSliderRef}
+                  className="loan-amount-input"
+                  ref={loanAmtInputRef}
+                  placeholder={price}
                 />
               </div>
               <div>

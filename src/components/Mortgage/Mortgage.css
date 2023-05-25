@@ -158,6 +158,14 @@
   background: #9088d2;
 }
 
+.loan-amount-input {
+  border: 1px solid #9088D2;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  font-size: 15px;
+}
+
 /*-------------------------------------*/
 .mortgage-price {
   color: #130f31;
