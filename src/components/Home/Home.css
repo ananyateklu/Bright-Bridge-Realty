@@ -34,7 +34,7 @@
   .Slogan {
     position: absolute;
     z-index: 1;
-    top: 370px;
+    top: 470px;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3em;
