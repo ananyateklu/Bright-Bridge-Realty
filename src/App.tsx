@@ -9,7 +9,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer';
 import Mortgage from './components/Mortgage/Mortgage';
-
+import Sold from './components/Sold/Sold';
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
           <Route path="/about" element={<About  />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mortgage" element={<Mortgage />} />
+          <Route path='/sold' element={<Sold />} />
         </Routes>
         <Footer />
       </BrowserRouter>
