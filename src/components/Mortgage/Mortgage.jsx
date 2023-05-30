@@ -230,6 +230,7 @@ const Mortgage = () => {
                   min="1"
                   max="15"
                   step="0.5"
+                  defaultValue={3.5}
                   ref={intRateSliderRef}
                 />
               </div>
