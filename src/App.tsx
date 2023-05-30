@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -12,7 +13,16 @@ import Mortgage from './components/Mortgage/Mortgage';
 
 
 
-function App() {
+const App = () => {
+  const [showContactForm, setShowContactForm] = useState(true);
+  const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
+
+  const handleContactSubmit = () => {
+    setShowContactForm(false);
+    setShowMortgageCalculator(true);
+  
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,9 +30,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<HouseSearchResult />} />
-          <Route path="/house-details/:zpid" element={<HouseDetails />} />
+          <Route
+          path="/house-details/:zpid"
+          element={<HouseDetails />}
+        />
           <Route path="/about" element={<About  />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route
+          path="/contact"
+          element={
+            <Contact
+              onContactSubmit={handleContactSubmit}
+              
+            />
+          }
+        />
           <Route path="/mortgage" element={<Mortgage />} />
         </Routes>
         <Footer />

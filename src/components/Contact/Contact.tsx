@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Contact.css';
 import Gmaps from '../../assets/Gmaps.png';
 
-const Contact: React.FC = () => {
+const Contact: React.FC<{ onContactSubmit: () => void }> = ({ onContactSubmit }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -30,6 +30,8 @@ const Contact: React.FC = () => {
         setEmail('');
         setPhone('');
         setMessage('');
+
+        onContactSubmit();
     };
 
     const sendEmail = async () => {

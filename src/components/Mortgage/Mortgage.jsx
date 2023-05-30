@@ -18,7 +18,7 @@ const Mortgage = () => {
     const loanAmtInput = loanAmtInputRef.current;
     const intRateSlider = intRateSliderRef.current;
     const loanPeriodSlider = loanPeriodSliderRef.current;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
 
     const displayDetails = () => {
       const P = parseFloat(loanAmtInput.value) || price;

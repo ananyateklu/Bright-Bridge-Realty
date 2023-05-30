@@ -4,7 +4,8 @@ import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-
+import Mortgage from '../Mortgage/Mortgage';
+import Contact from '../Contact/Contact';
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -30,6 +31,7 @@ interface House {
 
 
 const HouseDetails: React.FC = () => {
+  
   const { zpid } = useParams<RouteParams>();
   const [houseData, setHouseData] = useState<any>(null);
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
@@ -37,6 +39,13 @@ const HouseDetails: React.FC = () => {
 
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
+
+  const handleContactSubmit = () => {
+    setShowContactForm(false);
+    setShowMortgageCalculator(true);
+  };
 
  
   
@@ -45,9 +54,9 @@ const HouseDetails: React.FC = () => {
   
   useEffect(() => {
 
+    
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -311,12 +320,22 @@ const HouseDetails: React.FC = () => {
 
         </div>
        <div>
-       <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
+       <button
+          className="view-more-listing-button" style={{ textDecoration: "none" }}
+          onClick={() => {
+            setShowContactForm(true);
+            setShowMortgageCalculator(false);
+          }}
+        >
+          Mortgage Calculator
+        </button>
           
        </div>
+       {showContactForm && <Contact onContactSubmit={handleContactSubmit} />}
+    {showMortgageCalculator && <Mortgage />}
       </div>
 
-
+      
     </div>
     
   );
