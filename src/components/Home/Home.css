@@ -28,21 +28,13 @@
     align-items: center;
   }
 
-  .House-container {
-    position: relative;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
+ 
 
-  .House {
-    width: 100%;
-  }
-
+  
   .Slogan {
     position: absolute;
     z-index: 1;
-    top: 370px;
+    top: 470px;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3em;
@@ -53,3 +45,69 @@
     animation: fadeIn 1s ease-in-out;
   }
   
+  /* Make the house-container relative so the images can be positioned absolutely */
+.House-container {
+  position: relative;
+  max-width: 100%; /* Or set it to your preferred width */
+  max-height: 100%; /* Or set it to your preferred height */
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideShow 20s infinite; /* Increased animation time to 12s */
+}
+
+.slideshow img:nth-child(2) {
+  animation-delay: 5s; /* Image appears after 5s */
+  animation-fill-mode: forwards;
+}
+
+.slideshow img:nth-child(3) {
+  animation-delay: 10s; /* Image appears after 10s */
+  animation-fill-mode: forwards;
+}
+
+.slideshow img:nth-child(4) {
+  animation-delay: 15s; /* Image appears after 15s */
+  animation-fill-mode: forwards;
+}
+
+
+/* Keyframes for zoom effect */
+/* Keyframes for zoom effect */
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+    transition-timing-function: ease;
+  }
+  10% {
+    opacity: 1;
+    transition-timing-function: ease;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+    transition-timing-function: ease;
+  }
+  33% {
+    opacity: 0;
+    transform: scale(1.1);
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    transition-timing-function: ease;
+  }
+}
+
+
+
+.slideshow {
+  width: 100%;
+  height: 700px; /* Set to your preferred height */
+  position: relative;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
-import house from '../../assets/House1.jpg';
 import './Home.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { useNavigate } from 'react-router-dom';
 import FeaturedListings from "./FeaturedListings/FeaturedListings";
+import ImageSlider from './ImageSlider';
+
 
 
 const Home: React.FC = () => {
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
             <div className="Slogan">The Bridge to Your Next Home</div>
             <SearchBar onSearch={handleSearch} />
             <div className="House-container">
-                <img src={house} className="House" alt="house" />     
+            <ImageSlider />
             </div>
             <FeaturedListings />
         </div>
