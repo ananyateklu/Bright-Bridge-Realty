@@ -173,8 +173,24 @@
   right: 10px;
 }
 
+.next-arrow img{
+  width: 20px;
+  height: 20px;
+  max-height: 50%;
+  object-fit: cover;
+  margin-bottom: 0px;
+}
+
 .prev-arrow {
   left: 10px;
+}
+
+.prev-arrow img{
+  width: 20px;
+  height: 20px;
+  max-height: 50%;
+  object-fit: cover;
+  margin-bottom: 0px;
 }
 
 .next-arrow:hover,

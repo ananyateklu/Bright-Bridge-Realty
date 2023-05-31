@@ -13,6 +13,8 @@ import Edina from "../../../assets/Edina.jpg";
 import Minneapolis from "../../../assets/Minneapolis.jpg";
 import StPaul from "../../../assets/StPaul.jpg";
 import Bloomington from "../../../assets/Bloomington.jpg";
+import right from "../../../assets/Right.png";
+import left from "../../../assets/Left.png";
 
 interface House {
   zpid: number;
@@ -29,7 +31,8 @@ const NextArrow: React.FC = (props: any) => {
   const { onClick } = props;
   return (
     <div className="next-arrow" onClick={onClick}>
-      &gt;
+     <img className='arrow' src={right} alt="right" ></img>
+       
     </div>
   );
 };
@@ -38,7 +41,7 @@ const PrevArrow: React.FC = (props: any) => {
   const { onClick } = props;
   return (
     <div className="prev-arrow" onClick={onClick}>
-      &lt;
+    <img className='arrow' src={left} alt="left" ></img>
     </div>
   );
 };
