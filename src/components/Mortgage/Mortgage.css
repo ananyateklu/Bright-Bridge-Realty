@@ -7,16 +7,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(150, 150, 150, 0.1);
   
 }
 
 .mortgage-wrapper {
   height: auto;
-  width: 700px;
+  width: auto;
   border-radius: 20px;
   padding: 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   
-  background-image: linear-gradient(to bottom left, #e4dfec, white, white);
 }
 
 .mortgage-header {
