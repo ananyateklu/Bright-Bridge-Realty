@@ -4,7 +4,8 @@ import './HouseDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
-
+import Mortgage from '../Mortgage/Mortgage';
+import Contact from '../Contact/ContactForm';
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -28,18 +29,28 @@ interface House {
 
 
 const HouseDetails: React.FC = () => {
+  
   const { zpid } = useParams<RouteParams>();
   const [houseData, setHouseData] = useState<any>(null);
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
   const [displayedImage, setDisplayedImage] = useState<string>('');
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
+  const [showMortgageButton, setShowMortgageButton] = useState(true);
+  const [housePrice, setHousePrice] = useState<number>(0);
+
+  const handleContactSubmit = () => {
+    setShowContactForm(false);
+    setShowMortgageCalculator(true);
+  };
 
   useEffect(() => {
-    //Scroll to top of page
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-
+    
+    
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -83,6 +94,7 @@ const HouseDetails: React.FC = () => {
         setLoading(true);
         const response = await axios.request(options);
         setHouseData(response.data);
+        setHousePrice(response.data.price);
         await wait();
         const additionalImagesResponse = await axios.request(additionalImagesOptions);
         setAdditionalImages(additionalImagesResponse.data.images);
@@ -304,10 +316,24 @@ const HouseDetails: React.FC = () => {
             <div className="interior-desc"> {houseData.resoFacts.gas ? houseData.resoFacts.gas + ", " : 'No data found'} </div>
           </div>
         </div>
-        <div>
-          <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
-        </div>
+       <div>
+      { showMortgageButton && <button
+          className="view-more-listing-button" style={{ textDecoration: "none" }}
+          onClick={() => {
+            setShowContactForm(true);
+            setShowMortgageCalculator(false);
+            setShowMortgageButton(false);
+          }}
+        >
+          Calculate Mortgage
+        </button>}
+          
+       </div>
+       {showContactForm && <Contact onContactSubmit={handleContactSubmit}  />}
+    {showMortgageCalculator && <Mortgage housePrice={housePrice}  />}
       </div>
+
+
     </div>
   );
 };

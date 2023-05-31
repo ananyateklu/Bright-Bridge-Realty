@@ -2,21 +2,23 @@
 .mortgage-container {
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
-  height: 100%;
+  
   width: 100%;
-  display: flex;
+  
   justify-content: center;
   align-items: center;
-  background-color: #bab5e3;
+  background-color: rgba(150, 150, 150, 0.1);
+  
 }
 
 .mortgage-wrapper {
   height: auto;
-  width: 700px;
+  width: auto;
   border-radius: 20px;
   padding: 20px;
-  margin: 100px 0;
-  background-image: linear-gradient(to bottom left, #e4dfec, white, white);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  
 }
 
 .mortgage-header {

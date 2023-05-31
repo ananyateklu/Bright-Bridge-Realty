@@ -161,9 +161,13 @@
 
 .header-details {
   font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 
 .property-description {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
   text-align: left; /* Added to make the text left-justified */
   padding-top: 10px; /* Added padding-top */
   padding-bottom: 20px; /* Added padding-bottom */

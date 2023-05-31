@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+
 import Chart from 'chart.js/auto';
 import './Mortgage.css';
 
-const Mortgage = () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const price = searchParams.get('price');
+
+
+
+const Mortgage = ({ housePrice }) => {
+ 
+  const price = housePrice;
   const loanAmtInputRef = useRef();
   const intRateSliderRef = useRef();
   const loanPeriodSliderRef = useRef();
@@ -18,7 +20,7 @@ const Mortgage = () => {
     const loanAmtInput = loanAmtInputRef.current;
     const intRateSlider = intRateSliderRef.current;
     const loanPeriodSlider = loanPeriodSliderRef.current;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
 
     const displayDetails = () => {
       const P = parseFloat(loanAmtInput.value) || price;

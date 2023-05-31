@@ -8,13 +8,14 @@ import HouseSearchResult from './components/HouseSearchResult/HouseSearchResult'
 import About from './components/About/About';
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer';
-import Mortgage from './components/Mortgage/Mortgage';
+
 import Sold from './components/Sold/Sold';
 import house from "../src/assets/mobile.jpg";
 import logo from '../src/assets/BBLogo.png';
 
 function App() {
   const isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
+  
 
   if (isMobile) {
     return <div className="Home">
@@ -35,7 +36,7 @@ function App() {
           <Route path="/house-details/:zpid" element={<HouseDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/mortgage" element={<Mortgage />} />
+          
           <Route path='/sold' element={<Sold />} />
         </Routes>
         <Footer />
