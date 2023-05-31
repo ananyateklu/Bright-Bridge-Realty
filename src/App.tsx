@@ -10,19 +10,22 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer';
 import Mortgage from './components/Mortgage/Mortgage';
+import Sold from './components/Sold/Sold';
+import house from "../src/assets/mobile.jpg";
+import logo from '../src/assets/BBLogo.png';
 
+function App() {
+  const isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
 
-
-const App = () => {
-  const [showContactForm, setShowContactForm] = useState(true);
-  const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
-
-  const handleContactSubmit = () => {
-    setShowContactForm(false);
-    setShowMortgageCalculator(true);
-  
-  };
-
+  if (isMobile) {
+    return <div className="Home">
+      <img src={logo} className="App-logo" alt="logo" />
+      <div className="mobilePrompt">Sorry, this website is only available on desktop devices.</div>
+      <div className="mobile">
+        <img src={house} alt="house" />
+      </div>
+    </div>
+  }
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,21 +33,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<HouseSearchResult />} />
-          <Route
-          path="/house-details/:zpid"
-          element={<HouseDetails />}
-        />
-          <Route path="/about" element={<About  />} />
-          <Route
-          path="/contact"
-          element={
-            <Contact
-              onContactSubmit={handleContactSubmit}
-              
-            />
-          }
-        />
+          <Route path="/house-details/:zpid" element={<HouseDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/mortgage" element={<Mortgage />} />
+          <Route path='/sold' element={<Sold />} />
         </Routes>
         <Footer />
       </BrowserRouter>

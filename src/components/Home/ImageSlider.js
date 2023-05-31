@@ -1,8 +1,8 @@
 import React from "react";
 import house from "../../assets/House1.jpg";
-import house1 from "../../assets/streetimg.jpg";
-import house2 from "../../assets/streetimg2.jpg";
-import house3 from "../../assets/streetimg3.jpg";
+import house1 from "../../assets/Apa1.jpg";
+import house2 from "../../assets/streetimg.jpg";
+import house3 from "../../assets/streetimg2.jpg";
 
 function ImageSlider() {
   return (

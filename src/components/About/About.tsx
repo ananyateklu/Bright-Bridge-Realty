@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import ted from '../../assets/Ted.png';
 
 const About: React.FC = () => {
   return (
@@ -16,20 +17,39 @@ const About: React.FC = () => {
       <div className="agent-roster">
         <h2>Our Agents</h2>
         <div className="agents">
-          {Array.from({ length: 3 }, (_, i) => i + 1).map((_, index) => (
-            <div className="agent" key={index}>
+            <div className="agent">
               <div className="agent-image">
-                {/* Replace with actual agent image */}
+                <img src={ted} alt="Agent" />
+              </div>
+              <div className="agent-info">
+                <h3>Tedla Belayneh</h3>
+                <p>Role: Real Estate Agent</p>
+                <p>Email: ted@brightbridgerealty.com</p>
+                <p>Phone: +1 (612) 999-0660</p>
+              </div>
+            </div>
+            <div className="agent">
+              <div className="agent-image">
                 <img src="https://via.placeholder.com/150" alt="Agent" />
               </div>
               <div className="agent-info">
-                <h3>Agent {index + 1}</h3>
+                <h3>Daniel Lema</h3>
                 <p>Role: Real Estate Agent</p>
-                <p>Email: agent{index + 1}@brightbridgerealty.com</p>
-                <p>Phone: +123 456 78{index + 1}0</p>
+                <p>Email: daniel@brightbridgerealty.com</p>
+                <p>Phone: +123 456 780</p>
               </div>
             </div>
-          ))}
+            <div className="agent">
+              <div className="agent-image">
+                <img src="https://via.placeholder.com/150" alt="Agent" />
+              </div>
+              <div className="agent-info">
+                <h3>Mahilet Sayed</h3>
+                <p>Role: Real Estate Agent</p>
+                <p>Email: mahilet@brightbridgerealty.com</p>
+                <p>Phone: +123 456 780</p>
+              </div>
+            </div>
         </div>
       </div>
     </div>
