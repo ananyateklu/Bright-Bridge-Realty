@@ -169,6 +169,9 @@
 
 .next-arrow {
   right: 10px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 7px;
 }
 
 .next-arrow img{
@@ -181,6 +184,9 @@
 
 .prev-arrow {
   left: 10px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 7px;
 }
 
 .prev-arrow img{
