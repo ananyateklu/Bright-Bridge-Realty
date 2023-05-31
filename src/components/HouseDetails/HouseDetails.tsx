@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import Mortgage from '../Mortgage/Mortgage';
-import Contact from '../Contact/Contact';
+import Contact from '../Contact/ContactForm';
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -36,6 +36,13 @@ const HouseDetails: React.FC = () => {
   const [displayedImage, setDisplayedImage] = useState<string>('');
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
+
+  const handleContactSubmit = () => {
+    setShowContactForm(false);
+    setShowMortgageCalculator(true);
+  };
 
   useEffect(() => {
 
@@ -306,9 +313,20 @@ const HouseDetails: React.FC = () => {
             <div className="interior-desc"> {houseData.resoFacts.gas ? houseData.resoFacts.gas + ", " : 'No data found'} </div>
           </div>
         </div>
-        <div>
-          <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
-        </div>
+       <div>
+      <button
+          className="view-more-listing-button" style={{ textDecoration: "none" }}
+          onClick={() => {
+            setShowContactForm(true);
+            setShowMortgageCalculator(false);
+          }}
+        >
+          Mortgage Calculator
+        </button>
+          
+       </div>
+       {showContactForm && <Contact onContactSubmit={handleContactSubmit}  />}
+    {showMortgageCalculator && <Mortgage />}
       </div>
 
 
