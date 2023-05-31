@@ -17,6 +17,11 @@ const Contact: React.FC = () => {
         setRecaptchaValue(token);
     };
 
+    const reCaptchaKey = process.env.REACT_APP_RECAPTCHA_KEY;
+    if (!reCaptchaKey) {
+        throw new Error("REACT_APP_RECAPTCHA_KEY environment variable not set");
+    }
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -62,7 +67,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <GoogleReCaptchaProvider reCaptchaKey="your-recaptcha-site-key">
+        <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
             <div className="Contact">
                 <div className="contact-header">
                     <h1>
@@ -75,16 +80,21 @@ const Contact: React.FC = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="name-inputs">
                                 <input
+                                    className='first-name-input'
                                     type="text"
                                     placeholder="First Name"
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
+                                    required
+
                                 />
                                 <input
+                                    className='last-name-input'
                                     type="text"
                                     placeholder="Last Name"
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
+                                    required
                                 />
                             </div>
                             <input
@@ -92,17 +102,20 @@ const Contact: React.FC = () => {
                                 placeholder="Email Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
                             <input
                                 type="tel"
                                 placeholder="Phone"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
+                                required
                             />
                             <textarea
                                 placeholder="Message"
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
+                                required
                             ></textarea>
                             <GoogleReCaptcha onVerify={handleRecaptcha} />
                             <button type="submit">Send</button>

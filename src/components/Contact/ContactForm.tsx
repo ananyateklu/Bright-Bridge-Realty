@@ -64,51 +64,49 @@ const ContactForm: React.FC<{ onContactSubmit: () => void }> = ({ onContactSubmi
 
 
     return (
-        
-                <div className="contact-form">
-                    <div className="contact-header" >
-                <h1>
-                    CONTACT <span>US</span>
-                </h1>
-                <p>We would love to hear from you! Send us a message.</p>
-            </div>
-                    <form onSubmit={handleSubmit}>
-                        <div className="name-inputs">
-                            <input
-                                type="text"
-                                placeholder="First Name"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Last Name"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
-                            />
-                        </div>
-                        <input
-                            type="email"
-                            placeholder="Email Address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                        />
-                        <textarea
-                            placeholder="Message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                        ></textarea>
-                        <button type="submit">Send</button>
-                    </form>
+
+        <div className="contact-form-details">
+            <form onSubmit={handleSubmit}>
+                <div className="contact-header-form" >
+                    <p>Add your contact information to access our Mortgage Calculator</p>
                 </div>
-               
-           
+                <div className="name-inputs">
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className='email-phone-inputs'>
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <input
+                    type="tel"
+                    placeholder="Phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
     );
 };
 

@@ -262,7 +262,7 @@ const Mortgage = ({ housePrice }) => {
               <p id="ct" style={{ color: '#130F31', fontSize: '17px' }}></p>
             </div>
           </div>
-          <canvas id="lineChart" height="200px" width="200px"></canvas>
+          <canvas id="lineChart" style={{width: "300px"}}></canvas>
         </div>
       </div>
     </div>
