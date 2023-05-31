@@ -11,8 +11,6 @@ import down from "../../assets/Down.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
 interface RouteParams extends Record<string, string | undefined> {
   zpid: string;
 }
@@ -34,20 +32,14 @@ const HouseDetails: React.FC = () => {
   const [houseData, setHouseData] = useState<any>(null);
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
   const [displayedImage, setDisplayedImage] = useState<string>('');
-
   const [similarHouse, setSimilarHouse] = useState<any[]>([]);
   const [loading, setLoading] = useState(true); // Initialize loading state
 
- 
-  
-
-  
-  
   useEffect(() => {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    
+
+
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -83,11 +75,9 @@ const HouseDetails: React.FC = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
             resolve();
-          }, 1000); // 3 seconds in milliseconds
+          }, 1000); // 1 seconds in milliseconds
         });
       }
-
-
 
       try {
         setLoading(true);
@@ -182,11 +172,8 @@ const HouseDetails: React.FC = () => {
     </div>
   );
 
-
-
-
   return (
-    
+
     <div className="House-details">
       <div className="side-bar">
         <div className="side-slider">
@@ -202,7 +189,6 @@ const HouseDetails: React.FC = () => {
             ))}
           </Slider>
         </div>
-
         <div className="side-details">
           <a href="/search?city=Minneapolis, MN" className="view-more-listing-button" style={{ textDecoration: "none" }}>
             VIEW MORE LISTINGS
@@ -246,21 +232,20 @@ const HouseDetails: React.FC = () => {
         </div>
         <div className="listing-detail">
           <div className="listing-lists>">
-
-            <div>Status: </div>
-            <div>Bedrooms: {houseData.bedrooms}</div>
-            <div>Bathrooms:{houseData.bathrooms}</div>
-            <div>Lot Size: {houseData.bathrooms}</div>
-            <div>Square Feet: {houseData.livingAreaValue} sqft</div>
-            <div>Year Built: {houseData.yearBuilt}</div>
-            <div>Foundation: {houseData.homeType}</div>
-            <div>Garage:{houseData.hasGarage}</div>
-            <div>Stories:</div>
-            <div>Property Attached:</div>
-            <div>Subdivision:</div>
-            <div>County:</div>
-            <div>Construction Status:</div>
-
+            <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No data found'}</div>
+            <div>Status: {houseData.homeStatus ? houseData.homeStatus : 'No data found'} </div>
+            <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No data found'}</div>
+            <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
+            <div>Lot Size: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
+            <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No data found'}</div>
+            <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No data found'}</div>
+            <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No data found'}</div>
+            <div>Home Type: {houseData.homeType ? houseData.homeType : 'No data found'}</div>
+            <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No data found'}</div>
+            <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No data found'} </div>
+            <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No data found'}</div>
+            <div>County: {houseData.county ? houseData.county : 'No data found'}</div>
+            <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No data found'}</div>
           </div>
         </div>
         <div className="interior">
@@ -268,57 +253,55 @@ const HouseDetails: React.FC = () => {
         </div>
         <div className="interior-detail">
           <div className="interior-list">
-            <div className="interior-name"> 3/4 Bath</div>
-            <div className="interior-desc"> 1</div>
+            <div className="interior-name">Full Bathrooms</div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsFull ? houseData.resoFacts.bathroomsFull : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Above Grade Finished Area</div>
-            <div className="interior-desc"> 2</div>
+            <div className="interior-name">Half Bathrooms</div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsHalf ? houseData.resoFacts.bathroomsHalf : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Bath Desc </div>
-            <div className="interior-desc"> 3</div>
+            <div className="interior-name">3/4 Bathrooms </div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsThreeQuarter ? houseData.resoFacts.bathroomsThreeQuarter : 'No data found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Below Grade Finished Area</div>
-            <div className="interior-desc"> 4</div>
+            <div className="interior-desc"> {houseData.resoFacts.belowGradeFinishedArea ? houseData.resoFacts.belowGradeFinishedArea : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Dining Room Description</div>
-            <div className="interior-desc"> 5</div>
+            <div className="interior-name"> Above Grade Finished Area</div>
+            <div className="interior-desc"> {houseData.resoFacts.aboveGradeFinishedArea ? houseData.resoFacts.aboveGradeFinishedArea : 'No data found'} </div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Fireplace Features</div>
             <div className="interior-desc"> 6</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Fireplace Y/N</div>
-            <div className="interior-desc"> 7</div>
+            <div className="interior-name"> Accessibility Features</div>
+            <div className="interior-desc"> {houseData.resoFacts.accessibilityFeatures ? houseData.resoFacts.accessibilityFeatures : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Fuel</div>
-            <div className="interior-desc"> 8</div>
+            <div className="interior-name"> Basement Description</div>
+            <div className="interior-desc"> {houseData.resoFacts.basement ? houseData.resoFacts.basement : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Full Baths</div>
-            <div className="interior-desc"> 9</div>
+            <div className="interior-name"> Cooling</div>
+            <div className="interior-desc"> {houseData.resoFacts.cooling ? houseData.resoFacts.cooling : 'No data found'}</div>
           </div>
           <div className="interior-list">
-            <div className="interior-name"> Garage Square Feet</div>
-            <div className="interior-desc"> 10</div>
+            <div className="interior-name"> Electric</div>
+            <div className="interior-desc"> {houseData.resoFacts.electric ? houseData.resoFacts.electric + ", " : 'No data found'} </div>
           </div>
-
-
+          <div className="interior-list">
+            <div className="interior-name"> Gas</div>
+            <div className="interior-desc"> {houseData.resoFacts.gas ? houseData.resoFacts.gas + ", " : 'No data found'} </div>
+          </div>
         </div>
-       <div>
-       <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
-          
-       </div>
+        <div>
+          <Link to={`/mortgage?price=${houseData.price}`} className="view-more-listing-button" style={{ textDecoration: "none" }}>Mortgage Calculator</Link>
+        </div>
       </div>
-
-
     </div>
-    
   );
 };
 
