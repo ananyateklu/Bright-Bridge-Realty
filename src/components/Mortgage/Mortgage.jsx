@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+
 import Chart from 'chart.js/auto';
 import './Mortgage.css';
 
@@ -7,9 +7,8 @@ import './Mortgage.css';
 
 
 const Mortgage = ({ housePrice }) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const [price, setPrice] = useState(housePrice);
+ 
+  const price = housePrice;
   const loanAmtInputRef = useRef();
   const intRateSliderRef = useRef();
   const loanPeriodSliderRef = useRef();

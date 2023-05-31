@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           <a href="/search?city=Minneapolis, MN" className="Search-link">
             SEARCH
           </a>
-          <a href='/sold' className='Sold-link'>OURLISTINGS</a>
+          <a href='/sold' className='Sold-link'>OUR LISTINGS</a>
           <a href="/about" className="About-link">
             ABOUT
           </a>
