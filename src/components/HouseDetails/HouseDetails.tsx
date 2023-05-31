@@ -36,7 +36,7 @@ const HouseDetails: React.FC = () => {
   const [loading, setLoading] = useState(true); // Initialize loading state
 
   useEffect(() => {
-
+    //Scroll to top of page
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
 
@@ -112,6 +112,13 @@ const HouseDetails: React.FC = () => {
     setDisplayedImage(image);
   };
 
+  function formatPropertyTypeAndStatus(propertyType: string) {
+    return propertyType
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  }
+
   if (loading) {
     return <div className='LoadDiv'><Loading /></div>;
   }
@@ -160,7 +167,7 @@ const HouseDetails: React.FC = () => {
         <p className="House-item-price">${house.price.toLocaleString()}</p>
         <p className="House-item-city House-item-data">{house.address.city}, {house.address.state}</p>
         <p className="House-item-detail">Type:</p>
-        <p className="House-item-detail House-item-data">{house.homeType}</p>
+        <p className="House-item-detail House-item-data">{formatPropertyTypeAndStatus(house.homeType)}</p>
         <p className="House-item-detail">Size:</p>
         <p className="House-item-detail House-item-data">{house.livingArea} sqft</p>
         <p className="House-item-detail">Rooms:</p>
@@ -211,7 +218,7 @@ const HouseDetails: React.FC = () => {
           </div>
           <div className="property-info-type">
             <span className="label">Home Type</span>
-            <span>{houseData.homeType}</span>
+            <span>{formatPropertyTypeAndStatus(houseData.homeType)}</span>
           </div>
           <div className="property-info-price">
             <span className="label">Price</span>
@@ -233,14 +240,14 @@ const HouseDetails: React.FC = () => {
         <div className="listing-detail">
           <div className="listing-lists>">
             <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No data found'}</div>
-            <div>Status: {houseData.homeStatus ? houseData.homeStatus : 'No data found'} </div>
+            <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No data found'} </div>
             <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No data found'}</div>
             <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
             <div>Lot Size: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
             <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No data found'}</div>
             <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No data found'}</div>
             <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No data found'}</div>
-            <div>Home Type: {houseData.homeType ? houseData.homeType : 'No data found'}</div>
+            <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No data found'}</div>
             <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No data found'}</div>
             <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No data found'} </div>
             <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No data found'}</div>

@@ -53,6 +53,8 @@ const HouseSearchResult: React.FC = () => {
 
 
     useEffect(() => {
+        //Scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         if (city) {
 
             fetchData(city, minPrice, maxPrice, bedsMin, bedsMax, bathsMin, bathsMax, home_type, currentPage);
