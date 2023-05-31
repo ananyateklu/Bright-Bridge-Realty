@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Contact.css';
 import Gmaps from '../../assets/Gmaps.png';
+import { GoogleReCaptchaProvider, GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const Contact: React.FC = () => {
     const [firstName, setFirstName] = useState('');
@@ -9,6 +10,12 @@ const Contact: React.FC = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
+    const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+
+
+    const handleRecaptcha = (token: string) => {
+        setRecaptchaValue(token);
+    };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -22,14 +29,7 @@ const Contact: React.FC = () => {
         setEmail('');
         setPhone('');
         setMessage('');
-
-
-        // Clear the input fields after sending the email
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
+        setRecaptchaValue(null);
     };
 
     const sendEmail = async () => {
@@ -42,6 +42,7 @@ const Contact: React.FC = () => {
                 'from_name': `${firstName} ${lastName}`,
                 'phoneNumber': phone,
                 'message': message,
+                'recaptcha_token': recaptchaValue, // include the token in your request
             },
         };
 
@@ -60,79 +61,81 @@ const Contact: React.FC = () => {
         }
     };
 
-
     return (
-        <div className="Contact">
-            <div className="contact-header">
-                <h1>
-                    CONTACT <span>US</span>
-                </h1>
-                <p>We would love to hear from you! Send us a message.</p>
-            </div>
-            <div className="contact-container">
-                <div className="contact-form">
-                    <form onSubmit={handleSubmit}>
-                        <div className="name-inputs">
+        <GoogleReCaptchaProvider reCaptchaKey="your-recaptcha-site-key">
+            <div className="Contact">
+                <div className="contact-header">
+                    <h1>
+                        CONTACT <span>US</span>
+                    </h1>
+                    <p>We would love to hear from you! Send us a message.</p>
+                </div>
+                <div className="contact-container">
+                    <div className="contact-form">
+                        <form onSubmit={handleSubmit}>
+                            <div className="name-inputs">
+                                <input
+                                    type="text"
+                                    placeholder="First Name"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Last Name"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                />
+                            </div>
                             <input
-                                type="text"
-                                placeholder="First Name"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
+                                type="email"
+                                placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                             <input
-                                type="text"
-                                placeholder="Last Name"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
+                                type="tel"
+                                placeholder="Phone"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                             />
+                            <textarea
+                                placeholder="Message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            ></textarea>
+                            <GoogleReCaptcha onVerify={handleRecaptcha} />
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                    <div className="contact-info">
+                        <h2>BRIGHTBRIDGE REALTY</h2>
+                        <div className="info-item">
+                            <i className="fas fa-envelope"></i>
+                            <span>brightbridgeone@gmail.com</span>
                         </div>
-                        <input
-                            type="email"
-                            placeholder="Email Address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                        />
-                        <textarea
-                            placeholder="Message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                        ></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-                <div className="contact-info">
-                    <h2>BRIGHTBRIDGE REALTY</h2>
-                    <div className="info-item">
-                        <i className="fas fa-envelope"></i>
-                        <span>brightbridgeone@gmail.com</span>
-                    </div>
-                    <div className="info-item">
-                        <i className="fas fa-phone"></i>
-                        <span>+1 (612) 999-0660</span>
-                    </div>
-                    <div className="info-item">
-                        <i className="fas fa-map-marker-alt"></i>
-                        <span>7900 International Drive Suite 300
-                            Bloomington, MN 55425</span>
-                    </div>
-                    <div className="map-container">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.google.com/maps/place/7900+International+Dr,+Bloomington,+MN+55425/@44.8592112,-93.2285661,17z/data=!3m1!4b1!4m6!3m5!1s0x87f62fab792bc727:0xca4ea7fb039453c3!8m2!3d44.8592112!4d-93.2259912!16s%2Fg%2F11s9jz2456"
-                        >
-                            <img src={Gmaps} alt="map" />
-                        </a>
+                        <div className="info-item">
+                            <i className="fas fa-phone"></i>
+                            <span>+1 (612) 999-0660</span>
+                        </div>
+                        <div className="info-item">
+                            <i className="fas fa-map-marker-alt"></i>
+                            <span>7900 International Drive Suite 300
+                                Bloomington, MN 55425</span>
+                        </div>
+                        <div className="map-container">
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.google.com/maps/place/7900+International+Dr,+Bloomington,+MN+55425/@44.8592112,-93.2285661,17z/data=!3m1!4b1!4m6!3m5!1s0x87f62fab792bc727:0xca4ea7fb039453c3!8m2!3d44.8592112!4d-93.2259912!16s%2Fg%2F11s9jz2456"
+                            >
+                                <img src={Gmaps} alt="map" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </GoogleReCaptchaProvider>
     );
 };
 
