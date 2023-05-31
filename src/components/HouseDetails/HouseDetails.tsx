@@ -38,6 +38,8 @@ const HouseDetails: React.FC = () => {
   const [loading, setLoading] = useState(true); // Initialize loading state
   const [showContactForm, setShowContactForm] = useState(false);
   const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
+  const [showMortgageButton, setShowMortgageButton] = useState(true);
+  const [housePrice, setHousePrice] = useState<number>(0);
 
   const handleContactSubmit = () => {
     setShowContactForm(false);
@@ -92,6 +94,7 @@ const HouseDetails: React.FC = () => {
         setLoading(true);
         const response = await axios.request(options);
         setHouseData(response.data);
+        setHousePrice(response.data.price);
         await wait();
         const additionalImagesResponse = await axios.request(additionalImagesOptions);
         setAdditionalImages(additionalImagesResponse.data.images);
@@ -314,19 +317,20 @@ const HouseDetails: React.FC = () => {
           </div>
         </div>
        <div>
-      <button
+      { showMortgageButton && <button
           className="view-more-listing-button" style={{ textDecoration: "none" }}
           onClick={() => {
             setShowContactForm(true);
             setShowMortgageCalculator(false);
+            setShowMortgageButton(false);
           }}
         >
-          Mortgage Calculator
-        </button>
+          Calculate Mortgage
+        </button>}
           
        </div>
        {showContactForm && <Contact onContactSubmit={handleContactSubmit}  />}
-    {showMortgageCalculator && <Mortgage />}
+    {showMortgageCalculator && <Mortgage housePrice={housePrice}  />}
       </div>
 
 
