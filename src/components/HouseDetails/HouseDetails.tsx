@@ -298,7 +298,7 @@ const HouseDetails: React.FC = () => {
           </div>
           <div className="interior-list">
             <div className="interior-name"> Fireplace Features</div>
-            <div className="interior-desc"> 6</div>
+            <div className="interior-desc"> {houseData.resoFacts.fireplaceFeatures ? houseData.resoFacts.fireplaceFeatures + ", " : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Accessibility Features</div>
