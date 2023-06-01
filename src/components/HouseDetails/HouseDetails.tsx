@@ -29,7 +29,7 @@ interface House {
 
 
 const HouseDetails: React.FC = () => {
-  
+
   const { zpid } = useParams<RouteParams>();
   const [houseData, setHouseData] = useState<any>(null);
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
@@ -49,8 +49,8 @@ const HouseDetails: React.FC = () => {
   useEffect(() => {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    
+
+
     const fetchHouseDetails = async () => {
       const options = {
         method: 'GET',
@@ -130,6 +130,11 @@ const HouseDetails: React.FC = () => {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(' ');
   }
+
+  function formatPrice(price: number) {
+    return new Intl.NumberFormat('en-US').format(price);
+  }
+
 
   if (loading) {
     return <div className='LoadDiv'><Loading /></div>;
@@ -234,7 +239,7 @@ const HouseDetails: React.FC = () => {
           </div>
           <div className="property-info-price">
             <span className="label">Price</span>
-            <span>${houseData.price}</span>
+            <span>${formatPrice(houseData.price)}</span>
           </div>
         </div>
         <div className="property-header">
@@ -251,20 +256,20 @@ const HouseDetails: React.FC = () => {
         </div>
         <div className="listing-detail">
           <div className="listing-lists>">
-            <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No data found'}</div>
-            <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No data found'} </div>
-            <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No data found'}</div>
-            <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
-            <div>Lot Size: {houseData.bathrooms ? houseData.bathrooms : 'No data found'}</div>
-            <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No data found'}</div>
-            <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No data found'}</div>
-            <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No data found'}</div>
-            <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No data found'}</div>
-            <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No data found'}</div>
-            <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No data found'} </div>
-            <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No data found'}</div>
-            <div>County: {houseData.county ? houseData.county : 'No data found'}</div>
-            <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No data found'}</div>
+            <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No Data Found'}</div>
+            <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
+            <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
+            <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
+            <div>Lot Size: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
+            <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
+            <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
+            <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>
+            <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No Data Found'}</div>
+            <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No Data Found'}</div>
+            <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No Data Found'} </div>
+            <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No Data Found'}</div>
+            <div>County: {houseData.county ? houseData.county : 'No Data Found'}</div>
+            <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No Data Found'}</div>
           </div>
         </div>
         <div className="interior">
@@ -273,23 +278,23 @@ const HouseDetails: React.FC = () => {
         <div className="interior-detail">
           <div className="interior-list">
             <div className="interior-name">Full Bathrooms</div>
-            <div className="interior-desc"> {houseData.resoFacts.bathroomsFull ? houseData.resoFacts.bathroomsFull : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsFull ? houseData.resoFacts.bathroomsFull : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name">Half Bathrooms</div>
-            <div className="interior-desc"> {houseData.resoFacts.bathroomsHalf ? houseData.resoFacts.bathroomsHalf : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsHalf ? houseData.resoFacts.bathroomsHalf : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name">3/4 Bathrooms </div>
-            <div className="interior-desc"> {houseData.resoFacts.bathroomsThreeQuarter ? houseData.resoFacts.bathroomsThreeQuarter : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.bathroomsThreeQuarter ? houseData.resoFacts.bathroomsThreeQuarter : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Below Grade Finished Area</div>
-            <div className="interior-desc"> {houseData.resoFacts.belowGradeFinishedArea ? houseData.resoFacts.belowGradeFinishedArea : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.belowGradeFinishedArea ? houseData.resoFacts.belowGradeFinishedArea : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Above Grade Finished Area</div>
-            <div className="interior-desc"> {houseData.resoFacts.aboveGradeFinishedArea ? houseData.resoFacts.aboveGradeFinishedArea : 'No data found'} </div>
+            <div className="interior-desc"> {houseData.resoFacts.aboveGradeFinishedArea ? houseData.resoFacts.aboveGradeFinishedArea : 'No Data Found'} </div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Fireplace Features</div>
@@ -297,40 +302,40 @@ const HouseDetails: React.FC = () => {
           </div>
           <div className="interior-list">
             <div className="interior-name"> Accessibility Features</div>
-            <div className="interior-desc"> {houseData.resoFacts.accessibilityFeatures ? houseData.resoFacts.accessibilityFeatures : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.accessibilityFeatures ? houseData.resoFacts.accessibilityFeatures : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Basement Description</div>
-            <div className="interior-desc"> {houseData.resoFacts.basement ? houseData.resoFacts.basement : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.basement ? houseData.resoFacts.basement : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Cooling</div>
-            <div className="interior-desc"> {houseData.resoFacts.cooling ? houseData.resoFacts.cooling : 'No data found'}</div>
+            <div className="interior-desc"> {houseData.resoFacts.cooling ? houseData.resoFacts.cooling : 'No Data Found'}</div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Electric</div>
-            <div className="interior-desc"> {houseData.resoFacts.electric ? houseData.resoFacts.electric + ", " : 'No data found'} </div>
+            <div className="interior-desc"> {houseData.resoFacts.electric ? houseData.resoFacts.electric + ", " : 'No Data Found'} </div>
           </div>
           <div className="interior-list">
             <div className="interior-name"> Gas</div>
-            <div className="interior-desc"> {houseData.resoFacts.gas ? houseData.resoFacts.gas + ", " : 'No data found'} </div>
+            <div className="interior-desc"> {houseData.resoFacts.gas ? houseData.resoFacts.gas + ", " : 'No Data Found'} </div>
           </div>
         </div>
-       <div>
-      { showMortgageButton && <button
-          className="view-more-listing-button" style={{ textDecoration: "none" }}
-          onClick={() => {
-            setShowContactForm(true);
-            setShowMortgageCalculator(false);
-            setShowMortgageButton(false);
-          }}
-        >
-          Calculate Mortgage
-        </button>}
-          
-       </div>
-       {showContactForm && <Contact onContactSubmit={handleContactSubmit}  />}
-    {showMortgageCalculator && <Mortgage housePrice={housePrice}  />}
+        <div>
+          {showMortgageButton && <button
+            className="view-more-listing-button" style={{ textDecoration: "none" }}
+            onClick={() => {
+              setShowContactForm(true);
+              setShowMortgageCalculator(false);
+              setShowMortgageButton(false);
+            }}
+          >
+            Calculate Mortgage
+          </button>}
+
+        </div>
+        {showContactForm && <Contact onContactSubmit={handleContactSubmit} />}
+        {showMortgageCalculator && <Mortgage housePrice={housePrice} />}
       </div>
 
 
