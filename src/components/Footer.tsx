@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './../assets/FooterLogo.png'
 import facebookLogo from './../assets/Facebook-logo.png'; 
+import equal from './../assets/Equal.png';
+import mls from './../assets/MLS.png';
 
 
 const Footer: React.FC = () => {
@@ -49,6 +51,8 @@ const Footer: React.FC = () => {
             responsible for any errors, omissions, or inaccuracies in the data
             displayed.
           </p>
+          <img src={equal} style={{width: "50px", marginTop: "10px"}} alt="Equal Housing Opportunity" />
+          <img src={mls} style={{width: "150px", marginTop: "10px"}} alt="MLS" />
         </div>
       </div>
       <p className="footer-copyright">

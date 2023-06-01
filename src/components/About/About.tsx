@@ -11,7 +11,7 @@ const About: React.FC = () => {
         </h1>
         <p>
           BRIGHTBRIDGE REALTY is a professional real estate brokerage serving
-          buyers and sellers of luxury property in Minnesota.
+          buyers and sellers of property in Minnesota.
         </p>
       </div>
       <div className="agent-roster">
