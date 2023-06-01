@@ -24,7 +24,7 @@ const Sold: React.FC = () => {
         <div className="Sold">
             <div className="sold-header">
                 <h1>
-                 <span>SOLD LISTINGS</span>
+                    <span>SOLD LISTINGS</span>
                 </h1>
                 <div className="House-list-sold">
                     <div className="House-item-sold" >
@@ -40,8 +40,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                6274342
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House2} alt="House" className="House-item-image-sold" />
@@ -56,8 +61,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {5} Beds + {4} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                6261414
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House3} alt="House" className="House-item-image-sold" />
@@ -72,8 +82,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {5} Beds + {4} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                6173141
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House4} alt="House" className="House-item-image-sold" />
@@ -88,8 +103,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                6188214
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House5} alt="House" className="House-item-image-sold" />
@@ -102,10 +122,15 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">6360 sqft</p>
                             <p className="House-item-detail-sold">Rooms:</p>
                             <p className="House-item-detail-sold House-item-data-sold">
-                                1BR Units (10) + 2BR Units (2) 
+                                1BR Units (10) + 2BR Units (2)
+                            </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                5719732
                             </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House6} alt="House" className="House-item-image-sold" />
@@ -120,8 +145,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {3} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                5715049
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House7} alt="House" className="House-item-image-sold" />
@@ -134,10 +164,15 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">2236 sqft</p>
                             <p className="House-item-detail-sold">Rooms:</p>
                             <p className="House-item-detail-sold House-item-data-sold">
-                            2BR Units (1) + 3BR Units (1) 
+                                2BR Units (1) + 3BR Units (1)
+                            </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                5646168
                             </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House8} alt="House" className="House-item-image-sold" />
@@ -152,8 +187,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {3} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                5668791
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House9} alt="House" className="House-item-image-sold" />
@@ -168,8 +208,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {2} Beds + {3} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                5282087
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House10} alt="House" className="House-item-image-sold" />
@@ -184,8 +229,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4816796
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House11} alt="House" className="House-item-image-sold" />
@@ -199,6 +249,10 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold">Rooms:</p>
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {4} Baths
+                            </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4757899
                             </p>
                         </div>
                         <hr className="House-item-divider-sold" />
@@ -216,8 +270,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {3} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4782464
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House13} alt="House" className="House-item-image-sold" />
@@ -232,8 +291,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4707031
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House14} alt="House" className="House-item-image-sold" />
@@ -248,8 +312,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {3} Beds + {1} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4692989
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House15} alt="House" className="House-item-image-sold" />
@@ -264,8 +333,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {3} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4577351
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House16} alt="House" className="House-item-image-sold" />
@@ -280,8 +354,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {3} Beds + {1} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4416832
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House17} alt="House" className="House-item-image-sold" />
@@ -296,8 +375,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {4} Beds + {4} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                4354764
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                     <div className="House-item-sold" >
                         <img src={House18} alt="House" className="House-item-image-sold" />
@@ -312,8 +396,13 @@ const Sold: React.FC = () => {
                             <p className="House-item-detail-sold House-item-data-sold">
                                 {3} Beds + {2} Baths
                             </p>
+                            <p className='House-item-detail-sold'>MLS ID:</p>
+                            <p className="House-item-detail-sold House-item-data-sold">
+                                3126850
+                            </p>
                         </div>
                         <hr className="House-item-divider-sold" />
+
                     </div>
                 </div>
             </div>
