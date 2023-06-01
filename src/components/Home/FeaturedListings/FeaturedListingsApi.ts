@@ -34,7 +34,6 @@ const fetchFeaturedListings = async (): Promise<[any[]]> => {
     await wait();
     const isOpenHousesOnly = data.slice(1, 15);
     const imageUrLsPlusDetails: [any[]] = [isOpenHousesOnly]; // Specify the type explicitly
-    console.log(imageUrLsPlusDetails);
     return imageUrLsPlusDetails; // Return the imageUrLsPlusDetails array
   } catch (error) {
     console.error(error);

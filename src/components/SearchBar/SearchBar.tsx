@@ -64,7 +64,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       }, [city, API_KEY]);      
 
     const handleSearch = () => {
-        console.log('City:', city);
         onSearch(city);
     };
 
