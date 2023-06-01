@@ -14,7 +14,6 @@ This is a React application created for Bright Bridge Realty. It uses the Zillow
 
 - Search for real estate listings by city
 - View property details such as address, price, bedrooms, bathrooms, and living area
-- Responsive design that works on both desktop and mobile devices
 
 ## Installation
 
