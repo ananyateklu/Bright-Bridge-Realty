@@ -9,8 +9,11 @@ const Footer: React.FC = () => {
       <div className="footer-left">
         <img src={logo} alt="Logo" className="footer-logo" />
         <p>brightbridgeone@gmail.com</p>
-        <p>7900 International Drive Suite 300 Bloomington, MN 55425</p>
-        <p>Contact our office at +1 (612) 999-0660</p>
+        <p>7900 International Drive</p>
+        <p>Suite 300</p>
+        <p>Bloomington, MN 55425</p>
+        <p>Contact our office at</p>
+        <p>+1 (612) 999-0660</p>
         <img src={facebookLogo} alt="Facebook" className="footer-facebook" />
       </div>
       <div className="footer-right">

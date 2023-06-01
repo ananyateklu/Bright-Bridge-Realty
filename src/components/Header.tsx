@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         setBurgerMenuOpen(false);
       }
     };
-    
+
 
     window.addEventListener("click", handleClickOutside);
 
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           <a href="/search?city=Minneapolis, MN" className="Search-link">
             SEARCH
           </a>
-          <a href='/sold' className='Sold-link'>OUR LISTINGS</a>
+          <a href='/sold' className='Sold-link'>SOLD LISTINGS</a>
           <a href="/about" className="About-link">
             ABOUT
           </a>
@@ -89,11 +89,11 @@ const Header: React.FC = () => {
         <a href="/search?city=Minneapolis, MN" className="Search-link-burger" onClick={toggleBurgerMenu}>
           SEARCH
         </a>
-        <a href='/sold' className='Sold-link-burger'>OURLISTINGS</a>
+        <a href='/sold' className='Sold-link-burger'>SOLD LISTINGS</a>
         <a href="/about" className="About-link-burger" onClick={toggleBurgerMenu}>
           ABOUT
         </a>
-        
+
         <a href="/contact" className="Contact-link-burger" onClick={toggleBurgerMenu}>
           CONTACT
         </a>

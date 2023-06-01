@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
             <div className="Contact">
                 <div className="contact-header">
                     <h1>
-                        CONTACT <span>US</span>
+                        <span>CONTACT US</span>
                     </h1>
                     <p>We would love to hear from you! Send us a message.</p>
                 </div>

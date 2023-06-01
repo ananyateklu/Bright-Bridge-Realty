@@ -181,7 +181,7 @@ const FeaturedListings: React.FC = () => {
             <span className="FeaturedListings-title-featured">FEATURED </span>{" "}
             <span className="FeaturedListings-title-listings"> CITIES</span>
           </h1>
-          <HouseAllDetailsButton>VIEW MORE CITIES</HouseAllDetailsButton>
+          <HouseAllDetailsButton>SEARCH OTHER CITIES</HouseAllDetailsButton>
         </div>
       </div>
       <div className="House-slider-title">Open</div>

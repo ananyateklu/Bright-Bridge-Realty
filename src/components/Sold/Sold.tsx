@@ -24,7 +24,7 @@ const Sold: React.FC = () => {
         <div className="Sold">
             <div className="sold-header">
                 <h1>
-                    OUR SOLD <span>LISTINGS</span>
+                 <span>SOLD LISTINGS</span>
                 </h1>
                 <div className="House-list-sold">
                     <div className="House-item-sold" >
