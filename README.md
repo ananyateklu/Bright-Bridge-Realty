@@ -12,8 +12,11 @@ This is a React application created for Bright Bridge Realty. It uses the Zillow
 
 ## Features
 
-- Search for real estate listings by city
-- View property details such as address, price, bedrooms, bathrooms, and living area
+- City-Based Real Estate Search: Allows users to conduct tailored searches for real estate listings based on specific cities.
+- Property Details Access: Provides comprehensive property information, including address, pricing, number of bedrooms and bathrooms, and total living area.
+- Extensive Property Details: Offers a detailed view of each property, supplemented with interior photographs and other relevant property specifics.
+- Mortgage Calculator: Incorporates a user-friendly calculator tool for estimating mortgage payments, taking into account principal, interest, and other related factors.
+- Client Feedback Mechanism: Features a contact form for clients to submit feedback or inquiries. Messages are directly routed to your preferred email, facilitating prompt and efficient communication.
 
 ## Installation
 
