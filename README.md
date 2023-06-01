@@ -62,7 +62,7 @@ To keep your API key and other sensitive information secure, create a \`.env\` f
 REACT_APP_RAPIDAPI_KEY="your_api_key"
 REACT_APP_RAPIDAPI_HOST="your_api_host"
 REACT_APP_OPENCAGE_KEY="your_api_key"
-REACT_APP_RECAPTCHA_KEY="your_recaptcha_key"
+REACT_APP_RECAPTCHA_KEY="your_api_key"
 ```
 
 Replace \`your_api_key\` and \`your_api_host\` with your actual values.
