@@ -239,7 +239,7 @@ const Mortgage = ({ housePrice }) => {
             </div>
             <div className="mortgage-footer">
               <p id="price-container">
-                <span id="price">0</span>/mo
+                <span id="price">0</span> Per Month
               </p>
             </div>
           </div>
