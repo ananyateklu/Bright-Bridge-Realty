@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import { useNavigate } from 'react-router-dom';
 import FeaturedListings from "./FeaturedListings/FeaturedListings";
 import ImageSlider from './ImageSlider';
-
+import Testimonial from "./Testimonial";
 
 
 const Home: React.FC = () => {
@@ -23,6 +23,12 @@ const Home: React.FC = () => {
             <ImageSlider />
             </div>
             <FeaturedListings />
+            <div className="Testimonial-header">
+            <div className="Testimonial-slider-title">WHAT CLIENTS</div>
+            <hr className="Testimonial-slider-hr"></hr>
+            <div className="Testimonial-slider-title2">SAY ABOUT US</div>
+            </div>
+            <Testimonial />
         </div>
     );
 };
