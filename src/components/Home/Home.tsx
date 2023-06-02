@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             </div>
             <FeaturedListings />
             <div className="Testimonial-header">
-            <div className="Testimonial-slider-title">WHAT CLIENT</div>
+            <div className="Testimonial-slider-title">WHAT CLIENTS</div>
             <hr className="Testimonial-slider-hr"></hr>
             <div className="Testimonial-slider-title2">SAY ABOUT US</div>
             </div>
