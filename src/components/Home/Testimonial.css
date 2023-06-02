@@ -1,0 +1,131 @@
+.testimonial-container {
+    margin-top: 80px;
+  
+    justify-content: center;
+    height: 65vh;
+    
+    overflow: hidden;
+  
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper-container {
+    width: 25%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.04);
+    filter: blur(4px);
+  }
+  
+  .swiper-slide-active {
+    filter: blur(0px);
+    background: #fff;
+  }
+  
+  .testimonialBox {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    padding-top: 55px;
+    color:white;
+    box-sizing: border-box;
+    background-color: #726A73;
+    
+  }
+  
+  .testimonialBox .quote {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    opacity: 0.2;
+    width: 50px;
+    height: 50px;
+    color:#c585f3;
+  }
+  
+  .testimonialBox .testimonial-details {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .testimonialBox .testimonial-details .imgBx {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .testimonialBox .testimonial-details .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  .testimonialBox .testimonial-details h3 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #deddde;
+    line-height: 1.1em;
+  }
+  
+  .testimonialBox .testimonial-details h3 span {
+    font-size: 12px;
+  
+    color: #c585f3;
+  }
+  
+  .swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+  }
+
+  .swiper-wrapper{
+    width: 90% !important;
+  }
+
+  .Testimonials {
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 70px;
+    margin-bottom: 50px;
+  }
+  .Testimonials h1 {
+    font-weight: 500;
+  }
+  
+  .test-main{
+    display: grid;
+    grid-template-columns: auto 0.1% auto;
+  }
+
+
+.swiper-pagination{
+    position: static !important;
+}
+
+.Box1{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+}
+
+.Box2{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
