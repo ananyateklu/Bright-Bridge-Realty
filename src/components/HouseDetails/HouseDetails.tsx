@@ -260,7 +260,7 @@ const HouseDetails: React.FC = () => {
             <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
             <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
             <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
-            <div>Lot Size: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
+            <div>Lot Size: {houseData.resoFacts.lotSize ? houseData.resoFacts.lotSize : 'No Data Found'}</div>
             <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
             <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
             <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>

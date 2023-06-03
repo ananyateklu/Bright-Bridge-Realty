@@ -33,7 +33,7 @@ const Testimonial = () => {
             modifier: 2,
             slideShadows: true,
           }}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 8000 }}
           pagination={true}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper"
