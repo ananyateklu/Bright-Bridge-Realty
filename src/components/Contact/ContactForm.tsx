@@ -36,9 +36,9 @@ const ContactForm: React.FC<{ onContactSubmit: () => void }> = ({ onContactSubmi
 
     const sendEmail = async () => {
         const data = {
-            service_id: 'service_241i7lk',
-            template_id: 'template_n44i7rm',
-            user_id: 'maakvZmBQ2cdSzAF7',
+            service_id: process.env.REACT_APP_SERVICE_ID,
+            template_id: process.env.REACT_APP_TEMPLATE_ID_M,
+            user_id: process.env.REACT_APP_USER_ID,
             template_params: {
                 'reply_to': email,
                 'from_name': `${firstName} ${lastName}`,
@@ -53,7 +53,7 @@ const ContactForm: React.FC<{ onContactSubmit: () => void }> = ({ onContactSubmi
             });
 
             if (response.status === 200) {
-                alert('Your mail is sent!');
+                alert('Thanks for your contact. You can use the mortgage calculator now');
             } else {
                 throw new Error('Failed to send email');
             }

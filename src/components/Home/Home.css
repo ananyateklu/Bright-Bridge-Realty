@@ -114,30 +114,30 @@
 
 .Testimonial-slider-title {
   font-family: 'Quicksand', sans-serif;
-  font-size: 45px;
-  font-weight: 500;
-  margin-right: 90px;
- 
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 180px;
   margin-top: 40px;
 }
 
 .Testimonial-slider-title2 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 45px;
+  font-size: 30px;
   font-weight:bolder;
   color: #5d1a91;
   margin-bottom: 1rem;
+  margin-right: 60px;
   
 }
 
 .Testimonial-slider-hr {
-  width: 27%;
-  margin-left:75%;
- 
-  
+  width: 70%;
+  margin-left: 51%;
   border: 1.5px solid #d0b25e;
 }
 
 .Testimonial-header {
   text-align: right;
+  width: 100%;
+  margin-bottom: 50px;
 }

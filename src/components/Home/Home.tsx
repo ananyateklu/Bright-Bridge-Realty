@@ -24,9 +24,9 @@ const Home: React.FC = () => {
             </div>
             <FeaturedListings />
             <div className="Testimonial-header">
-            <div className="Testimonial-slider-title">WHAT CLIENTS</div>
+            <div className="Testimonial-slider-title">OUR CLIENTS ARE IMPORTANT TO US</div>
             <hr className="Testimonial-slider-hr"></hr>
-            <div className="Testimonial-slider-title2">SAY ABOUT US</div>
+            <div className="Testimonial-slider-title2">HERE IS WHAT THEY HAVE TO SAY</div>
             </div>
             <Testimonial />
         </div>
