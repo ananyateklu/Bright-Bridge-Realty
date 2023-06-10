@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './../assets/FooterLogo.png'
-import facebookLogo from './../assets/Facebook-logo.png'; 
 import equal from './../assets/Equal.png';
 import mls from './../assets/MLS.png';
 
@@ -16,7 +15,6 @@ const Footer: React.FC = () => {
         <p>Bloomington, MN 55425</p>
         <p>Contact our office at</p>
         <p>+1 (612) 999-0660</p>
-        <img src={facebookLogo} alt="Facebook" className="footer-facebook" />
       </div>
       <div className="footer-right">
         <div className="footer-links">
