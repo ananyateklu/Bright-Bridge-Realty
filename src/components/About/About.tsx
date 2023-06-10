@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
-import ted from '../../assets/Ted.png';
+import ted from '../../assets/Tedla.jpg';
+import daniel from '../../assets/Daniel.jpg';
 
 const About: React.FC = () => {
   return (
@@ -23,20 +24,20 @@ const About: React.FC = () => {
             </div>
             <div className="agent-info">
               <h3>Tedla Belayneh</h3>
-              <p>Role: Real Estate Agent</p>
+              <p>Role: Broker/Realtor</p>
               <p>Email: ted@brightbridgerealty.com</p>
               <p>Phone: +1 (612) 999-0660</p>
             </div>
           </div>
           <div className="agent">
             <div className="agent-image">
-              <img src="https://via.placeholder.com/150" alt="Agent" />
+              <img src={daniel} alt="Agent" />
             </div>
             <div className="agent-info">
               <h3>Daniel Lema</h3>
-              <p>Role: Real Estate Agent</p>
+              <p>Role: Assistant Manager</p>
               <p>Email: daniel@brightbridgerealty.com</p>
-              <p>Phone: +123 456 780</p>
+              <p>Phone: +1 (612) 807-6545</p>
             </div>
           </div>
           <div className="agent">
@@ -45,9 +46,9 @@ const About: React.FC = () => {
             </div>
             <div className="agent-info">
               <h3>Mahilet Sayed</h3>
-              <p>Role: Real Estate Agent</p>
+              <p>Role: Assistant Manager</p>
               <p>Email: mahilet@brightbridgerealty.com</p>
-              <p>Phone: +123 456 780</p>
+              <p>Phone: +1 (612) 205-7897</p>
             </div>
           </div>
         </div>

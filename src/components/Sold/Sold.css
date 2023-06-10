@@ -5,7 +5,7 @@
   .sold-header {
     padding-top: 130px;
     margin-left: 60px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   
   .sold-header h1 {
@@ -13,6 +13,10 @@
     color: black;
   }
   
+  .sold-details {
+    font-size: 1.2rem;
+  }
+
   .sold-header h1 span {
     color: #5d1a91; /* dark purple color */
   }
@@ -24,7 +28,7 @@
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    padding-top: 130px;
+    padding-top: 100px;
   }
   
   .House-item-sold {

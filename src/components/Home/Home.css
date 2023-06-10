@@ -114,7 +114,7 @@
 
 .Testimonial-slider-title {
   font-family: 'Quicksand', sans-serif;
-  font-size: 45px;
+  font-size: 30px;
   font-weight: 600;
   margin-right: 180px;
   margin-top: 40px;
@@ -122,7 +122,7 @@
 
 .Testimonial-slider-title2 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 45px;
+  font-size: 30px;
   font-weight:bolder;
   color: #5d1a91;
   margin-bottom: 1rem;
@@ -131,8 +131,8 @@
 }
 
 .Testimonial-slider-hr {
-  width: 50%;
-  margin-left: 65%;
+  width: 70%;
+  margin-left: 51%;
   border: 1.5px solid #d0b25e;
 }
 

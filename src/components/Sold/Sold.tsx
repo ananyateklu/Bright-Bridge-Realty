@@ -26,6 +26,7 @@ const Sold: React.FC = () => {
                 <h1>
                     <span>SOLD LISTINGS</span>
                 </h1>
+                <p className='sold-details'>Here are the properties our firm has successfully facilitated in selling.</p>
                 <div className="House-list-sold">
                     <div className="House-item-sold" >
                         <img src={House1} alt="House" className="House-item-image-sold" />

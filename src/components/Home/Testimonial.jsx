@@ -1,25 +1,20 @@
-
-import React from 'react';
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import './Testimonial.css';
+import "./Testimonial.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import quote from "../../assets/quote.png";
-import user1 from "../../assets/user1.jpg";
+import rowo from "../../assets/ROWO.png";
+import fwda from "../../assets/FWDA.png";
+import dyl from "../../assets/DYL.png";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 const Testimonial = () => {
-   
-
-    return (
-
-
-
-<div>
-
+  return (
+    <div>
       <div className="testimonial-container">
         <Swiper
           effect={"coverflow"}
@@ -40,169 +35,185 @@ const Testimonial = () => {
           loop={true}
         >
           <SwiperSlide>
-          <div className="test-main">
-            <div className="testimonialBox Box1">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+            <div className="test-main">
+              <div className="testimonialBox Box1">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Our agent was Tedla, he was very knowledgeable of the
+                    current market trends. He was very helpful and
+                    straightforward with us on the sale of our home in which he
+                    didn't make a dime and help us purchase a beautiful home. He
+                    is a professional in every aspect of the real estate
+                    business. He would respond quickly if we sent him a text
+                    message or called him. Top notch customer service! Would
+                    definitely use BrightBridge Realty in the future and have
+                    Tedla as our agent.
+                  </p>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
-              </div>
-            </div>
-            <div className="test-divide">
-
-            </div>
-            <div className="testimonialBox Box2">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={fwda} alt=""></img>
+                  </div>
+                  <h3>
+                    Fikerte W & Daniel A
+                    <br />
+                    <span>
+                      {" "}
+                      He is a professional in every aspect of the real estate
+                      business
+                    </span>
+                  </h3>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
               </div>
-            </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-          <div className="test-main">
-            <div className="testimonialBox Box1">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+              <div className="test-divide"></div>
+              <div className="testimonialBox Box2">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Ted Belayneh is the perfect balance between tough and
+                    charming. When you're making a big financial, personal and
+                    sometimes emotional decision, you want someone who will be a
+                    good listener, a strong negotiator and who is respected by
+                    his/her peers. Ted meets all expectations. We have worked
+                    with him three times. He was a great coach when we were
+                    first time homebuyers and a savvy marketer when we sold that
+                    home and bought a great house last year.
+                  </p>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
-              </div>
-            </div>
-            <div className="test-divide">
-                
-            </div>
-            <div className="testimonialBox Box2">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={rowo} alt=""></img>
+                  </div>
+                  <h3>
+                    Ruth O & Wilson O
+                    <br />
+                    <span>Ted meets all expectations</span>
+                  </h3>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
               </div>
-            </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="test-main">
-            <div className="testimonialBox Box1">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+              <div className="testimonialBox Box1">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Throughout the purchase processes I felt Tedla to be very
+                    pleasant, knowledgeable, trustworthy, and responsive. I have
+                    and would confidently recommend Tedla and BrightBridge
+                    Broker to family and friends, and plan to work with him
+                    again in the future!
+                  </p>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
-              </div>
-            </div>
-            <div className="test-divide">
-                
-            </div>
-            <div className="testimonialBox Box2">
-              <img src={quote} className="quote" alt=""></img>
-              <div className="content">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  faucibus, dui vel rhoncus elementum, lorem velit posuere
-                  nulla, nec accumsan leo felis eget tellus. Sed laoreet ipsum
-                  suscipit, dapibus sapien a, dignissim elit. Sed odio felis,
-                  condimentum nec augue at, iaculis feugiat massa. Duis a
-                  sollicitudin ipsum, sed blandit magna.
-                </p>
-              </div>
-              <div className="testimonial-details">
-                <div className="imgBx">
-                  <img src={user1} alt=""></img>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={dyl} alt=""></img>
+                  </div>
+                  <h3>
+                    Daniel Y. L
+                    <br />
+                    <span>
+                      {" "}
+                      He is a professional in every aspect of the real estate
+                      business
+                    </span>
+                  </h3>
                 </div>
-                <h3>
-                  Someone Famous
-                  <br />
-                  <span>Home Owner 3</span>
-                </h3>
+              </div>
+              <div className="test-divide"></div>
+              <div className="testimonialBox Box2">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Ted Belayneh is the perfect balance between tough and
+                    charming. When you're making a big financial, personal and
+                    sometimes emotional decision, you want someone who will be a
+                    good listener, a strong negotiator and who is respected by
+                    his/her peers. Ted meets all expectations. We have worked
+                    with him three times. He was a great coach when we were
+                    first time homebuyers and a savvy marketer when we sold that
+                    home and bought a great house last year.
+                  </p>
+                </div>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={rowo} alt=""></img>
+                  </div>
+                  <h3>
+                    Ruth O & Wilson O
+                    <br />
+                    <span>Ted meets all expectations</span>
+                  </h3>
+                </div>
               </div>
             </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="test-main">
+              <div className="testimonialBox Box1">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Our agent was Tedla, he was very knowledgeable of the
+                    current market trends. He was very helpful and
+                    straightforward with us on the sale of our home in which he
+                    didn't make a dime and help us purchase a beautiful home. He
+                    is a professional in every aspect of the real estate
+                    business. He would respond quickly if we sent him a text
+                    message or called him. Top notch customer service! Would
+                    definitely use BrightBridge Realty in the future and have
+                    Tedla as our agent.
+                  </p>
+                </div>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={fwda} alt=""></img>
+                  </div>
+                  <h3>
+                    Fikerte W & Daniel A
+                    <br />
+                    <span>
+                      {" "}
+                      He is a professional in every aspect of the real estate
+                      business
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div className="test-divide"></div>
+              <div className="testimonialBox Box2">
+                <img src={quote} className="quote" alt=""></img>
+                <div className="content">
+                  <p>
+                    Ted Belayneh is the perfect balance between tough and
+                    charming. When you're making a big financial, personal and
+                    sometimes emotional decision, you want someone who will be a
+                    good listener, a strong negotiator and who is respected by
+                    his/her peers. Ted meets all expectations. We have worked
+                    with him three times. He was a great coach when we were
+                    first time homebuyers and a savvy marketer when we sold that
+                    home and bought a great house last year.
+                  </p>
+                </div>
+                <div className="testimonial-details">
+                  <div className="imgBx">
+                    <img src={rowo} alt=""></img>
+                  </div>
+                  <h3>
+                    Ruth O & Wilson O
+                    <br />
+                    <span>Ted meets all expectations</span>
+                  </h3>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         </Swiper>
       </div>
-      </div>
-       );
-    };
-    
-    
-    export default Testimonial;
+    </div>
+  );
+};
+
+export default Testimonial;
