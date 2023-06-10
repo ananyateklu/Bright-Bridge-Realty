@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import ted from '../../assets/Tedla.jpg';
 import daniel from '../../assets/Daniel.jpg';
+import mahilet from '../../assets/Mahilet.jpg';
 
 const About: React.FC = () => {
   return (
@@ -42,7 +43,7 @@ const About: React.FC = () => {
           </div>
           <div className="agent">
             <div className="agent-image">
-              <img src="https://via.placeholder.com/150" alt="Agent" />
+              <img src={mahilet} alt="Agent" />
             </div>
             <div className="agent-info">
               <h3>Mahilet Sayed</h3>
