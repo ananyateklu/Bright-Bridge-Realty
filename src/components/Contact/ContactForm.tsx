@@ -89,6 +89,7 @@ const ContactForm: React.FC<{ onContactSubmit: () => void }> = ({ onContactSubmi
                 <div className='email-phone-inputs'>
                 <input
                     type="email"
+                    pattern="\S+@\S+\.\S+"
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

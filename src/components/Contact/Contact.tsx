@@ -99,6 +99,7 @@ const Contact: React.FC = () => {
                             </div>
                             <input
                                 type="email"
+                                pattern="\S+@\S+\.\S+"
                                 placeholder="Email Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
