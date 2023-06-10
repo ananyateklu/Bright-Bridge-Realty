@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
                 'from_name': `${firstName} ${lastName}`,
                 'phoneNumber': phone,
                 'message': message,
-                'recaptcha_token': recaptchaValue, // include the token in your request
+                'recaptcha_token': recaptchaValue,
             },
         };
 

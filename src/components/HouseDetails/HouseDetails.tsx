@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import Mortgage from '../Mortgage/Mortgage';
-import Contact from '../Contact/ContactForm';
+import ContactFormTop from '../Contact/ContactFormTop';
+import ContactForm from '../Contact/ContactForm';
 import Slider from "react-slick";
 import up from "../../assets/Up.png";
 import down from "../../assets/Down.png";
@@ -251,26 +252,38 @@ const HouseDetails: React.FC = () => {
         <div className="property-description">
           <span>{houseData.description}</span>
         </div>
-        <div className="listing-info">
-          <h2>Listing Information</h2>
-        </div>
-        <div className="listing-detail">
-          <div className="listing-lists>">
-            <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No Data Found'}</div>
-            <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
-            <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
-            <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
-            <div>Lot Size: {houseData.resoFacts.lotSize ? houseData.resoFacts.lotSize : 'No Data Found'}</div>
-            <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
-            <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
-            <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>
-            <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No Data Found'}</div>
-            <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No Data Found'}</div>
-            <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No Data Found'} </div>
-            <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No Data Found'}</div>
-            <div>County: {houseData.county ? houseData.county : 'No Data Found'}</div>
-            <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No Data Found'}</div>
+        <div className="list-and-contact">
+        <div className="grid-one-detail">
+          <div className="listing-info">
+            <h2>Listing Information</h2>
           </div>
+          <div className="listing-detail">
+            <div className="listing-lists>">
+              <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No Data Found'}</div>
+              <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
+              <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
+              <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
+              <div>Lot Size: {houseData.resoFacts.lotSize ? houseData.resoFacts.lotSize : 'No Data Found'}</div>
+              <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
+              <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
+              <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>
+              <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No Data Found'}</div>
+              <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No Data Found'}</div>
+              <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No Data Found'} </div>
+              <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No Data Found'}</div>
+              <div>County: {houseData.county ? houseData.county : 'No Data Found'}</div>
+              <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No Data Found'}</div>
+            </div>
+          </div>
+        </div>
+        <div className="grid-two-detail">
+        <div className="contact-form">
+        <div className="listing-info">
+            <h2>Contact Us</h2>
+          </div>
+          <ContactFormTop onContactSubmit={handleContactSubmit} />
+        </div>
+        </div>
         </div>
         <div className="interior">
           <h2>Interior Features</h2>
@@ -334,7 +347,7 @@ const HouseDetails: React.FC = () => {
           </button>}
 
         </div>
-        {showContactForm && <Contact onContactSubmit={handleContactSubmit} />}
+        {showContactForm && <ContactForm onContactSubmit={handleContactSubmit} />}
         {showMortgageCalculator && <Mortgage housePrice={housePrice} />}
       </div>
 

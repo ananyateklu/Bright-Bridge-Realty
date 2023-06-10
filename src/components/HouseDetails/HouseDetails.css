@@ -195,6 +195,16 @@
   margin-bottom: 20px;
 }
 
+.list-and-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+}
+
+.grid-one-detail, .grid-two-detail {
+  width: 100%;
+}
+
 .interior {
   display: flex;
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);

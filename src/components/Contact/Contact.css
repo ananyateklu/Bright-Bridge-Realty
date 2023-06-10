@@ -70,6 +70,18 @@
     transition: border-bottom 0.3s;
   }
 
+  .contact-top-form-details textarea {
+    display: block;
+    width: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #5d1a91; /* dark purple color */
+    outline: none;
+    transition: border-bottom 0.3s;
+  }
+
 
   
   .contact-form-details input:focus,
@@ -89,20 +101,41 @@
   .contact-form-details .name-inputs input {
     grid-row: 1;
   }
-  .contact-form-details .email-phone-inputs input {
-    grid-row: 2;
+  .contact-form-details .email-and-phone-inputs input {
+    grid-row: 1;
   }
 
   .contact-form-details textarea {
     resize: none;
     height: 170px;
   }
-  
+
+  .contact-top-form-details textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  .top-message-input {
+    resize: none;
+    height: 50px !important;
+  }
+
   .contact-form-details button {
     background-color: #5d1a91; /* dark purple color */
     color: white;
     width: 200px;
     height: 50px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .top-button  {
+    background-color: #5d1a91; /* dark purple color */
+    color: white;
+    width: 200px;
+    height: 40px !important;
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
