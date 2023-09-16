@@ -1,5 +1,5 @@
 .House-slider-title {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 45px;
   font-weight: 600;
   margin-left: 100px;
@@ -8,7 +8,7 @@
 }
 
 .House-slider-title2 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #5d1a91;
   font-size: 45px;
   font-weight: 600;
@@ -50,15 +50,15 @@
 
 .House-slider-item-details {
   position: absolute;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 0;
-    font-size: 1.2em;
-    opacity: 0;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    transition: opacity 0.3s;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 0;
+  font-size: 1.2em;
+  opacity: 0;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: opacity 0.3s;
 }
 
 .House-slider-item-details a {
@@ -174,7 +174,7 @@
   padding-left: 3px;
 }
 
-.next-arrow img{
+.next-arrow img {
   width: 20px;
   height: 20px;
   max-height: 50%;
@@ -186,7 +186,7 @@
   left: 10px;
 }
 
-.prev-arrow img{
+.prev-arrow img {
   width: 20px;
   height: 20px;
   max-height: 50%;
@@ -202,4 +202,25 @@
 
 .slick-list {
   overflow: visible !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .HousesSlider {
+    max-width: 70%;
+    margin-left: 15%;
+  }
+
+  .House-slider-item {
+    padding: 0;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+  }
+
+  .House-slider-hr {
+    width: 80%;
+    margin-top: 105px;
+    margin-left: 0px;
+    position: absolute;
+    border: 1.5px solid #d0b25e;
+  }
 }

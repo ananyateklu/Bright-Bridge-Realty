@@ -31,8 +31,8 @@ const NextArrow: React.FC = (props: any) => {
   const { onClick } = props;
   return (
     <div className="next-arrow" onClick={onClick}>
-     <img className='arrow' src={right} alt="right" ></img>
-       
+      <img className='arrow' src={right} alt="right" ></img>
+
     </div>
   );
 };
@@ -41,7 +41,7 @@ const PrevArrow: React.FC = (props: any) => {
   const { onClick } = props;
   return (
     <div className="prev-arrow" onClick={onClick}>
-    <img className='arrow' src={left} alt="left" ></img>
+      <img className='arrow' src={left} alt="left" ></img>
     </div>
   );
 };
@@ -54,6 +54,16 @@ const settings = {
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1000, // up to 1000px screen width
+      settings: {
+        slidesToShow: 1,
+        dots: false,
+      },
+
+    }
+  ]
 };
 
 const FeaturedListings: React.FC = () => {

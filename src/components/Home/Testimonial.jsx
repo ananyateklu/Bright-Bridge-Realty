@@ -59,7 +59,7 @@ const Testimonial = () => {
                   </p>
                 </div>
                 <div className="testimonial-details">
-                  <div className="imgBx">
+                  <div className="imgBx long">
                     <img src={fwda} alt=""></img>
                   </div>
                   <h3>
@@ -86,8 +86,8 @@ const Testimonial = () => {
                   </p>
                 </div>
                 <div className="testimonial-details">
-                  <div className="imgBx">
-                    <img src={rowo} alt=""></img>
+                  <div className="imgBx long">
+                    <img className="long" src={rowo} alt=""></img>
                   </div>
                   <h3>
                     Ruth O & Wilson O

@@ -10,22 +10,9 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer';
 
 import Sold from './components/Sold/Sold';
-import house from "../src/assets/mobile.jpg";
-import logo from '../src/assets/BBLogo.png';
 
 function App() {
-  const isMobile = window.matchMedia("only screen and (max-width: 1200px)").matches;
   
-
-  if (isMobile) {
-    return <div className="Home">
-      <img src={logo} className="App-logo" alt="logo" />
-      <div className="mobilePrompt">Sorry, this website is only available on desktop devices.</div>
-      <div className="mobile">
-        <img src={house} alt="house" />
-      </div>
-    </div>
-  }
   return (
     <div className="App">
       <BrowserRouter>

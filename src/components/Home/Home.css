@@ -8,44 +8,41 @@
 }
 
 .Search-and-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .Larger-search {
-    position: inherit;
-    z-index: 10;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Larger-search {
+  position: inherit;
+  z-index: 2;
+}
 
-  .Search-container {
-    position: absolute;
-    z-index: 1;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.Search-container {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- 
+.Slogan {
+  position: absolute;
+  z-index: 1;
+  top: 470px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
 
-  
-  .Slogan {
-    position: absolute;
-    z-index: 1;
-    top: 470px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3em;
-    font-weight: 500;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  /* Make the house-container relative so the images can be positioned absolutely */
+/* Make the house-container relative so the images can be positioned absolutely */
 .House-container {
   position: relative;
   max-width: 100%; /* Or set it to your preferred width */
@@ -75,7 +72,6 @@
   animation-fill-mode: forwards;
 }
 
-
 /* Keyframes for zoom effect */
 /* Keyframes for zoom effect */
 @keyframes slideShow {
@@ -104,40 +100,14 @@
   }
 }
 
-
-
 .slideshow {
   width: 100%;
   height: 700px; /* Set to your preferred height */
   position: relative;
 }
 
-.Testimonial-slider-title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 30px;
-  font-weight: 600;
-  margin-right: 180px;
-  margin-top: 40px;
-}
-
-.Testimonial-slider-title2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 30px;
-  font-weight:bolder;
-  color: #5d1a91;
-  margin-bottom: 1rem;
-  margin-right: 60px;
-  
-}
-
-.Testimonial-slider-hr {
-  width: 70%;
-  margin-left: 51%;
-  border: 1.5px solid #d0b25e;
-}
-
-.Testimonial-header {
-  text-align: right;
-  width: 100%;
-  margin-bottom: 50px;
+@media only screen and (max-width: 1000px) {
+  .House-container {
+    display: none;
+  }
 }

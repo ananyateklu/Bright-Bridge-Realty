@@ -54,7 +54,7 @@ const Header: React.FC = () => {
   };
 
   const isHouseSearchResult = location.pathname.includes('/search');
-  const showBurger = isHouseSearchResult || windowWidth <= 768;
+  const showBurger = isHouseSearchResult || windowWidth <= 1000;
 
   return (
     <header className={`App-header${scrolled ? ' scrolled' : ''}`}>

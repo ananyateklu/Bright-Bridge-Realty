@@ -116,7 +116,6 @@
   font-size: 1.2em;
   font-weight: 600;
   color: black;
-  
 }
 
 .No-results-message-header {
@@ -142,8 +141,8 @@
 .pagination-container button {
   background-color: white;
   border: none;
-  color: #5D1A91;
-  border: 1px solid #5D1A91;
+  color: #5d1a91;
+  border: 1px solid #5d1a91;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -171,10 +170,9 @@
   font-size: 16px;
 }
 
-@media (max-width: 1200px) {
-
+@media (max-width: 1000px) {
   .House-list {
-    padding-top: 500px;
+    padding-top: 200px;
   }
 
   .House-item {
