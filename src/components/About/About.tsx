@@ -24,7 +24,7 @@ const About: React.FC = () => {
               <img src={ted} alt="Agent" />
             </div>
             <div className="agent-info">
-              <h3>Tedla Belayneh</h3>
+              <h3>Tedla "Ted" Belayneh</h3>
               <p>Role: Broker/Realtor</p>
               <p>Email: ted@brightbridgerealty.com</p>
               <p>Phone: +1 (612) 999-0660</p>
