@@ -14,7 +14,7 @@
 }
 .Larger-search {
   position: inherit;
-  z-index: 2;
+  z-index: 4;
 }
 
 .Search-container {
@@ -47,12 +47,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
-  font-size: 2.5em;
+  padding-top: 110px;
+  padding-bottom: 50px;
+  font-size: 37px;
   font-weight: 500;
   text-align: center;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -122,5 +123,10 @@
 @media only screen and (max-width: 1000px) {
   .House-container {
     display: none;
+  }
+
+  .Larger-search {
+    position: inherit;
+    z-index: 2;
   }
 }

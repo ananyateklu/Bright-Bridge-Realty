@@ -55,6 +55,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
   const [bathsMax, setBathsMax] = useState(initialValues.bathsMax || '');
   const [homeType, setHomeType] = useState(initialValues.home_type || 'Houses');
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000); // Initialize with current window width
+  const [isFilterOpen, setIsFilterOpen] = useState(false || window.innerWidth >= 1000);
 
   const API_KEY = process.env.REACT_APP_OPENCAGE_KEY;
 
@@ -84,6 +86,20 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
     }
   }, [city, API_KEY]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    // Add event listener for window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handleSearch = () => {
     if (city.trim() !== '') {
       setError('');
@@ -102,16 +118,38 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
     }
   };
 
+  const openSearch = () => {
+    setIsFilterOpen(true);
+  }
+
   return (
     <div className="SearchList-container">
-      <div className="Larger-search">
+      <div className="Larger-search-list">
         <datalist id="citySuggestions">
           {suggestions.map((suggestion) => (
             <option key={suggestion} value={suggestion} />
           ))}
         </datalist>
         <div className="Filters-wrapper">
-          <div className="Filter-container">
+         {isMobile && <div className="Filter-container-mobile">
+    
+              <input
+                readOnly
+                className={`Search-input-details ${error ? 'Input-error' : ''}`}
+                type="text"
+                placeholder="Enter city or ZIP code"
+                value={city}
+                onClick={openSearch}
+                onChange={(e) => {
+                  setError('');
+                  setCity(e.target.value);
+                }}
+                list="citySuggestions"
+              />
+              {error && <div className="Error-message">{error}</div>}
+
+          </div>}
+         {isFilterOpen && <div className="Filter-container">
             <div className="Filter-item">
               <label className="Filter-label">City or ZIP Code</label>
               <input
@@ -204,7 +242,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialValues, onSearch }) => {
             <button className="Filter-button" onClick={handleSearch}>
               Search
             </button>
-          </div>
+          </div>}
         </div>
       </div>
     </div>

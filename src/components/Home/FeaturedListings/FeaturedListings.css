@@ -110,13 +110,13 @@
 .FeaturedListings-title-featured {
   color: black;
   display: inline;
-  font-size: 30px;
+  font-size: 70px;
   font-weight: 400;
 }
 
 .FeaturedListings-title-listings {
   color: #5d1a91;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 400;
   margin-left: 5px;
   margin-top: -13px;
@@ -272,7 +272,22 @@
   .FeaturedListings-grid {
     display: flow-root;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 10px;
+  }
+
+  .FeaturedListings-title-featured {
+    color: black;
+    display: inline;
+    font-size: 50px;
+    font-weight: 400;
+  }
+  
+  .FeaturedListings-title-listings {
+    color: #5d1a91;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 5px;
+    margin-top: -13px;
   }
 
   .FeaturedListings-image,

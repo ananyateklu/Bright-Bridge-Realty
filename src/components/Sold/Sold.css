@@ -120,3 +120,11 @@
   margin-top: 0px;
   margin-bottom: 26px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .sold-header {
+    padding-top: 130px;
+    margin-left: 0px;
+    margin-bottom: 60px;
+  }
+}

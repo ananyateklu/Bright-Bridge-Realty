@@ -373,3 +373,54 @@
   margin-top: 0px;
   margin-bottom: 26px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .House-details {
+    display: block;
+    grid-template-columns: 20% 80%;
+    height: auto;
+    margin-bottom: 2rem;
+    padding-top: 5rem;
+  }
+
+  .list-and-contact {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+  }
+
+  .next-arrow-details {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: none;
+    color: white;
+    left: -20px;
+    margin-top: 14px;
+    transform: translateY(-50%);
+  }
+  
+  .prev-arrow-details {
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: none;
+    color: white;
+    left: 20px;
+    margin-top: -26px;
+    transform: translateY(-50%);
+  }
+}

@@ -205,3 +205,39 @@
     height: max-content;
     margin-bottom: 2rem;
   }
+
+
+
+@media (max-width: 1000px) {
+  .sub-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    height: max-content;
+    margin-bottom: 2rem;
+  }
+  .mortgage-view {
+    width: 40%;
+    margin-top: -5px;
+  }
+  .mortgage-breakup {
+    width: 56%;
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  .mortgage-loan-details {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .mortgage-wrapper {
+    height: 1000px;
+    width: auto;
+    border-radius: 20px;
+    padding: 20px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    
+  }
+}

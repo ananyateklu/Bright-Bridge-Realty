@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 }
 
 .Filter-label {
@@ -185,15 +186,37 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+.SearchList-container .Larger-search-list {
+  position: fixed;
+  top: -85px;
+  width: 100%;
+  z-index: 1;
+}
+
 @media (max-width: 1000px) {
   .Filters-wrapper {
+    z-index: 1;
     flex-direction: column;
     margin-top: 10px;
     gap: 10px;
   }
 
   .Filter-container {
-    flex-direction: column;
+    position: fixed;  
+    top: 0;  
+    left: 0; 
+    height: 100vh; 
+    width: 100vw;  
+    background-color: rgba(255, 255, 255);  
+    z-index: 9999;  
+    overflow-y: auto;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+  }
+
+  .Filter-container-mobile {
+    margin-top: -67px;
   }
 
   .Filter-item {
@@ -222,7 +245,7 @@
   .Search-container {
     position: absolute;
     animation: fadeIn 1s ease-in-out;
-    top: 250px;
+    top: 190px;
   }
 
   .SearchBar {
@@ -240,7 +263,7 @@
   }
 
   .Search-input {
-    padding: 12px 20px;
+    padding: 8px 20px;
     border: 2px solid #5d1a91;
     outline: none;
     justify-content: center;
@@ -248,6 +271,7 @@
     height: 20px;
     font-size: 18px;
     position: sticky;
+    border-radius: 0;
   }
 
   .Search-input-details {
@@ -258,16 +282,17 @@
     border-radius: 3px;
     font-size: 14px;
     text-align: center;
+    z-index: 2;
   }
 
   .Search-button {
-    padding: 12px 20px;
+    padding: 8px 20px;
     font-size: 20px;
     background-color: #5d1a91;
     color: white;
     border: none;
     cursor: pointer;
-    height: 48px;
+    height: 40px;
     transition: background-color 0.3s;
   }
 
@@ -278,8 +303,14 @@
 
   .SearchList-container .Larger-search {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.7);
-    top: 60px;
+    top: 65px;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .SearchList-container .Larger-search-list {
+    position: fixed;
+    top: 65px;
     width: 100%;
     z-index: 1;
   }

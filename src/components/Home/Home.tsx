@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     return (
         <div className="Home">
             {!isMobile && <div className="Slogan">The Bridge to Your Next Home</div>}
-            {isMobile && <div className="SloganMobile">The Bridge to Your Next Home</div>}
+            {isMobile && <div className="SloganMobile">Find Your Next Home</div>}
             {!isMobile && <SearchBar onSearch={handleSearch} />}
             {isMobile && <SearchBar onSearch={handleSearch} />}
             <div className="House-container">

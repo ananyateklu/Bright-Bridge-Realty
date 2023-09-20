@@ -41,6 +41,7 @@ const HouseDetails: React.FC = () => {
   const [showMortgageCalculator, setShowMortgageCalculator] = useState(false);
   const [showMortgageButton, setShowMortgageButton] = useState(true);
   const [housePrice, setHousePrice] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000); // Initialize with current window width
 
   const handleContactSubmit = () => {
     setShowContactForm(false);
@@ -116,6 +117,20 @@ const HouseDetails: React.FC = () => {
   }, [zpid]);
 
   useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 1000);
+    };
+
+    // Add event listener for window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []); 
+
+  useEffect(() => {
     if (additionalImages) {
       setDisplayedImage(additionalImages[0]);
     }
@@ -169,6 +184,15 @@ const HouseDetails: React.FC = () => {
     vertical: true,
     nextArrow: <PrevArrow />,
     prevArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1000, // up to 1000px screen width
+        settings: {
+          vertical: false,
+        },
+
+      }
+    ]
   };
 
 
@@ -200,9 +224,9 @@ const HouseDetails: React.FC = () => {
   return (
 
     <div className="House-details">
-      <div className="side-bar">
+     {!isMobile &&<div className="side-bar">
         <div className="side-slider">
-          <Slider {...settings}>
+           <Slider {...settings}>
             {additionalImages.slice(0, 20).map((image, index) => (
               <div key={index}>
                 <img
@@ -224,7 +248,7 @@ const HouseDetails: React.FC = () => {
           </div>
 
         </div>
-      </div>
+      </div>}
       <div className="main">
         <div className="main-img">
           <img src={displayedImage} alt="House" />
@@ -253,37 +277,37 @@ const HouseDetails: React.FC = () => {
           <span>{houseData.description}</span>
         </div>
         <div className="list-and-contact">
-        <div className="grid-one-detail">
-          <div className="listing-info">
-            <h2>Listing Information</h2>
-          </div>
-          <div className="listing-detail">
-            <div className="listing-lists>">
-              <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No Data Found'}</div>
-              <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
-              <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
-              <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
-              <div>Lot Size: {houseData.resoFacts.lotSize ? houseData.resoFacts.lotSize : 'No Data Found'}</div>
-              <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
-              <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
-              <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>
-              <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No Data Found'}</div>
-              <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No Data Found'}</div>
-              <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No Data Found'} </div>
-              <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No Data Found'}</div>
-              <div>County: {houseData.county ? houseData.county : 'No Data Found'}</div>
-              <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No Data Found'}</div>
+          <div className="grid-one-detail">
+            <div className="listing-info">
+              <h2>Listing Information</h2>
+            </div>
+            <div className="listing-detail">
+              <div className="listing-lists>">
+                <div>MLS ID: {houseData.mlsid ? houseData.mlsid : 'No Data Found'}</div>
+                <div>Status: {houseData.homeStatus ? formatPropertyTypeAndStatus(houseData.homeStatus) : 'No Data Found'} </div>
+                <div>Bedrooms: {houseData.bedrooms ? houseData.bedrooms : 'No Data Found'}</div>
+                <div>Bathrooms: {houseData.bathrooms ? houseData.bathrooms : 'No Data Found'}</div>
+                <div>Lot Size: {houseData.resoFacts.lotSize ? houseData.resoFacts.lotSize : 'No Data Found'}</div>
+                <div>Living Area: {houseData.resoFacts.livingArea ? houseData.resoFacts.livingArea : 'No Data Found'}</div>
+                <div>Sewer: {houseData.resoFacts.sewer ? houseData.resoFacts.sewer : 'No Data Found'}</div>
+                <div>Year Built: {houseData.yearBuilt ? houseData.yearBuilt : 'No Data Found'}</div>
+                <div>Home Type: {houseData.homeType ? formatPropertyTypeAndStatus(houseData.homeType) : 'No Data Found'}</div>
+                <div>Garage Spaces: {houseData.resoFacts.garageSpaces ? houseData.resoFacts.garageSpaces : 'No Data Found'}</div>
+                <div>Stories: {houseData.resoFacts.stories ? houseData.resoFacts.stories : 'No Data Found'} </div>
+                <div>Foundation Area: {houseData.resoFacts.foundationArea ? houseData.resoFacts.foundationArea : 'No Data Found'}</div>
+                <div>County: {houseData.county ? houseData.county : 'No Data Found'}</div>
+                <div>Brokerage Name: {houseData.brokerageName ? houseData.brokerageName : 'No Data Found'}</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="grid-two-detail">
-        <div className="contact-form">
-        <div className="listing-info">
-            <h2>Contact Us</h2>
+          <div className="grid-two-detail">
+            <div className="contact-form">
+              <div className="listing-info">
+                <h2>Contact Us</h2>
+              </div>
+              <ContactFormTop onContactSubmit={handleContactSubmit} />
+            </div>
           </div>
-          <ContactFormTop onContactSubmit={handleContactSubmit} />
-        </div>
-        </div>
         </div>
         <div className="interior">
           <h2>Interior Features</h2>
