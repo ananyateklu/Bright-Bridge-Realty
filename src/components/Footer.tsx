@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
       </div>
       <div className="footer-right">
         <div className="footer-links">
-          {/* Add the links as needed */}
           <a href="/">Home</a>
           <a href="/search?city=Minneapolis, MN">Search</a>
           <a href='/sold'>Sold Listings</a>

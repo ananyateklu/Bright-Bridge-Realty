@@ -272,6 +272,7 @@
   .FeaturedListings-grid {
     display: flow-root;
     margin: 0;
+    margin-top: 100px;
   }
 
   .FeaturedListings-image,
@@ -293,7 +294,14 @@
   .FeaturedListings-details-b,
   .FeaturedListings-details-ed,
   .FeaturedListings-details-button {
-    display: none;
+    font-size: 12px;
+    margin-left: 20px;
+  }
+
+  .FeaturedListings-city {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 20px;
   }
 
   .FeaturedListings-title {
@@ -315,4 +323,6 @@
     margin-top: 24px;
     padding-top: 30px;
   }
+  
+
 }

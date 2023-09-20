@@ -1,123 +1,122 @@
 .Sold {
-    margin: 0px 40px 100px 40px;
-  }
-  
-  .sold-header {
-    padding-top: 130px;
-    margin-left: 60px;
-    margin-bottom: 60px;
-  }
-  
-  .sold-header h1 {
-    font-size: 2.5rem;
-    color: black;
-  }
-  
-  .sold-details {
-    font-size: 1.2rem;
-  }
+  margin: 0px 40px 100px 40px;
+}
 
-  .sold-header h1 span {
-    color: #5d1a91; /* dark purple color */
-  }
+.sold-header {
+  padding-top: 130px;
+  margin-left: 60px;
+  margin-bottom: 60px;
+}
 
+.sold-header h1 {
+  font-size: 2.5rem;
+  color: black;
+}
+
+.sold-details {
+  font-size: 1.2rem;
+}
+
+.sold-header h1 span {
+  color: #5d1a91;
+}
 
 .House-list-sold {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    padding-top: 100px;
-  }
-  
-  .House-item-sold {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 260px;
-    background-color: #d9d9d9;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    position: relative;
-    transition: transform 0.3s;
-  }
-  
-  .House-item-sold:hover {
-    transform: scale(1.05);
-  }
-  
-  .House-item-image-sold {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
-  
-  .House-item-info-sold {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto auto;
-    gap: 8px;
-    padding: 16px;
-  }
-  
-  .House-item-data-sold {
-    color: black !important;
-    grid-column: 2;
-  }
-  
-  .House-item-detail-sold {
-    font-size: 0.8em;
-    color: grey;
-    padding-left: 4px;
-  }
-  
-  .House-item-details-sold {
-    position: absolute;
-    width: 260px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 0;
-    font-size: 1.2em;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .House-item-sold:hover .House-item-details-sold {
-    opacity: 1;
-  }
-  
-  .House-item-details-sold a {
-    color: white;
-    text-decoration: none;
-    padding-left: 30px;
-  }
-  
-  .House-item-city-sold {
-    font-size: 0.9em;
-    grid-column: 1 / -1;
-    margin: 0;
-    padding-left: 4px;
-  }
-  
-  .House-item-price-sold {
-    font-weight: bolder;
-    font-family: Cardo, serif;
-    font-size: 1.6em;
-    color: black;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 4px;
-  }
-  
-  .House-item-divider-sold {
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: 0px;
-    margin-bottom: 26px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.House-item-sold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.House-item-sold:hover {
+  transform: scale(1.05);
+}
+
+.House-item-image-sold {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.House-item-info-sold {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 8px;
+  padding: 16px;
+}
+
+.House-item-data-sold {
+  color: black !important;
+  grid-column: 2;
+}
+
+.House-item-detail-sold {
+  font-size: 0.8em;
+  color: grey;
+  padding-left: 4px;
+}
+
+.House-item-details-sold {
+  position: absolute;
+  width: 260px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 0;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.House-item-sold:hover .House-item-details-sold {
+  opacity: 1;
+}
+
+.House-item-details-sold a {
+  color: white;
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+.House-item-city-sold {
+  font-size: 0.9em;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-left: 4px;
+}
+
+.House-item-price-sold {
+  font-weight: bolder;
+  font-family: Cardo, serif;
+  font-size: 1.6em;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 4px;
+}
+
+.House-item-divider-sold {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+  margin-bottom: 26px;
+}

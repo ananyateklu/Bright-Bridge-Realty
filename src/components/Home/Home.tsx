@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []); // Empty array means this useEffect runs once on mount and unmount
+    }, []); 
 
     const handleSearch = (searchedCity: string) => {
         navigate(`/search?city=${searchedCity}`);
@@ -31,7 +31,9 @@ const Home: React.FC = () => {
     return (
         <div className="Home">
             {!isMobile && <div className="Slogan">The Bridge to Your Next Home</div>}
+            {isMobile && <div className="SloganMobile">The Bridge to Your Next Home</div>}
             {!isMobile && <SearchBar onSearch={handleSearch} />}
+            {isMobile && <SearchBar onSearch={handleSearch} />}
             <div className="House-container">
                 {/* Render ImageSlider only if it's not a mobile view */}
                 {!isMobile && <ImageSlider />}

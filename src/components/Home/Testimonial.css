@@ -178,15 +178,15 @@
 
   .testimonialBox h4,
   .testimonialBox p {
-    font-size: smaller; /* Reduce the font size */
+    font-size: smaller; 
   }
 
   .testimonialBox .testimonial-details h3 {
-    font-size: 14px; /* Further reduce the font size for the author */
+    font-size: 14px; 
   }
 
   .swiper-container {
-    width: 100%; /* Take up full width */
+    width: 100%; 
   }
 
   .Testimonial-slider-hr {
