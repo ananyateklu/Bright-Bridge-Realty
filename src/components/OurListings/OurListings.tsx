@@ -10,7 +10,7 @@ const OurListings: React.FC = () => {
                 <h1>
                     <span>OUR LISTINGS</span>
                 </h1>
-                <p className='our-listings-details'>Here are the properties currently listed in our firm</p>
+                <p className='our-listings-details'>Here are the properties currently listed on BrightBridge Realty</p>
                 <div className="House-list-our-listings">
                     <div className="House-item-our-listings" >
                         <img src={House1} alt="House" className="House-item-image-our-listings" />
