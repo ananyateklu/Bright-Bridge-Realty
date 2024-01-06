@@ -167,7 +167,6 @@ code {
 .Home-link:hover {
   color: #b382d5;
   position: absolute;
-  right: 900px;
   top: 0;
   margin: 30px 40px 20px 20px;
 }
@@ -175,7 +174,7 @@ code {
 .Search-link {
   position: absolute;
   top: 0;
-  right: 700px;
+  right: 720px;
   margin: 30px 40px 20px 20px;
   color: #5d1a91;
   font-size: calc(1px + 1.8vmin);
@@ -187,14 +186,31 @@ code {
   color: #b382d5;
   position: absolute;
   top: 0;
-  right: 700px;
+  margin: 30px 40px 20px 20px;
+}
+
+.Our-listings-link {
+  position: absolute;
+  top: 0;
+  right: 530px;
+  margin: 30px 40px 20px 20px;
+  color: #5d1a91;
+  font-size: calc(1px + 1.8vmin);
+  text-decoration: none;
+  animation: slideDown 1s ease-in-out;
+}
+
+.Our-listings-link:hover {
+  color: #b382d5;
+  position: absolute;
+  top: 0;
   margin: 30px 40px 20px 20px;
 }
 
 .Sold-link {
   position: absolute;
   top: 0;
-  right: 450px;
+  right: 330px;
   margin: 30px 40px 20px 20px;
   color: #5d1a91;
   font-size: calc(1px + 1.8vmin);
@@ -206,14 +222,13 @@ code {
   color: #b382d5;
   position: absolute;
   top: 0;
-  right: 450px;
   margin: 30px 40px 20px 20px;
 }
 
 .About-link {
   position: absolute;
   top: 0;
-  right: 260px;
+  right: 170px;
   margin: 30px 40px 20px 20px;
   color: #5d1a91;
   font-size: calc(1px + 1.8vmin);
@@ -225,7 +240,6 @@ code {
   color: #b382d5;
   position: absolute;
   top: 0;
-  right: 260px;
   margin: 30px 40px 20px 20px;
 }
 
@@ -246,7 +260,6 @@ code {
   color: white;
   position: absolute;
   top: 0;
-  right: 50px;
   margin: 18px 10px 20px 15px;
   background-color: #8b30c7;
 }

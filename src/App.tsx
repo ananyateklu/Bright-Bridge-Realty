@@ -8,6 +8,7 @@ import HouseSearchResult from './components/HouseSearchResult/HouseSearchResult'
 import About from './components/About/About';
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer';
+import OurListings from './components/OurListings/OurListings';
 
 import Sold from './components/Sold/Sold';
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/house-details/:zpid" element={<HouseDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          
+          <Route path='/listings' element={<OurListings />} />
           <Route path='/sold' element={<Sold />} />
         </Routes>
         <Footer />

@@ -74,6 +74,7 @@ const Header: React.FC = () => {
             SEARCH
           </a>
           <a href='/sold' className='Sold-link'>SOLD LISTINGS</a>
+          <a href='/listings' className='Our-listings-link'>OUR LISTINGS</a>
           <a href="/about" className="About-link">
             ABOUT
           </a>
@@ -90,6 +91,7 @@ const Header: React.FC = () => {
           SEARCH
         </a>
         <a href='/sold' className='Sold-link-burger'>SOLD LISTINGS</a>
+        <a href='/listings' className='Our-listings-link-burger'>OUR LISTINGS</a>
         <a href="/about" className="About-link-burger" onClick={toggleBurgerMenu}>
           ABOUT
         </a>
